@@ -1,0 +1,251 @@
+campaign_id,campaign_name,normalized_channel,spend,impressions,clicks,conversions
+CMP-000060,retargeting_us_fy25_social,paid_social,58424.67,210120,14906,700
+CMP-000039,Holiday Promo EMEA FY25 Social,paid_social,52790.39,154240,11376,49
+CMP-000025,Holiday Promotion APAC 2025 Social,paid_social,47751.03,171640,8840,364
+CMP-000035,Enterprise ABM APAC FY25 Social,paid_social,45012.15,56989,9164,789
+CMP-000036,LIFECYCLE WINBACK APAC Q4 SOCIAL,paid_social,39021.4,125512,13800,165
+CMP-000077,Regional Expansion EMEA FY25 Social,paid_social,36252.24,121590,10618,32
+CMP-000050,Enterprise ABM US FY25 Social,paid_social,33267.01,114408,7772,126
+CMP-000039,COMPETITOR SEARCH EMEA Q4 SOCIAL,paid_social,31888.11,97884,8462,397
+CMP-000052,Regional Expansion NA 2024 Social,paid_social,31648.25,198686,7652,176
+CMP-000047,Competitor SEM EMEA FY25 Social,paid_social,31467.69,133259,6842,7
+CMP-000002,lifecycle_winback_emea_fy25_social,paid_social,31370.02,195255,10836,227
+CMP-000021,enterprise_abm_na_2024_social,paid_social,30504.15,203317,16765,678
+CMP-000050,Product Launch Global FY25 Social,paid_social,29481.82,144371,12276,450
+CMP-000006,ENTERPRISE ABM APAC FY25 SOCIAL,paid_social,29456.99,124862,10443,234
+CMP-000071,COMPETITOR SEARCH EMEA FY25 SOCIAL,paid_social,28770.34,120269,12381,627
+CMP-000008,CREATOR SPARK EMEA 2024 SOCIAL,paid_social,28646.56,75702,12984,464
+CMP-000030,LIFECYCLE WINBACK NA Q4 SOCIAL,paid_social,28589.51,89184,5175,43
+CMP-000076,product_launch_global_q4_social,paid_social,27849.9,150930,7486,4
+CMP-000071,Lifecycle Winback Global 2025 Social,paid_social,27621.86,150855,11128,72
+CMP-000017,Lifecycle Winback Global 2024 Social,paid_social,27577.89,196386,13233,138
+CMP-000025,Regional Expansion APAC Q4 Social,paid_social,27499.94,50928,4367,110
+CMP-000064,Cart Recovery US Q4 Social,paid_social,27300.34,135630,6227,155
+CMP-000019,Lifecycle Winback US 2024 Social,paid_social,27204.03,192745,8711,266
+CMP-000039,Holiday Promotion APAC 2025 Social,paid_social,27074.76,99115,7833,165
+CMP-000068,Lifecycle Winback APAC 2025 Social,paid_social,26709.32,135646,4505,55
+CMP-000046,Regional Expansion EMEA 2024 Social,paid_social,26573.65,128204,23881,1466
+CMP-000072,Retargeting US 2024 Social,paid_social,26378.98,142864,8446,204
+CMP-000070,Competitor SEM EMEA 2024 Social,paid_social,26149.96,154913,9296,433
+CMP-000071,Cart Recovery NA FY25 Social,paid_social,25080.7,211501,12470,106
+CMP-000050,Enterprise ABM NA 2025 Social,paid_social,24232.29,91383,3935,29
+CMP-000008,Competitor Search EMEA Q4 Social,paid_social,24131.23,99621,6457,23
+CMP-000048,creator_spark_emea_fy25_social,paid_social,23777.99,95892,11152,257
+CMP-000053,Enterprise ABM Global 2024 Social,paid_social,23119.879999999997,151826,11559,68
+CMP-000049,holiday_promo_global_q4_social,paid_social,22017.73,131172,7975,246
+CMP-000030,Regional Expansion Global FY25 Social,paid_social,21913.79,169772,5997,81
+CMP-000038,Retargeting US FY25 Social,paid_social,21910.67,32609,3097,0
+CMP-000043,Retargeting Global 2024 Social,paid_social,21599.84,117275,12984,309
+CMP-000041,creator_spark_emea_2025_social,paid_social,21224.21,135036,135046,56
+CMP-000069,Lifecycle Winback EMEA FY25 Social,paid_social,21034.48,160668,3805,11
+CMP-000078,Product Launch EMEA 2024 Social,paid_social,20820.04,159140,14223,298
+CMP-000032,Brand SEM Global 2024 Social,paid_social,20689.65,143263,6565,213
+CMP-000005,Enterprise ABM APAC 2025 Social,paid_social,20620.46,124519,12338,669
+CMP-000018,Cart Recovery APAC 2024 Social,paid_social,20388.04,103559,6510,401
+CMP-000056,holiday_promo_global_2024_social,paid_social,20313.54,89839,3287,143
+CMP-000068,Enterprise ABM NA FY25 Social,paid_social,20274.54,107595,10056,340
+CMP-000079,Cart Recovery APAC 2024 Social,paid_social,19992.22,120174,7739,264
+CMP-000004,Lifecycle Winback APAC 2025 Social,paid_social,19385.12,176006,9852,100
+CMP-000071,enterprise_abm_na_q4_social,paid_social,19369.8,185911,6480,83
+CMP-000073,Cart Recovery US 2025 Social,paid_social,19152.4,111971,3828,53
+CMP-000035,CREATOR SPARK EMEA 2025 SOCIAL,paid_social,18932.17,72883,6595,142
+CMP-000038,Lifecycle Winback NA 2024 Social,paid_social,18608.74,83181,10133,183
+CMP-000053,Competitor Search US 2024 Social,paid_social,18545.29,70484,10407,522
+CMP-000075,Regional Expansion US Q4 Social,paid_social,18361.25,80486,3485,124
+CMP-000008,creator_spark_na_2025_social,paid_social,18171.29,118495,4226,36
+CMP-000035,Brand Search NA Q4 Social,paid_social,18040.92,72880,1658,9
+CMP-000021,COMPETITOR SEARCH EMEA 2025 SOCIAL,paid_social,17892.54,173988,5857,44
+CMP-000057,Brand Search EMEA Q4 Social,paid_social,17836.1,236202,7480,258
+CMP-000025,Holiday Promotion EMEA 2024 Social,paid_social,17833.95,112958,4671,175
+CMP-000072,Holiday Promo Global Q4 Social,paid_social,17799.31,44908,4388,122
+CMP-000072,Lifecycle Winback US 2025 Social,paid_social,17538.14,195270,13056,236
+CMP-000029,Brand Search EMEA Q4 Social,paid_social,17376.24,160858,7415,879
+CMP-000015,Regional Expansion Global 2025 Social,paid_social,17293.61,189288,7791,75
+CMP-000055,Regional Expansion APAC 2024,paid_search,17051.33,27520,2137,93
+CMP-000011,Retargeting APAC 2025 Social,paid_social,16810.66,65809,4627,147
+CMP-000056,enterprise_abm_us_2024_social,paid_social,16782.72,228988,8328,174
+CMP-000061,Cart Recovery Global Q4 Social,paid_social,16721.23,74222,5666,206
+CMP-000021,competitor_search_emea_q4_social,paid_social,16609.08,140668,6843,95
+CMP-000036,Creator Spark APAC FY25 Social,paid_social,16434.05,114095,9017,54
+CMP-000008,brand_search_apac_fy25_social,paid_social,16170.73,152584,6001,258
+CMP-000008,Brand Search EMEA Q4 Social,paid_social,15880.27,81937,5242,145
+CMP-000058,enterprise_abm_apac_q4_social,paid_social,15736.14,173282,6493,15
+CMP-000034,retargeting_na_2024_social,paid_social,15668.84,168190,12436,409
+CMP-000038,competitor_search_emea_q4,paid_search,15527.11,42346,1940,197
+CMP-000067,competitor_search_emea_q4_social,paid_social,15398.9,95827,7295,284
+CMP-000005,Lifecycle Winback Global 2024 Social,paid_social,15290.88,115384,7629,315
+CMP-000062,Cart Recovery APAC 2024 Social,paid_social,15274.8,88055,9157,15
+CMP-000061,Competitor Search Global FY25 Social,paid_social,15215.66,73168,6250,22
+CMP-000035,LIFECYCLE WINBACK APAC 2024 SOCIAL,paid_social,15134.75,134540,9636,169
+CMP-000008,Product Launch EMEA FY25 Social,paid_social,15129.43,68710,4916,240
+CMP-000029,Lifecycle Winback US Q4 Social,paid_social,15076.39,125580,5637,330
+CMP-000071,cart_recovery_global_fy25_social,paid_social,14972.94,71070,5625,38
+CMP-000032,Regional Expansion Global FY25 Social,paid_social,14971.52,60527,6092,47
+CMP-000072,Creator Spark NA 2024 Social,paid_social,14965.65,74326,5349,55
+CMP-000018,CREATOR SPARK NA Q4 SOCIAL,paid_social,14953.56,139260,5807,50
+CMP-000080,Holiday Promo APAC 2025 Social,paid_social,14860.07,108010,13276,584
+CMP-000068,Brand SEM APAC Q4 Social,paid_social,14790.89,122057,12285,150
+CMP-000014,lifecycle_winback_emea_2025_social,paid_social,14711.18,65443,4201,234
+CMP-000024,Retargeting US 2025 Social,paid_social,14710.41,248363,6264,263
+CMP-000027,Enterprise ABM Global Q4 Social,paid_social,14655.6,141565,9578,260
+CMP-000005,RETARGETING APAC 2025 SOCIAL,paid_social,14646.83,231865,6855,53
+CMP-000074,Cart Recovery Global 2025 Social,paid_social,14602.42,145122,3584,60
+CMP-000055,Regional Expansion APAC Q4 Social,paid_social,14186.67,48831,3802,78
+CMP-000020,LIFECYCLE WINBACK APAC Q4 SOCIAL,paid_social,14008.52,55680,5046,114
+CMP-000044,brand_search_us_fy25_social,paid_social,13998.94,144194,7716,292
+CMP-000023,Lifecycle Winback EMEA 2024 Social,paid_social,13964.1,81531,3093,121
+CMP-000063,Holiday Promo NA 2024 Social,paid_social,13892.36,116523,3724,51
+CMP-000053,Holiday Promo Global Q4 Social,paid_social,13817.28,169818,3849,106
+CMP-000031,Brand Search US 2024 Social,paid_social,13795.14,115407,3835,102
+CMP-000040,competitor_search_global_q4_social,paid_social,13785.34,96654,4922,37
+CMP-000036,Enterprise ABM EMEA 2024 Social,paid_social,13767.42,142793,5654,219
+CMP-000040,Retargeting APAC 2024 Social,paid_social,13677.91,97388,12440,71
+CMP-000055,Lifecycle Winback NA 2025 Social,paid_social,13662.49,86148,3531,114
+CMP-000045,product_launch_global_2025_social,paid_social,13602.65,77793,3672,227
+CMP-000022,Holiday Promo APAC 2025 Social,paid_social,13537.02,135555,5186,208
+CMP-000015,Brand SEM NA 2024 Social,paid_social,13502.77,65168,4456,476
+CMP-000063,Regional Expansion Global FY25 Social,paid_social,13302.17,106058,3384,89
+CMP-000083,Brand Search APAC 2025 Social,paid_social,13266.38,59037,3911,53
+CMP-000065,Creator Spark Global Q4 Social,paid_social,13256.46,133353,2013,54
+CMP-000071,brand_search_us_fy25_social,paid_social,13152.25,174112,4044,277
+CMP-000023,lifecycle_winback_emea_2024_social,paid_social,13007.61,114023,7208,127
+CMP-000021,Enterprise ABM EMEA 2025 Social,paid_social,12890.21,77024,77034,65
+CMP-000027,Brand SEM Global 2025 Social,paid_social,12824.32,83848,7719,78
+CMP-000033,Brand Search NA 2025 Social,paid_social,12786.99,162660,9227,387
+CMP-000010,product_launch_apac_2024,paid_search,12719.37,13720,2259,61
+CMP-000078,Regional Expansion APAC Q4 Social,paid_social,12657.78,140333,6805,273
+CMP-000073,Brand SEM US 2024 Social,paid_social,12601.5,39474,3754,54
+CMP-000045,Retargeting EMEA Q4 Social,paid_social,12591.6,90205,4303,23
+CMP-000074,Product Launch NA FY25 Social,paid_social,12486.3,128110,4532,104
+CMP-000040,COMPETITOR SEARCH APAC 2025 SOCIAL,paid_social,12447.42,109625,2443,9
+CMP-000049,Lifecycle Winback APAC FY25 Social,paid_social,12384.92,196571,196581,168
+CMP-000027,LIFECYCLE WINBACK US 2025 SOCIAL,paid_social,12189.36,73105,3560,2
+CMP-000003,Lifecycle Winback Global FY25 Social,paid_social,12063.38,63241,4251,48
+CMP-000067,Enterprise ABM NA 2025 Social,paid_social,12005.67,108443,4761,94
+CMP-000064,Regional Expansion APAC Q4 Social,paid_social,11985.17,105204,6508,53
+CMP-000050,Retargeting NA 2025 Social,paid_social,11949.66,82237,5163,96
+CMP-000012,brand_search_global_fy25_social,paid_social,11860.27,152955,12794,100
+CMP-000037,Holiday Promo Global 2024 Social,paid_social,11850.2,90300,3878,8
+CMP-000042,Brand SEM NA FY25 Social,paid_social,11803.35,115384,6438,56
+CMP-000003,CART RECOVERY NA 2025 SOCIAL,paid_social,11790.8,60459,3860,12
+CMP-000083,competitor_search_apac_2024_social,paid_social,11716.52,140620,4552,58
+CMP-000075,Competitor Search NA 2024 Social,paid_social,11663.43,125183,7972,248
+CMP-000020,Creator Spark US 2025 Social,paid_social,11541.1,90978,7544,190
+CMP-000048,Retargeting US FY25 Social,paid_social,11523.73,145811,5564,22
+CMP-000002,Product Launch US Q4 Social,paid_social,11388.06,94544,6735,137
+CMP-000059,Retargeting APAC FY25 Social,paid_social,11341.0,145428,4064,3
+CMP-000023,regional_expansion_global_q4_social,paid_social,11336.2,120592,5658,33
+CMP-000007,Brand Search NA 2025 Social,paid_social,11289.13,141624,141634,238
+CMP-000037,Regional Expansion APAC 2025 Social,paid_social,11163.71,95694,4753,151
+CMP-000026,Brand SEM Global 2024 Social,paid_social,11161.2,119331,2595,60
+CMP-000001,Creator Spark Global Q4 Social,paid_social,11152.52,168811,7672,550
+CMP-000008,product_launch_apac_fy25_social,paid_social,11142.55,151229,3113,161
+CMP-000038,Retargeting APAC 2024 Social,paid_social,11052.93,28953,3162,110
+CMP-000020,LIFECYCLE WINBACK US 2025 SOCIAL,paid_social,11033.08,111639,5152,78
+CMP-000081,Lifecycle Winback NA 2024 Social,paid_social,11028.6,120357,6066,78
+CMP-000069,Lifecycle Winback US FY25 Social,paid_social,11019.37,52817,2919,54
+CMP-000013,product_launch_apac_2024_social,paid_social,10987.31,139025,3172,163
+CMP-000009,Regional Expansion US FY25 Social,paid_social,10980.91,79192,4278,114
+CMP-000042,Creator Spark EMEA FY25 Social,paid_social,10943.78,115044,8429,671
+CMP-000018,Creator Spark US 2024 Social,paid_social,10743.78,197364,4908,68
+CMP-000047,Competitor SEM US FY25 Social,paid_social,10701.74,80911,2787,24
+CMP-000048,competitor_search_emea_fy25_social,paid_social,10658.93,65876,2736,15
+CMP-000064,Regional Expansion EMEA 2025 Social,paid_social,10624.24,200732,3107,79
+CMP-000037,RETARGETING US 2025 SOCIAL,paid_social,10565.81,150174,6533,126
+CMP-000007,CREATOR SPARK EMEA Q4 SOCIAL,paid_social,10552.34,47068,3237,56
+CMP-000061,Holiday Promotion NA 2025 Social,paid_social,10513.99,67071,4961,42
+CMP-000039,Retargeting APAC 2025 Social,paid_social,10486.57,84538,3738,37
+CMP-000079,RETARGETING NA 2025 SOCIAL,paid_social,10485.1,139441,5462,12
+CMP-000018,Competitor Search Global FY25 Social,paid_social,10461.99,66075,3136,4
+CMP-000075,Competitor Search EMEA 2025 Social,paid_social,10444.31,85495,5804,19
+CMP-000011,ENTERPRISE ABM APAC FY25 SOCIAL,paid_social,10428.43,57423,2648,29
+CMP-000036,Holiday Promo NA 2024 Social,paid_social,10408.92,129800,4329,89
+CMP-000062,Cart Recovery Global 2025 Social,paid_social,10356.31,103097,8063,367
+CMP-000035,product_launch_global_2025_social,paid_social,10321.85,131562,3810,19
+CMP-000070,LIFECYCLE WINBACK EMEA 2025 SOCIAL,paid_social,10320.81,114864,1784,92
+CMP-000040,brand_search_emea_2024,paid_search,10314.15,17302,1964,25
+CMP-000018,Cart Recovery US 2024,paid_search,10234.85,16983,1010,75
+CMP-000035,Holiday Promo Global FY25,paid_search,10199.28,11888,1553,50
+CMP-000057,cart_recovery_us_2025_social,paid_social,10193.28,90154,8013,382
+CMP-000049,competitor_search_global_2024_social,paid_social,10162.89,35538,2432,46
+CMP-000029,RETARGETING NA FY25 SOCIAL,paid_social,10154.88,117181,7108,49
+CMP-000051,holiday_promo_us_fy25_social,paid_social,10148.62,122594,4030,85
+CMP-000073,Regional Expansion Global FY25 Social,paid_social,10093.61,102369,6157,227
+CMP-000004,CREATOR SPARK APAC 2024 SOCIAL,paid_social,10069.85,84485,2190,21
+CMP-000030,Lifecycle Winback APAC 2024 Social,paid_social,10052.13,194775,6335,369
+CMP-000074,REGIONAL EXPANSION EMEA Q4 SOCIAL,paid_social,10036.83,84526,6320,5
+CMP-000030,competitor_search_global_fy25_social,paid_social,10024.36,89910,4120,328
+CMP-000048,Creator Spark NA 2025 Social,paid_social,9991.8,46560,3541,52
+CMP-000020,COMPETITOR SEARCH NA Q4 SOCIAL,paid_social,9965.93,146515,7471,56
+CMP-000045,Cart Recovery US 2024 Social,paid_social,9908.29,98766,1939,91
+CMP-000005,Competitor Search APAC 2024 Social,paid_social,9899.94,80167,6199,164
+CMP-000057,product_launch_apac_fy25_social,paid_social,9879.08,86109,2130,33
+CMP-000024,Product Launch Global 2025 Social,paid_social,9863.71,75246,1973,23
+CMP-000012,Product Launch NA Q4 Social,paid_social,9857.47,104139,5165,13
+CMP-000065,Holiday Promotion EMEA 2024,paid_search,9819.94,16695,1615,8
+CMP-000064,Cart Recovery APAC Q4 Social,paid_social,9786.33,54637,2924,32
+CMP-000039,lifecycle_winback_emea_2025_social,paid_social,9767.99,108771,5997,130
+CMP-000047,Cart Recovery EMEA 2024 Social,paid_social,9764.49,80274,4038,174
+CMP-000071,Lifecycle Winback APAC Q4 Social,paid_social,9761.93,146785,9308,70
+CMP-000033,CART RECOVERY GLOBAL Q4 SOCIAL,paid_social,9713.66,149257,3690,33
+CMP-000062,Regional Expansion EMEA FY25 Social,paid_social,9682.84,69230,4445,27
+CMP-000041,Creator Spark APAC FY25 Social,paid_social,9644.88,97174,3125,304
+CMP-000047,Brand Search EMEA 2024 Social,paid_social,9601.07,180575,9904,170
+CMP-000025,Product Launch EMEA 2024 Social,paid_social,9592.39,153989,4164,63
+CMP-000056,ENTERPRISE ABM NA 2024 SOCIAL,paid_social,9569.21,81326,2451,17
+CMP-000030,Lifecycle Winback US 2025 Social,paid_social,9566.9,50517,4508,175
+CMP-000064,Retargeting NA 2024 Social,paid_social,9528.85,81547,3976,36
+CMP-000059,Retargeting US 2025 Social,paid_social,9519.86,54645,2026,97
+CMP-000076,Brand Search Global 2024,paid_search,9512.26,33436,3166,330
+CMP-000066,Product Launch EMEA 2024 Social,paid_social,9465.84,143820,4543,138
+CMP-000017,Lifecycle Winback NA FY25 Social,paid_social,9450.78,114050,3546,44
+CMP-000001,HOLIDAY PROMO EMEA 2024,paid_search,9411.76,16762,1526,65
+CMP-000070,Enterprise ABM APAC FY25,paid_search,9354.96,16650,1400,103
+CMP-000023,Lifecycle Winback US 2024 Social,paid_social,9339.97,96543,3203,42
+CMP-000019,lifecycle_winback_global_2025_social,paid_social,9323.35,74012,4544,95
+CMP-000018,Lifecycle Winback Global 2024,paid_search,9260.24,14947,2218,38
+CMP-000081,creator_spark_apac_fy25_social,paid_social,9203.36,148340,5097,239
+CMP-000003,cart_recovery_emea_fy25_social,paid_social,9189.66,116981,5307,56
+CMP-000072,CART RECOVERY NA Q4 SOCIAL,paid_social,9170.75,95394,3392,163
+CMP-000040,Enterprise ABM US 2025,paid_search,9150.68,15151,2291,95
+CMP-000037,Brand Search EMEA FY25 Social,paid_social,9150.67,97461,5615,422
+CMP-000075,Creator Spark Global 2024 Social,paid_social,9124.09,105793,2332,43
+CMP-000024,Product Launch US Q4 Social,paid_social,9120.37,59514,4878,80
+CMP-000058,Product Launch EMEA Q4 Social,paid_social,9117.74,50668,3666,6
+CMP-000007,LIFECYCLE WINBACK US Q4 SOCIAL,paid_social,9050.94,129262,4176,110
+CMP-000063,Brand Search EMEA 2025 Social,paid_social,9006.98,59438,3464,44
+CMP-000019,CART RECOVERY APAC 2024 SOCIAL,paid_social,8976.91,81112,2305,157
+CMP-000045,Regional Expansion US 2025 Social,paid_social,8951.51,229300,11376,352
+CMP-000048,Brand SEM EMEA 2025 Social,paid_social,8949.99,129276,7548,40
+CMP-000028,Regional Expansion Global 2025,paid_search,8879.9,16849,2965,24
+CMP-000030,creator_spark_global_q4_social,paid_social,8843.11,106656,7335,269
+CMP-000023,Creator Spark NA 2024 Social,paid_social,8819.36,104229,3270,66
+CMP-000066,Lifecycle Winback Global 2024,paid_search,8770.25,17979,2787,131
+CMP-000039,Retargeting US FY25 Social,paid_social,8741.56,65854,3192,178
+CMP-000019,Creator Spark EMEA 2024 Social,paid_social,8730.79,146051,5287,96
+CMP-000056,Creator Spark Global FY25 Social,paid_social,8711.74,101161,6334,59
+CMP-000016,Retargeting EMEA 2024 Social,paid_social,8670.17,91981,2339,133
+CMP-000067,Regional Expansion APAC FY25 Social,paid_social,8651.7,147416,3310,18
+CMP-000009,ENTERPRISE ABM EMEA FY25 SOCIAL,paid_social,8644.48,88890,2739,113
+CMP-000074,enterprise_abm_us_q4_social,paid_social,8644.32,132995,4836,142
+CMP-000016,RETARGETING GLOBAL 2024 SOCIAL,paid_social,8606.6,192188,7017,101
+CMP-000059,Regional Expansion US FY25,paid_search,8570.87,15204,1866,30
+CMP-000019,Regional Expansion US 2024 Social,paid_social,8568.84,76617,5857,168
+CMP-000051,Cart Recovery Global FY25 Social,paid_social,8560.6,197686,3506,629
+CMP-000045,CART RECOVERY US FY25 SOCIAL,paid_social,8541.86,138165,2927,50
+CMP-000057,Brand Search US FY25 Social,paid_social,8538.08,132875,10459,207
+CMP-000052,LIFECYCLE WINBACK NA 2024 SOCIAL,paid_social,8530.73,194169,2723,73
+CMP-000001,Retargeting NA 2024 Social,paid_social,8510.17,173191,2800,122
+CMP-000032,Enterprise ABM Global 2025 Social,paid_social,8508.79,45614,3222,53
+CMP-000002,BRAND SEARCH NA FY25 SOCIAL,paid_social,8489.73,106453,5706,432
+CMP-000044,brand_search_global_fy25_social,paid_social,8480.06,56741,4244,71
+CMP-000034,Competitor Search US 2024 Social,paid_social,8460.25,44534,2140,20
+CMP-000063,CREATOR SPARK APAC 2025 SOCIAL,paid_social,8440.37,65951,4790,181
+CMP-000033,Lifecycle Winback Global 2024 Social,paid_social,8429.23,92666,3806,46
+CMP-000039,PRODUCT LAUNCH NA 2025,paid_search,8412.47,16850,1983,25
+CMP-000076,lifecycle_winback_us_q4_social,paid_social,8387.08,45424,3299,39
+CMP-000074,Retargeting US 2024 Social,paid_social,8385.53,85521,1223,48
+CMP-000037,Enterprise ABM US FY25 Social,paid_social,8375.76,126452,3985,6
+CMP-000050,BRAND SEARCH US 2025,paid_search,8360.39,14332,1589,60
+CMP-000036,Holiday Promo EMEA 2025 Social,paid_social,8349.24,122405,3365,28
+CMP-000033,Creator Spark APAC 2024 Social,paid_social,8338.74,67707,2610,48

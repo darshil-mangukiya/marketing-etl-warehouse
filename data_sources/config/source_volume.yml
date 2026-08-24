@@ -1,0 +1,60 @@
+profiles:
+  smoke:
+    start_date: "2025-01-01"
+    end_date: "2025-01-31"
+    chunk_size: 1000
+    output_root: "data_sources/generated"
+    row_counts:
+      google_ads: 2500
+      facebook_ads: 1800
+      tiktok_ads: 1200
+      website_analytics: 3000
+      ga4_events: 4000
+      crm_leads: 1300
+      sales_conversions: 600
+      marketing_targets: 120
+  dev:
+    start_date: "2024-01-01"
+    end_date: "2025-12-31"
+    chunk_size: 50000
+    output_root: "data_sources/generated"
+    row_counts:
+      google_ads: 50000
+      facebook_ads: 30000
+      tiktok_ads: 20000
+      website_analytics: 100000
+      ga4_events: 150000
+      crm_leads: 25000
+      sales_conversions: 12000
+      marketing_targets: 720
+  scale_test:
+    start_date: "2022-01-01"
+    end_date: "2025-12-31"
+    chunk_size: 250000
+    output_root: "data_sources/generated"
+    row_counts:
+      google_ads: 5000000
+      facebook_ads: 3000000
+      tiktok_ads: 2000000
+      website_analytics: 10000000
+      ga4_events: 15000000
+      crm_leads: 2000000
+      sales_conversions: 1000000
+      marketing_targets: 5000
+
+formats:
+  google_ads: jsonl
+  facebook_ads: csv
+  tiktok_ads: parquet
+  website_analytics: parquet
+  ga4_events: parquet
+  crm_leads: csv
+  sales_conversions: jsonl
+  marketing_targets: csv
+
+business_dimensions:
+  regions: ["NA", "LATAM", "EMEA", "APAC"]
+  countries: ["US", "CA", "MX", "BR", "GB", "DE", "FR", "IN", "JP", "AU"]
+  devices: ["desktop", "mobile", "tablet", "unknown"]
+  products: ["Starter", "Growth", "Enterprise", "Commerce Pro", "Marketing Suite"]
+  channels: ["google_ads", "facebook_ads", "tiktok_ads", "email", "organic_search", "direct", "referral"]

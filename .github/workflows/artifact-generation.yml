@@ -1,0 +1,49 @@
+name: Release Artifact Generation
+
+on:
+  workflow_dispatch:
+
+jobs:
+  artifacts:
+    name: Generate release artifacts
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+
+      - name: Generate demo and evidence artifacts
+        run: |
+          python -B scripts/run_smoke_pipeline.py
+          python -B scripts/build_demo_marts.py
+          python -B scripts/generate_powerbi_semantic_model.py
+          python -B scripts/generate_release_evidence.py
+          python -B scripts/generate_executive_report.py
+          python -B scripts/generate_executive_planning_report.py
+          python -B scripts/generate_governance_pack.py
+          python -B scripts/generate_release_bundle.py
+          python -B scripts/build_release_site.py
+
+      - name: Upload release bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: marketing-platform-release-bundle
+          path: |
+            release/generated/*
+            release/site/**
+            reports/generated/*
+            evidence/generated/*
+            governance/generated/*
+            data/exports/demo_mart_manifest.json

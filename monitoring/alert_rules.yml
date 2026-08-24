@@ -1,0 +1,26 @@
+rules:
+  freshness_failure:
+    severity: critical
+    condition: "last_ingestion_time older than 36 hours"
+    owner: data_engineering
+    action: "Check Airflow DAG status, source API credentials, and latest watermark."
+  rejected_rows_high:
+    severity: warning
+    threshold_pct: 2.0
+    owner: analytics_engineering
+    action: "Review rejected_records outputs and source schema drift."
+  missing_attribution_ids:
+    severity: warning
+    threshold_pct: 5.0
+    owner: growth_analytics
+    action: "Escalate UTM/click-id tagging issue to marketing operations."
+  impossible_kpi_relationship:
+    severity: critical
+    condition: "clicks > impressions or conversions > clicks"
+    owner: data_engineering
+    action: "Quarantine impacted batch and inspect source API response."
+  orphan_conversions:
+    severity: warning
+    threshold_pct: 1.0
+    owner: revenue_operations
+    action: "Check CRM to sales lead-id mapping and CDC delivery order."

@@ -1,0 +1,11 @@
+# Repository ownership map. Replace with team handles when this becomes a team repo.
+* @darshil-mangukiya
+
+/dbt/ @darshil-mangukiya
+/semantic_layer/ @darshil-mangukiya
+/bi_app/ @darshil-mangukiya
+/ingestion/ @darshil-mangukiya
+/airflow/ @darshil-mangukiya
+/warehouse/ @darshil-mangukiya
+/governance/ @darshil-mangukiya
+/docs/ @darshil-mangukiya

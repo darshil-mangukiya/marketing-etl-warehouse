@@ -1,0 +1,43 @@
+name: dbt Docs
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "dbt/**"
+      - ".github/workflows/dbt-docs.yml"
+
+jobs:
+  dbt-docs:
+    name: Generate static dbt documentation
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dbt
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install "dbt-core>=1.9,<1.12" "dbt-postgres>=1.9,<1.10"
+
+      - name: Generate docs without warehouse dependency
+        run: |
+          cd dbt
+          dbt docs generate --empty-catalog --static --no-compile --profiles-dir . --target-path target
+
+      - name: Upload dbt docs
+        uses: actions/upload-artifact@v4
+        with:
+          name: dbt-static-docs
+          path: |
+            dbt/target/static_index.html
+            dbt/target/manifest.json
+            dbt/target/catalog.json

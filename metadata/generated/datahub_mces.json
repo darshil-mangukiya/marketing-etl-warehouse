@@ -1,0 +1,1311 @@
+[
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.warehouse.dim_campaign,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.int_campaign_spend_unified,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_campaign_mapping,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_website_analytics,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.warehouse.dim_channel,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": []
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.warehouse.dim_customer,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_crm_leads,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_sales_conversions,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.warehouse.dim_date,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.int_campaign_daily,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_crm_leads,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_sales_conversions,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_website_analytics,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.warehouse.dim_device,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": []
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.warehouse.dim_product,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_sales_conversions,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.warehouse.dim_region,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_region_mapping,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.warehouse.dim_sales_rep,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_crm_leads,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.warehouse.dim_source_system,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": []
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.warehouse.fact_attribution,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_campaign,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_channel,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_customer,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.int_attribution_touchpoints,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.warehouse.fact_campaign_performance,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_campaign,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_channel,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_region,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_source_system,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.int_attribution_touchpoints,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.int_campaign_daily,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.warehouse.fact_conversions,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_campaign,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_customer,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124146,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_product,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_sales_conversions,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.warehouse.fact_leads,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_campaign,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_channel,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_customer,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_region,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_sales_rep,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_crm_leads,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.warehouse.fact_revenue,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_campaign,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_customer,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_product,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_sales_conversions,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.warehouse.fact_sessions,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_campaign,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_channel,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_device,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_region,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_website_analytics,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.warehouse.fact_targets,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_channel,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_region,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_marketing_targets,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.intermediate.int_attribution_touchpoints,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.int_campaign_spend_unified,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_sales_conversions,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_website_analytics,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.intermediate.int_campaign_daily,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.int_campaign_spend_unified,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.intermediate.int_campaign_spend_unified,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_facebook_ads,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_google_ads,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_region_mapping,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_tiktok_ads,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.intermediate.int_customer_journey,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_crm_leads,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_sales_conversions,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_website_analytics,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.intermediate.int_ga4_live_sessions,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_ga4_live_events,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.intermediate.int_ga4_sessions,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_ga4_events,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.reporting.mart_attribution_model_comparison,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_campaign,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_channel,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.fact_attribution,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.reporting.mart_attribution_summary,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_campaign,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_channel,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.fact_attribution,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.reporting.mart_budget_efficiency,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.mart_channel_performance,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.reporting.mart_campaign_action_center,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.mart_campaign_performance,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.mart_target_vs_actual,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.reporting.mart_campaign_performance,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_campaign,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.fact_campaign_performance,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.reporting.mart_channel_performance,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_campaign,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_channel,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.fact_campaign_performance,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.fact_conversions,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.fact_leads,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.reporting.mart_customer_value,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_campaign,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_customer,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.fact_campaign_performance,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.fact_revenue,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.reporting.mart_data_quality_monitoring,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:source,marketing_warehouse.source.ops_ingestion_logs,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:source,marketing_warehouse.source.ops_validation_results,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.reporting.mart_funnel_performance,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_campaign,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_channel,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.fact_conversions,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.fact_leads,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.reporting.mart_ga4_funnel,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.stg_ga4_events,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.reporting.mart_ga4_live_funnel,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.int_ga4_live_sessions,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.reporting.mart_marketing_variance_drivers,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.mart_channel_performance,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.reporting.mart_target_vs_actual,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_channel,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_region,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.fact_campaign_performance,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.fact_leads,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        },
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.fact_targets,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.warehouse.metricflow_time_spine,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:dbt,marketing_warehouse.dbt.dim_date,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.staging.stg_campaign_mapping,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:source,marketing_warehouse.source.raw_campaign_mapping,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.staging.stg_crm_leads,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:source,marketing_warehouse.source.raw_crm_leads,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.staging.stg_facebook_ads,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:source,marketing_warehouse.source.raw_facebook_ads,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.staging.stg_ga4_events,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:source,marketing_warehouse.source.raw_ga4_events,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.staging.stg_ga4_live_ecommerce_items,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:source,marketing_warehouse.source.ga4_live_export_events,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.staging.stg_ga4_live_events,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:source,marketing_warehouse.source.ga4_live_export_events,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.staging.stg_google_ads,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:source,marketing_warehouse.source.raw_google_ads,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.staging.stg_marketing_targets,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:source,marketing_warehouse.source.raw_marketing_targets,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.staging.stg_region_mapping,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:source,marketing_warehouse.source.raw_region_mapping,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.staging.stg_sales_conversions,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:source,marketing_warehouse.source.raw_sales_conversions,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.staging.stg_tiktok_ads,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:source,marketing_warehouse.source.raw_tiktok_ads,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "entityType": "dataset",
+    "entityUrn": "urn:li:dataset:(urn:li:dataPlatform:postgres,marketing_warehouse.staging.stg_website_analytics,PROD)",
+    "changeType": "UPSERT",
+    "aspectName": "upstreamLineage",
+    "aspect": {
+      "upstreams": [
+        {
+          "dataset": "urn:li:dataset:(urn:li:dataPlatform:source,marketing_warehouse.source.raw_website_analytics,PROD)",
+          "type": "TRANSFORMED",
+          "auditStamp": {
+            "time": 1787438124147,
+            "actor": "urn:li:corpuser:data_platform"
+          }
+        }
+      ]
+    }
+  }
+]

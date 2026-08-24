@@ -1,0 +1,22 @@
+role_name,data_layer,access_level,access_rationale
+data_engineer,raw,admin,"Needed to operate ingestion, replay, rejects, and source contracts."
+data_engineer,warehouse,admin,"Needed to operate warehouse loads, indexes, and recovery."
+data_engineer,mart,read,Needed for incident investigation and data validation.
+analytics_engineer,raw,read_masked,"Needed for debugging, but natural identifiers should be masked by default."
+analytics_engineer,warehouse,write_model,"Owns dbt models, tests, and semantic transformations."
+analytics_engineer,mart,write_model,Owns mart definitions and certified KPI dependencies.
+bi_developer,raw,none,BI developers should not consume raw customer or event-level data.
+bi_developer,warehouse,read_masked,Allowed for model validation when surrogate keys and masks are applied.
+bi_developer,mart,read,Primary dashboard and semantic-model surface.
+marketing_leadership,raw,none,Leadership consumes governed aggregate marts only.
+marketing_leadership,warehouse,none,Warehouse tables are not a self-service surface.
+marketing_leadership,mart,read_aggregate,"Can view executive, channel, campaign, planning, and governance marts."
+growth_finance,raw,none,Finance should not use raw source records for reporting.
+growth_finance,warehouse,read_sensitive,Can inspect revenue and margin facts for planning control.
+growth_finance,mart,read,"Can consume budget, scenario, forecast, and target attainment marts."
+sales_operations,raw,read_masked,Can validate CRM source issues and lead handoff quality.
+sales_operations,warehouse,read_masked,Can inspect customer and lead dimensions for operational QA.
+sales_operations,mart,read,"Can consume funnel, conversion lag, and customer segment marts."
+external_auditor,raw,none,No raw-system access in the local platform design.
+external_auditor,warehouse,none,No direct warehouse access in the local platform design.
+external_auditor,mart,read_redacted,Can receive redacted aggregate evidence exports only.

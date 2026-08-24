@@ -1,0 +1,53 @@
+{
+  "generated_at": "2026-08-24T14:56:55.623396+00:00",
+  "site_dir": "release/site",
+  "status": "generated",
+  "assets": [
+    "assets/architecture_snapshot.svg",
+    "assets/dashboard_executive_preview.svg",
+    "assets/dashboard_governance_preview.svg",
+    "assets/dashboard_observability_preview.svg",
+    "assets/dashboard_wireframe.svg"
+  ],
+  "reports": [
+    "reports/executive_marketing_report.html",
+    "reports/executive_planning_report.html",
+    "reports/governance_release_packet.html"
+  ],
+  "monitoring": "monitoring/observability_dashboard.html",
+  "dbt_docs": null,
+  "technical_docs": {
+    "Execution Profiles": "docs/execution_profiles.md",
+    "Row Count Summary": "docs/row_count_summary.md",
+    "Incremental Loading": "docs/incremental_load_evidence.md",
+    "Data Quality Framework": "docs/data_quality_framework.md",
+    "Warehouse Model": "docs/warehouse_model.md",
+    "Dashboard Outputs": "docs/dashboard_outputs.md",
+    "Business Requirements": "docs/business_requirements.md",
+    "Stakeholder Map": "docs/stakeholder_map.md",
+    "User Stories and Acceptance Criteria": "docs/user_stories_acceptance_criteria.md",
+    "UAT Checklist": "docs/uat_checklist.md",
+    "Dashboard Requirements": "docs/dashboard_requirements.md",
+    "Business Insights and Recommendations": "docs/business_insights_and_recommendations.md",
+    "Business Decision Workflow": "docs/business_decision_workflow.md",
+    "Power BI Setup Guide": "docs/POWERBI_SETUP_GUIDE.md",
+    "Power BI Assets": "docs/POWERBI_EVIDENCE.md",
+    "Excel-ready Analysis": "docs/excel_ready_analysis.md"
+  },
+  "streamlit_screenshots": {
+    "Executive Overview Screenshot": "screenshots/streamlit/executive_overview.png",
+    "Channel Performance Screenshot": "screenshots/streamlit/channel_performance.png",
+    "Campaign Intelligence Screenshot": "screenshots/streamlit/campaign_intelligence.png",
+    "Funnel Analysis Screenshot": "screenshots/streamlit/funnel_analysis.png",
+    "Attribution and ROI Screenshot": "screenshots/streamlit/attribution_roi.png",
+    "Target vs Actual Screenshot": "screenshots/streamlit/target_vs_actual.png",
+    "Data Quality Screenshot": "screenshots/streamlit/data_quality_monitoring.png",
+    "Customer Value Screenshot": "screenshots/streamlit/customer_value.png",
+    "Source Health Screenshot": "screenshots/streamlit/source_health.png"
+  },
+  "data": [
+    "data/release_manifest.json",
+    "data/latest_quality_gate.json",
+    "data/demo_mart_manifest.json"
+  ]
+}

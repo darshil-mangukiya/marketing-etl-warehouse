@@ -1,0 +1,146 @@
+{
+  "generated_at": "2026-08-18T02:55:37.354639+00:00",
+  "mode": "pandas_demo_marts",
+  "tables": [
+    {
+      "table": "mart_executive_scorecard",
+      "row_count": 1,
+      "file": "data/exports/demo_mart_executive_scorecard.csv"
+    },
+    {
+      "table": "mart_executive_briefing",
+      "row_count": 7,
+      "file": "data/exports/demo_mart_executive_briefing.csv"
+    },
+    {
+      "table": "mart_channel_performance",
+      "row_count": 10,
+      "file": "data/exports/demo_mart_channel_performance.csv"
+    },
+    {
+      "table": "mart_campaign_performance",
+      "row_count": 250,
+      "file": "data/exports/demo_mart_campaign_performance.csv"
+    },
+    {
+      "table": "mart_campaign_optimization",
+      "row_count": 250,
+      "file": "data/exports/demo_mart_campaign_optimization.csv"
+    },
+    {
+      "table": "mart_funnel_performance",
+      "row_count": 7,
+      "file": "data/exports/demo_mart_funnel_performance.csv"
+    },
+    {
+      "table": "mart_target_vs_actual",
+      "row_count": 120,
+      "file": "data/exports/demo_mart_target_vs_actual.csv"
+    },
+    {
+      "table": "mart_budget_pacing",
+      "row_count": 15,
+      "file": "data/exports/demo_mart_budget_pacing.csv"
+    },
+    {
+      "table": "mart_attribution_summary",
+      "row_count": 24,
+      "file": "data/exports/demo_mart_attribution_summary.csv"
+    },
+    {
+      "table": "mart_attribution_model_comparison",
+      "row_count": 4,
+      "file": "data/exports/demo_mart_attribution_model_comparison.csv"
+    },
+    {
+      "table": "mart_customer_value",
+      "row_count": 600,
+      "file": "data/exports/demo_mart_customer_value.csv"
+    },
+    {
+      "table": "mart_customer_segment_mix",
+      "row_count": 2,
+      "file": "data/exports/demo_mart_customer_segment_mix.csv"
+    },
+    {
+      "table": "mart_budget_efficiency",
+      "row_count": 10,
+      "file": "data/exports/demo_mart_budget_efficiency.csv"
+    },
+    {
+      "table": "mart_conversion_lag",
+      "row_count": 25,
+      "file": "data/exports/demo_mart_conversion_lag.csv"
+    },
+    {
+      "table": "mart_journey_quality",
+      "row_count": 7,
+      "file": "data/exports/demo_mart_journey_quality.csv"
+    },
+    {
+      "table": "mart_regional_performance",
+      "row_count": 34,
+      "file": "data/exports/demo_mart_regional_performance.csv"
+    },
+    {
+      "table": "mart_product_performance",
+      "row_count": 5,
+      "file": "data/exports/demo_mart_product_performance.csv"
+    },
+    {
+      "table": "mart_marketing_anomalies",
+      "row_count": 6,
+      "file": "data/exports/demo_mart_marketing_anomalies.csv"
+    },
+    {
+      "table": "mart_attribution_reconciliation",
+      "row_count": 34,
+      "file": "data/exports/demo_mart_attribution_reconciliation.csv"
+    },
+    {
+      "table": "mart_performance_forecast",
+      "row_count": 21,
+      "file": "data/exports/demo_mart_performance_forecast.csv"
+    },
+    {
+      "table": "mart_budget_scenarios",
+      "row_count": 28,
+      "file": "data/exports/demo_mart_budget_scenarios.csv"
+    },
+    {
+      "table": "mart_customer_cohort_retention",
+      "row_count": 4,
+      "file": "data/exports/demo_mart_customer_cohort_retention.csv"
+    },
+    {
+      "table": "mart_action_center",
+      "row_count": 30,
+      "file": "data/exports/demo_mart_action_center.csv"
+    },
+    {
+      "table": "mart_data_product_scorecard",
+      "row_count": 8,
+      "file": "data/exports/demo_mart_data_product_scorecard.csv"
+    },
+    {
+      "table": "mart_semantic_kpi_governance",
+      "row_count": 9,
+      "file": "data/exports/demo_mart_semantic_kpi_governance.csv"
+    },
+    {
+      "table": "mart_data_quality_monitoring",
+      "row_count": 20,
+      "file": "data/exports/demo_mart_data_quality_monitoring.csv"
+    },
+    {
+      "table": "mart_device_performance",
+      "row_count": 5,
+      "file": "data/exports/demo_mart_device_performance.csv"
+    },
+    {
+      "table": "mart_source_health",
+      "row_count": 10,
+      "file": "data/exports/demo_mart_source_health.csv"
+    }
+  ]
+}

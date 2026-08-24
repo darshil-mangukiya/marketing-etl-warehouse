@@ -1,0 +1,63 @@
+table 'mart_semantic_kpi_governance'
+	description: "Certified KPI catalog with definitions, formulas, owners, source marts, dashboard pages, guardrails, dependencies, and refresh SLAs."
+	lineageTag: mart_semantic_kpi_governance
+
+	column kpi_name
+		dataType: string
+		summarizeBy: none
+
+	column business_definition
+		dataType: string
+		summarizeBy: none
+
+	column formula
+		dataType: string
+		summarizeBy: none
+
+	column grain
+		dataType: string
+		summarizeBy: none
+
+	column owner_team
+		dataType: string
+		summarizeBy: none
+
+	column certified_status
+		dataType: string
+		summarizeBy: none
+
+	column source_marts
+		dataType: string
+		summarizeBy: none
+
+	column dashboard_pages
+		dataType: string
+		summarizeBy: none
+
+	column target_or_guardrail
+		dataType: string
+		summarizeBy: none
+
+	column dax_measure_name
+		dataType: string
+		summarizeBy: none
+
+	column quality_dependencies
+		dataType: string
+		summarizeBy: none
+
+	column refresh_sla
+		dataType: string
+		summarizeBy: none
+
+	column interpretation_notes
+		dataType: string
+		summarizeBy: none
+
+	measure 'Governed KPIs' = COUNTROWS('mart_semantic_kpi_governance')
+		formatString: "#,0"
+		displayFolder: "Governance"
+
+	measure 'Certified KPIs' = CALCULATE([Governed KPIs], 'mart_semantic_kpi_governance'[certified_status] = "certified")
+		formatString: "#,0"
+		displayFolder: "Governance"

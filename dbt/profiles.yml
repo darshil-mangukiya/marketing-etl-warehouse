@@ -1,0 +1,28 @@
+marketing_etl_platform:
+  target: "{{ env_var('DBT_TARGET', 'duckdb') }}"
+  outputs:
+    duckdb:
+      type: duckdb
+      path: "{{ env_var('DUCKDB_PATH', 'data/warehouse/campaign_roi.duckdb') }}"
+      schema: analytics
+      threads: 4
+    postgres:
+      type: postgres
+      host: "{{ env_var('POSTGRES_HOST', 'localhost') }}"
+      port: "{{ env_var('POSTGRES_PORT', 5432) | int }}"
+      user: "{{ env_var('POSTGRES_USER', 'marketing') }}"
+      password: "{{ env_var('POSTGRES_PASSWORD', 'marketing') }}"
+      dbname: "{{ env_var('POSTGRES_DB', 'marketing_warehouse') }}"
+      schema: analytics
+      threads: 4
+    bigquery:
+      type: bigquery
+      method: "{{ env_var('BIGQUERY_AUTH_METHOD', 'oauth') }}"
+      project: "{{ env_var('GCP_PROJECT_ID') }}"
+      dataset: "{{ env_var('BIGQUERY_STAGING_DATASET', 'marketing_staging') }}"
+      location: "{{ env_var('GCP_REGION', 'us-central1') }}"
+      threads: 4
+      priority: interactive
+      maximum_bytes_billed: "{{ env_var('BIGQUERY_MAXIMUM_BYTES_BILLED', '104857600') | int }}"
+      job_execution_timeout_seconds: 300
+      job_retries: 1

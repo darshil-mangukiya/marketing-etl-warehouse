@@ -1,0 +1,36 @@
+table 'dim_campaign'
+	description: "SCD Type 2-style campaign dimension with canonical names and owner teams."
+	lineageTag: dim_campaign
+
+	column campaign_key
+		dataType: string
+		summarizeBy: none
+		isHidden
+
+	column campaign_id
+		dataType: string
+		summarizeBy: none
+
+	column canonical_campaign_name
+		dataType: string
+		summarizeBy: none
+
+	column canonical_channel
+		dataType: string
+		summarizeBy: none
+
+	column owner_team
+		dataType: string
+		summarizeBy: none
+
+	column valid_from
+		dataType: dateTime
+		summarizeBy: none
+
+	column valid_to
+		dataType: dateTime
+		summarizeBy: none
+
+	column is_current
+		dataType: boolean
+		summarizeBy: none

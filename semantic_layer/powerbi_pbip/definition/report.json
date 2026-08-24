@@ -1,0 +1,11 @@
+{
+  "name": "Marketing Intelligence Command Center",
+  "description": "Power BI project scaffold for the multi-source marketing ETL warehouse.",
+  "datasetMode": "import",
+  "certification": {
+    "status": "candidate",
+    "evidence": "../../reports/generated/governance_release_packet.html"
+  },
+  "expectedSemanticSource": "../powerbi_tmdl",
+  "expectedExportSource": "../../data/exports"
+}

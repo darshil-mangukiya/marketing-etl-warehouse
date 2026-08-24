@@ -1,0 +1,132 @@
+table 'mart_channel_performance'
+	description: "Executive channel performance mart for spend, revenue, ROAS, CAC, and funnel KPIs."
+	lineageTag: mart_channel_performance
+
+	column reporting_month
+		dataType: dateTime
+		summarizeBy: none
+
+	column normalized_channel
+		dataType: string
+		summarizeBy: none
+
+	column channel_key
+		dataType: string
+		summarizeBy: none
+		isHidden
+
+	column channel_name
+		dataType: string
+		summarizeBy: none
+
+	column channel_group
+		dataType: string
+		summarizeBy: none
+
+	column spend
+		dataType: decimal
+		summarizeBy: none
+
+	column impressions
+		dataType: int64
+		summarizeBy: none
+
+	column clicks
+		dataType: int64
+		summarizeBy: none
+
+	column platform_conversions
+		dataType: int64
+		summarizeBy: none
+
+	column leads
+		dataType: int64
+		summarizeBy: none
+
+	column qualified_leads
+		dataType: int64
+		summarizeBy: none
+
+	column closed_won_conversions
+		dataType: int64
+		summarizeBy: none
+
+	column booked_revenue
+		dataType: decimal
+		summarizeBy: none
+
+	column gross_margin
+		dataType: decimal
+		summarizeBy: none
+
+	column ctr
+		dataType: decimal
+		summarizeBy: none
+
+	column cpc
+		dataType: decimal
+		summarizeBy: none
+
+	column cac
+		dataType: decimal
+		summarizeBy: none
+
+	column roas
+		dataType: decimal
+		summarizeBy: none
+
+	column mer
+		dataType: decimal
+		summarizeBy: none
+
+	measure 'Total Spend' = SUM('mart_channel_performance'[spend])
+		formatString: "$#,0"
+		displayFolder: "Executive KPIs"
+
+	measure 'Booked Revenue' = SUM('mart_channel_performance'[booked_revenue])
+		formatString: "$#,0"
+		displayFolder: "Executive KPIs"
+
+	measure 'Gross Margin' = SUM('mart_channel_performance'[gross_margin])
+		formatString: "$#,0"
+		displayFolder: "Executive KPIs"
+
+	measure 'ROAS' = DIVIDE([Booked Revenue], [Total Spend])
+		formatString: "0.00x"
+		displayFolder: "Executive KPIs"
+
+	measure 'Marketing Efficiency Ratio' = DIVIDE([Gross Margin], [Total Spend])
+		formatString: "0.00x"
+		displayFolder: "Executive KPIs"
+
+	measure 'Total Clicks' = SUM('mart_channel_performance'[clicks])
+		formatString: "#,0"
+		displayFolder: "Engagement"
+
+	measure 'Total Impressions' = SUM('mart_channel_performance'[impressions])
+		formatString: "#,0"
+		displayFolder: "Engagement"
+
+	measure 'Click Through Rate' = DIVIDE([Total Clicks], [Total Impressions])
+		formatString: "0.00%"
+		displayFolder: "Engagement"
+
+	measure 'Total Leads' = SUM('mart_channel_performance'[leads])
+		formatString: "#,0"
+		displayFolder: "Funnel"
+
+	measure 'Qualified Leads' = SUM('mart_channel_performance'[qualified_leads])
+		formatString: "#,0"
+		displayFolder: "Funnel"
+
+	measure 'Closed Won Conversions' = SUM('mart_channel_performance'[closed_won_conversions])
+		formatString: "#,0"
+		displayFolder: "Funnel"
+
+	measure 'CAC' = DIVIDE([Total Spend], [Closed Won Conversions])
+		formatString: "$#,0"
+		displayFolder: "Efficiency"
+
+	measure 'Cost Per Lead' = DIVIDE([Total Spend], [Total Leads])
+		formatString: "$#,0"
+		displayFolder: "Efficiency"

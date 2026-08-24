@@ -1,0 +1,20 @@
+table 'dim_region'
+	description: "Conformed region and sales territory dimension."
+	lineageTag: dim_region
+
+	column region_key
+		dataType: string
+		summarizeBy: none
+		isHidden
+
+	column country
+		dataType: string
+		summarizeBy: none
+
+	column region
+		dataType: string
+		summarizeBy: none
+
+	column sales_territory
+		dataType: string
+		summarizeBy: none

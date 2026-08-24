@@ -1,0 +1,55 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: "{{ env_var('BIGQUERY_RAW_DATASET', 'raw') if target.type == 'bigquery' else 'raw' }}"
+    config:
+      freshness:
+        warn_after: {count: 36, period: hour}
+        error_after: {count: 72, period: hour}
+      loaded_at_field: "cast(ingestion_available_at as timestamp)"
+    tables:
+      - name: google_ads
+        description: "Raw Google Ads campaign metrics extracted from simulated REST API payloads."
+      - name: facebook_ads
+        description: "Raw Facebook Ads ad set and placement metrics with schema drift examples."
+      - name: tiktok_ads
+        description: "Raw TikTok Ads campaign metrics."
+      - name: website_analytics
+        description: "Raw website analytics session events."
+      - name: ga4_events
+        description: "Locally generated GA4-style event export, separate from the Daily BigQuery source."
+      - name: crm_leads
+        description: "Raw CRM lead records with CDC operation flags."
+      - name: sales_conversions
+        description: "Raw sales conversion records with deal values and CDC flags."
+      - name: marketing_targets
+        description: "Raw monthly marketing targets by channel and region."
+      - name: campaign_mapping
+        description: "Reference mapping from platform campaign IDs to canonical campaign metadata."
+      - name: region_mapping
+        description: "Reference mapping from country code to reporting region."
+  - name: ops
+    schema: ops
+    tables:
+      - name: ingestion_logs
+      - name: validation_results
+  - name: ga4_live_export
+    description: >-
+      Live GA4 Daily BigQuery export for the Northstar Lab project site. This
+      source is separate from the generated raw.ga4_events contract and is never
+      mutated by dbt.
+    database: "{{ var('ga4_export_project', 'p2-marketing-analytics-505916') }}"
+    schema: "{{ var('ga4_export_dataset', 'analytics_550433518') }}"
+    loader: "Google Analytics 4 Daily BigQuery Export"
+    config:
+      meta:
+        data_origin: "live_ga4_export"
+        export_mode: "daily"
+        location: "us-central1"
+    tables:
+      - name: events
+        identifier: "events_*"
+        description: >-
+          Date-sharded GA4 event export. Live models always apply a date-filtered
+          _TABLE_SUFFIX predicate and filter to the configured production hostname.

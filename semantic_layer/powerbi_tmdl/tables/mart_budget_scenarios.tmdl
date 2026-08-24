@@ -1,0 +1,119 @@
+table 'mart_budget_scenarios'
+	description: "Deterministic planning simulations for governed baseline, downside, expected, upside, and user-defined assumptions; not causal forecasts or approved budgets."
+	lineageTag: mart_budget_scenarios
+
+	column scenario_name
+		dataType: string
+		summarizeBy: none
+
+	column channel
+		dataType: string
+		summarizeBy: none
+
+	column simulation_status
+		dataType: string
+		summarizeBy: none
+
+	column total_budget
+		dataType: decimal
+		summarizeBy: none
+
+	column channel_allocation
+		dataType: decimal
+		summarizeBy: none
+
+	column channel_budget
+		dataType: decimal
+		summarizeBy: none
+
+	column cpc_assumption
+		dataType: decimal
+		summarizeBy: none
+
+	column conversion_assumption
+		dataType: decimal
+		summarizeBy: none
+
+	column aov_assumption
+		dataType: decimal
+		summarizeBy: none
+
+	column projected_clicks
+		dataType: decimal
+		summarizeBy: none
+
+	column projected_sessions
+		dataType: decimal
+		summarizeBy: none
+
+	column projected_conversions
+		dataType: decimal
+		summarizeBy: none
+
+	column projected_customers
+		dataType: decimal
+		summarizeBy: none
+
+	column projected_revenue
+		dataType: decimal
+		summarizeBy: none
+
+	column projected_cac
+		dataType: decimal
+		summarizeBy: none
+
+	column projected_roas
+		dataType: decimal
+		summarizeBy: none
+
+	column target_roas
+		dataType: decimal
+		summarizeBy: none
+
+	column target_cac
+		dataType: decimal
+		summarizeBy: none
+
+	column roas_target_variance
+		dataType: decimal
+		summarizeBy: none
+
+	column cac_target_variance
+		dataType: decimal
+		summarizeBy: none
+
+	column growth_assumption
+		dataType: decimal
+		summarizeBy: none
+
+	column methodology
+		dataType: string
+		summarizeBy: none
+
+	measure 'Scenario Budget' = SUM('mart_budget_scenarios'[channel_budget])
+		formatString: "$#,0"
+		displayFolder: "Scenario Planning"
+
+	measure 'Scenario Projected Revenue' = SUM('mart_budget_scenarios'[projected_revenue])
+		formatString: "$#,0"
+		displayFolder: "Scenario Planning"
+
+	measure 'Scenario Projected Customers' = SUM('mart_budget_scenarios'[projected_customers])
+		formatString: "#,0"
+		displayFolder: "Scenario Planning"
+
+	measure 'Scenario ROAS' = DIVIDE([Scenario Projected Revenue], [Scenario Budget])
+		formatString: "0.00x"
+		displayFolder: "Scenario Planning"
+
+	measure 'Scenario CAC' = DIVIDE([Scenario Budget], [Scenario Projected Customers])
+		formatString: "$#,0"
+		displayFolder: "Scenario Planning"
+
+	measure 'Scenario ROAS Target Variance' = [Scenario ROAS] - MAX('mart_budget_scenarios'[target_roas])
+		formatString: "0.00x"
+		displayFolder: "Scenario Planning"
+
+	measure 'Scenario CAC Target Variance' = [Scenario CAC] - MAX('mart_budget_scenarios'[target_cac])
+		formatString: "$#,0"
+		displayFolder: "Scenario Planning"

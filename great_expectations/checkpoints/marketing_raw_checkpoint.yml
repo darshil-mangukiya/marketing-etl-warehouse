@@ -1,0 +1,37 @@
+name: marketing_raw_checkpoint
+config_version: 1.0
+class_name: Checkpoint
+run_name_template: "%Y%m%d-%H%M%S-marketing-raw"
+validations:
+  - batch_request:
+      datasource_name: marketing_raw_lake
+      data_connector_name: raw_runtime_connector
+      data_asset_name: google_ads
+    expectation_suite_name: google_ads_suite
+  - batch_request:
+      datasource_name: marketing_raw_lake
+      data_connector_name: raw_runtime_connector
+      data_asset_name: facebook_ads
+    expectation_suite_name: paid_social_suite
+  - batch_request:
+      datasource_name: marketing_raw_lake
+      data_connector_name: raw_runtime_connector
+      data_asset_name: tiktok_ads
+    expectation_suite_name: paid_social_suite
+  - batch_request:
+      datasource_name: marketing_raw_lake
+      data_connector_name: raw_runtime_connector
+      data_asset_name: crm_leads
+    expectation_suite_name: funnel_revenue_suite
+  - batch_request:
+      datasource_name: marketing_raw_lake
+      data_connector_name: raw_runtime_connector
+      data_asset_name: sales_conversions
+    expectation_suite_name: funnel_revenue_suite
+action_list:
+  - name: store_validation_result
+    action:
+      class_name: StoreValidationResultAction
+  - name: update_data_docs
+    action:
+      class_name: UpdateDataDocsAction

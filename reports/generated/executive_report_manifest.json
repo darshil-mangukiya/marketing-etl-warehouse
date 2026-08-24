@@ -1,0 +1,14 @@
+{
+  "generated_at": "2026-08-18T02:55:36.590469+00:00",
+  "html": "reports/generated/executive_marketing_report.html",
+  "markdown": "reports/generated/executive_marketing_report.md",
+  "metrics": {
+    "spend": 11437368.84,
+    "booked_revenue": 2073544.9900000002,
+    "gross_margin": 1391598.27,
+    "roas": 0.18129563005331917,
+    "cac": 19062.2814,
+    "rejected_rows": 43
+  },
+  "pdf_note": "Open the HTML report in a browser and print to PDF for a polished PDF artifact."
+}

@@ -1,0 +1,13 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir pandas numpy PyYAML requests pyarrow "fastapi>=0.133,<0.134" "starlette>=1.3.1,<1.4" "uvicorn[standard]>=0.30,<0.33"
+
+COPY . /app
+
+CMD ["uvicorn", "api_simulator.main:app", "--host", "0.0.0.0", "--port", "8000"]

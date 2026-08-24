@@ -1,0 +1,4 @@
+execution_mode: test
+storage_backend: local
+warehouse_target: duckdb
+secret_provider: environment

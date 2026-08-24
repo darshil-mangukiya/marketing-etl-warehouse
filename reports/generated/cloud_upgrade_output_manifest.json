@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-08-18T02:55:31.528949+00:00",
+  "database_path": "data/warehouse/campaign_roi.duckdb",
+  "tables": {
+    "mart_ga4_funnel": 3998,
+    "mart_marketing_variance_drivers": 24,
+    "mart_campaign_action_center": 29,
+    "mart_data_quality_monitoring": 10
+  },
+  "report": "reports/generated/executive_marketing_diagnostic_brief.md",
+  "execution_state": "simulated_local"
+}

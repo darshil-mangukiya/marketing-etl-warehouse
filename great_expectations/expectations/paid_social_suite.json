@@ -1,0 +1,16 @@
+{
+  "expectation_suite_name": "paid_social_suite",
+  "meta": {
+    "source_system": "facebook_ads,tiktok_ads",
+    "business_owner": "performance_marketing",
+    "description": "Great Expectations suite for paid-social metrics and attribution readiness."
+  },
+  "expectations": [
+    {"expectation_type": "expect_column_to_exist", "kwargs": {"column": "event_date"}},
+    {"expectation_type": "expect_column_to_exist", "kwargs": {"column": "campaign_id"}},
+    {"expectation_type": "expect_column_values_to_not_be_null", "kwargs": {"column": "event_date"}},
+    {"expectation_type": "expect_column_values_to_not_be_null", "kwargs": {"column": "spend", "mostly": 0.99}},
+    {"expectation_type": "expect_column_values_to_be_between", "kwargs": {"column": "spend", "min_value": 0}},
+    {"expectation_type": "expect_column_values_to_not_be_null", "kwargs": {"column": "attribution_id", "mostly": 0.90}}
+  ]
+}

@@ -1,0 +1,10 @@
+retention_policy,applies_to,retention_days,disposition_action,cutoff_rule,as_of_date,planned_sql_pattern,execution_mode
+raw_customer_touchpoint_730_days,raw CRM and attribution records,730,anonymize,records older than 730 days,2026-08-18,-- update eligible raw_customer_touchpoint_730_days records by hashing natural identifiers older than interval '730 days',dry_run
+web_event_730_days,raw website session events,730,delete,records older than 730 days,2026-08-18,-- delete eligible web_event_730_days records older than interval '730 days',dry_run
+revenue_fact_1095_days,sales conversion and revenue facts,1095,archive_then_delete,records older than 1095 days,2026-08-18,"-- copy eligible revenue_fact_1095_days records to archive storage, then delete older than interval '1095 days'",dry_run
+customer_dimension_1095_days,customer identity dimension,1095,anonymize,records older than 1095 days,2026-08-18,-- update eligible customer_dimension_1095_days records by hashing natural identifiers older than interval '1095 days',dry_run
+customer_value_1095_days,customer-level LTV marts,1095,aggregate_then_delete,records older than 1095 days,2026-08-18,"-- aggregate eligible customer_value_1095_days records, then delete detail older than interval '1095 days'",dry_run
+aggregate_mart_1825_days,aggregate BI marts,1825,archive,records older than 1825 days,2026-08-18,-- archive eligible aggregate_mart_1825_days records older than interval '1825 days',dry_run
+operational_action_365_days,action center rows,365,archive_then_delete,records older than 365 days,2026-08-18,"-- copy eligible operational_action_365_days records to archive storage, then delete older than interval '365 days'",dry_run
+governance_scorecard_730_days,data product scorecard rows,730,archive,records older than 730 days,2026-08-18,-- archive eligible governance_scorecard_730_days records older than interval '730 days',dry_run
+governance_reference_indefinite,KPI definitions and policy references,0,retain_until_superseded,retain_until_superseded,2026-08-18,-- retain records until superseded by a new governed definition,dry_run

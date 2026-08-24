@@ -1,0 +1,11 @@
+source_system,files,rows,accepted,rejected,failed,skipped,latest_watermark,watermark_captured_at,quality_issue_count,failed_quality_files,rejection_rate,acceptance_rate,source_health_status
+campaign_mapping,1,500,500,0,0,0,,,0,0,0.0,1.0,healthy
+crm_leads,2,1300,1300,0,0,0,2025-04-26T00:00:00,2026-08-18T02:55:20.184118+00:00,2,0,0.0,1.0,healthy
+facebook_ads,2,1807,1791,16,0,0,2025-04-21T00:00:00,2026-08-18T02:55:19.927787+00:00,8,0,0.008854454897620365,0.9911455451023796,healthy
+ga4_events,4,4000,4000,0,0,0,2025-04-29T00:00:00,2026-08-18T02:55:20.123955+00:00,8,0,0.0,1.0,healthy
+google_ads,3,2510,2487,23,0,0,2025-04-29T00:00:00,2026-08-18T02:55:19.860668+00:00,12,0,0.009163346613545816,0.9908366533864542,healthy
+marketing_targets,1,120,120,0,0,0,,,0,0,0.0,1.0,healthy
+region_mapping,1,10,10,0,0,0,,,0,0,0.0,1.0,healthy
+sales_conversions,1,600,600,0,0,0,2025-07-11T00:00:00,2026-08-18T02:55:20.205607+00:00,2,0,0.0,1.0,healthy
+tiktok_ads,2,1205,1201,4,0,0,2025-04-26T00:00:00,2026-08-18T02:55:20.026262+00:00,7,0,0.0033195020746887966,0.9966804979253112,healthy
+website_analytics,3,3000,3000,0,0,0,2025-04-29T00:00:00,2026-08-18T02:55:20.062159+00:00,6,0,0.0,1.0,healthy

@@ -1,0 +1,62 @@
+name: Release Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag, for example v1.0.0"
+        required: true
+        default: "v1.0.0"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build release package
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install "dbt-core>=1.9,<1.12" "dbt-postgres>=1.9,<1.10"
+
+      - name: Generate release artifacts
+        run: |
+          python -B local_ci/local_quality_gate.py
+          cd dbt
+          dbt docs generate --empty-catalog --static --no-compile --profiles-dir . --target-path target
+          cd ..
+          INCLUDE_DBT_DOCS=1 python -B scripts/build_release_site.py
+          zip -r marketing-platform-release.zip \
+            release/generated \
+            release/site \
+            reports/generated \
+            evidence/generated \
+            governance/generated \
+            metadata/generated \
+            catalog/generated \
+            monitoring/generated \
+            semantic_layer/powerbi_tmdl \
+            dbt/target/static_index.html \
+            local_ci/latest_quality_gate.json
+
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.tag }}
+          name: Marketing ETL Platform ${{ inputs.tag }}
+          body_path: release/v1.0.0.md
+          files: marketing-platform-release.zip

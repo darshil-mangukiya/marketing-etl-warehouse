@@ -1,0 +1,76 @@
+table 'mart_funnel_performance'
+	description: "Monthly lead funnel mart by channel."
+	lineageTag: mart_funnel_performance
+
+	column reporting_month
+		dataType: dateTime
+		summarizeBy: none
+
+	column normalized_channel
+		dataType: string
+		summarizeBy: none
+
+	column channel_key
+		dataType: string
+		summarizeBy: none
+		isHidden
+
+	column channel_name
+		dataType: string
+		summarizeBy: none
+
+	column channel_group
+		dataType: string
+		summarizeBy: none
+
+	column total_leads
+		dataType: int64
+		summarizeBy: none
+
+	column mqls
+		dataType: int64
+		summarizeBy: none
+
+	column sales_accepted_leads
+		dataType: int64
+		summarizeBy: none
+
+	column sales_qualified_leads
+		dataType: int64
+		summarizeBy: none
+
+	column conversions
+		dataType: decimal
+		summarizeBy: none
+
+	column lead_to_mql_rate
+		dataType: decimal
+		summarizeBy: none
+
+	column mql_to_sql_rate
+		dataType: decimal
+		summarizeBy: none
+
+	column sql_to_close_rate
+		dataType: decimal
+		summarizeBy: none
+
+	measure 'Funnel Leads' = SUM('mart_funnel_performance'[total_leads])
+		formatString: "#,0"
+		displayFolder: "Funnel"
+
+	measure 'Funnel MQLs' = SUM('mart_funnel_performance'[mqls])
+		formatString: "#,0"
+		displayFolder: "Funnel"
+
+	measure 'Funnel SQLs' = SUM('mart_funnel_performance'[sales_qualified_leads])
+		formatString: "#,0"
+		displayFolder: "Funnel"
+
+	measure 'Lead to MQL Rate' = DIVIDE([Funnel MQLs], [Funnel Leads])
+		formatString: "0.00%"
+		displayFolder: "Funnel"
+
+	measure 'SQL to Close Rate' = DIVIDE(SUM('mart_funnel_performance'[conversions]), [Funnel SQLs])
+		formatString: "0.00%"
+		displayFolder: "Funnel"

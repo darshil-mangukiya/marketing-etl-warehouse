@@ -1,0 +1,22 @@
+select
+    {{ surrogate_key(["source_system", "campaign_id", "event_date", "ad_group_id"]) }} as google_ads_row_key,
+    cast(event_date as date) as event_date,
+    cast(campaign_id as {{ string_type() }}) as campaign_id,
+    nullif(trim(campaign_name), '') as campaign_name,
+    cast(ad_group_id as {{ string_type() }}) as ad_group_id,
+    cast(network_type as {{ string_type() }}) as network_type,
+    cast(region as {{ string_type() }}) as region,
+    cast(currency as {{ string_type() }}) as currency,
+    cast(impressions as bigint) as impressions,
+    cast(clicks as bigint) as clicks,
+    cast(ctr as {{ numeric_type(18, 6) }}) as ctr,
+    cast(avg_cpc as {{ numeric_type(18, 4) }}) as avg_cpc,
+    cast(coalesce(spend, 0) as {{ numeric_type(18, 2) }}) as spend,
+    spend is null as null_spend_flag,
+    cast(conversions as bigint) as conversions,
+    cast(attribution_id as {{ string_type() }}) as attribution_id,
+    cast(batch_id as {{ string_type() }}) as batch_id,
+    cast(updated_at as timestamp) as updated_at,
+    'paid_search' as normalized_channel,
+    cast(source_system as {{ string_type() }}) as source_system
+from {{ source('raw', 'google_ads') }}

@@ -1,0 +1,46 @@
+version: 1
+classification: project_traceability
+description: Representative requirement-to-report lineage; complete row-level mappings are in the requirements traceability workbook.
+lineage:
+  - requirement: BR-001
+    source: [google_ads, meta_ads, tiktok_ads, crm, sales]
+    dbt: mart_channel_performance
+    kpi: [total_spend, booked_revenue, roas, cac]
+    dax: [Total Spend, Booked Revenue, ROAS, CAC]
+    power_bi_page: Executive Marketing Overview
+    uat: [UAT-001, UAT-002, UAT-003]
+  - requirement: BR-004
+    source: [mart_channel_performance]
+    dbt: mart_marketing_variance_drivers
+    kpi: [roas, cac]
+    dax: [High Variance Drivers, ROAS Absolute Variance]
+    power_bi_page: Variance Drivers
+    uat: [UAT-015, UAT-016]
+  - requirement: BR-008
+    source: analytics_550433518.events_*
+    dbt: mart_ga4_live_funnel
+    kpi: [ga4_sessions, ga4_purchases]
+    dax: [GA4 Sessions, GA4 Purchases]
+    power_bi_page: GA4 Funnel
+    uat: [UAT-027, UAT-028]
+  - requirement: BR-013
+    source: [performance, targets, quality]
+    dbt: mart_campaign_action_center
+    kpi: [campaign_actions]
+    dax: [Campaign Actions, Campaigns to Scale, Data Quality Holds]
+    power_bi_page: Campaign Action Center
+    uat: [UAT-006, UAT-007, UAT-035]
+  - requirement: BR-014
+    source: [mart_channel_performance, scenario_assumptions]
+    dbt: mart_budget_scenarios
+    kpi: [scenario_roas, scenario_cac]
+    dax: [Scenario ROAS, Scenario CAC]
+    power_bi_page: Scenario Planning
+    uat: [UAT-031, UAT-032]
+  - requirement: BR-020
+    source: [generated_manifest, ingestion_summary, warehouse_manifest, bi_exports]
+    dbt: multiple_governed_marts
+    kpi: reconciliation_status
+    dax: []
+    power_bi_page: Data Quality / Governance
+    uat: [UAT-038, UAT-039]

@@ -1,0 +1,36 @@
+{
+  "pages": [
+    {
+      "name": "Executive Marketing Overview",
+      "purpose": "Summarize spend, revenue, gross margin, ROAS, CAC, and quality risk."
+    },
+    {
+      "name": "Channel Performance",
+      "purpose": "Compare efficiency and funnel performance by channel."
+    },
+    {
+      "name": "Campaign Intelligence",
+      "purpose": "Identify waste-budget campaigns and scalable opportunities."
+    },
+    {
+      "name": "Funnel Analysis",
+      "purpose": "Show lead-stage dropoff and conversion lag."
+    },
+    {
+      "name": "Attribution and ROI",
+      "purpose": "Explain attribution model variance and reconciliation risk."
+    },
+    {
+      "name": "Target vs Actual",
+      "purpose": "Track budget, revenue, and lead attainment by owner."
+    },
+    {
+      "name": "Planning",
+      "purpose": "Show forecasts, scenarios, and budget decisions."
+    },
+    {
+      "name": "Governance and Action Center",
+      "purpose": "Show data product score, certified KPIs, privacy controls, and open actions."
+    }
+  ]
+}

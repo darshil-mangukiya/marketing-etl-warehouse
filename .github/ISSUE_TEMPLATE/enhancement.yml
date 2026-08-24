@@ -1,0 +1,35 @@
+name: Enhancement
+description: Propose an improvement to the platform, models, dashboard, or documentation.
+title: "[Enhancement]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What workflow, business question, or engineering gap should this improve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: Describe the change and the expected outcome.
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Ingestion
+        - Orchestration
+        - Warehouse/dbt
+        - Semantic layer
+        - Dashboard
+        - Monitoring
+        - Governance
+        - Infrastructure
+        - Documentation
+    validations:
+      required: true

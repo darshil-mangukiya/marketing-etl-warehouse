@@ -1,0 +1,107 @@
+table 'mart_target_vs_actual'
+	description: "Monthly target attainment by region, channel, and budget owner."
+	lineageTag: mart_target_vs_actual
+
+	column source_system
+		dataType: string
+		summarizeBy: none
+
+	column batch_id
+		dataType: string
+		summarizeBy: none
+
+	column target_month
+		dataType: dateTime
+		summarizeBy: none
+
+	column region
+		dataType: string
+		summarizeBy: none
+
+	column channel
+		dataType: string
+		summarizeBy: none
+
+	column channel_name
+		dataType: string
+		summarizeBy: none
+
+	column target_spend
+		dataType: decimal
+		summarizeBy: none
+
+	column actual_spend
+		dataType: decimal
+		summarizeBy: none
+
+	column spend_attainment
+		dataType: decimal
+		summarizeBy: none
+
+	column target_revenue
+		dataType: decimal
+		summarizeBy: none
+
+	column actual_revenue
+		dataType: decimal
+		summarizeBy: none
+
+	column revenue_attainment
+		dataType: decimal
+		summarizeBy: none
+
+	column target_leads
+		dataType: int64
+		summarizeBy: none
+
+	column target_conversions
+		dataType: int64
+		summarizeBy: none
+
+	column actual_leads
+		dataType: int64
+		summarizeBy: none
+
+	column lead_attainment
+		dataType: decimal
+		summarizeBy: none
+
+	column budget_owner
+		dataType: string
+		summarizeBy: none
+
+	column ingestion_available_at
+		dataType: dateTime
+		summarizeBy: none
+
+	column reporting_month
+		dataType: dateTime
+		summarizeBy: none
+
+	column normalized_channel
+		dataType: string
+		summarizeBy: none
+
+	measure 'Target Revenue' = SUM('mart_target_vs_actual'[target_revenue])
+		formatString: "$#,0"
+		displayFolder: "Targets"
+
+	measure 'Actual Revenue' = SUM('mart_target_vs_actual'[actual_revenue])
+		formatString: "$#,0"
+		displayFolder: "Targets"
+
+	measure 'Revenue Attainment' = DIVIDE([Actual Revenue], [Target Revenue])
+		formatString: "0.00%"
+		displayFolder: "Targets"
+
+	measure 'Target Spend' = SUM('mart_target_vs_actual'[target_spend])
+		formatString: "$#,0"
+		displayFolder: "Targets"
+
+	measure 'Actual Spend' = SUM('mart_target_vs_actual'[actual_spend])
+		formatString: "$#,0"
+		displayFolder: "Targets"
+
+	measure 'Spend Attainment' = DIVIDE([Actual Spend], [Target Spend])
+		formatString: "0.00%"
+		displayFolder: "Targets"

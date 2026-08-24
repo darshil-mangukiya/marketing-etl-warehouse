@@ -1,0 +1,158 @@
+dashboard_pages:
+- page: Executive Marketing Overview
+  grain: Month and channel
+  business_question: Are marketing dollars producing efficient revenue and margin?
+  metrics:
+  - Total Spend
+  - Booked Revenue
+  - Gross Margin
+  - ROAS
+  - CAC
+  - Marketing Efficiency Ratio
+  filters:
+  - Reporting Month
+  - Channel Group
+  - Region
+  - Owner Team
+- page: Channel Performance
+  grain: Month, channel, and channel group
+  business_question: Which channels are scaling efficiently and which need budget
+    reallocation?
+  metrics:
+  - Total Spend
+  - Total Leads
+  - Closed Won Conversions
+  - ROAS
+  - Cost Per Lead
+  filters:
+  - Reporting Month
+  - Channel Group
+  - Device
+  - Region
+- page: Campaign Intelligence
+  grain: Campaign
+  business_question: Which campaigns are wasting budget or driving high-value customers?
+  metrics:
+  - Campaign Spend
+  - Attributed Revenue
+  - Attributed ROAS
+  - Waste Campaigns
+  filters:
+  - Campaign
+  - Channel
+  - Owner Team
+  - Waste Budget Flag
+- page: Funnel Analysis
+  grain: Month and channel
+  business_question: Where are leads dropping before revenue conversion?
+  metrics:
+  - Funnel Leads
+  - Funnel MQLs
+  - Funnel SQLs
+  - Lead to MQL Rate
+  - SQL to Close Rate
+  filters:
+  - Reporting Month
+  - Channel
+  - Region
+  - Sales Rep
+- page: Attribution & ROI
+  grain: Month, campaign, channel, and attribution model
+  business_question: Why do attribution reports disagree across systems?
+  metrics:
+  - First Touch Revenue
+  - Last Touch Revenue
+  - Linear Revenue
+  - Time Decay Revenue
+  - Last vs First Revenue Delta
+  filters:
+  - Reporting Month
+  - Campaign
+  - Channel
+  - Attribution Model
+- page: Target vs Actual
+  grain: Month, region, channel, and budget owner
+  business_question: Are teams meeting regional budget, lead, and revenue targets?
+  metrics:
+  - Target Revenue
+  - Actual Revenue
+  - Revenue Attainment
+  - Target Spend
+  - Actual Spend
+  - Spend Attainment
+  filters:
+  - Target Month
+  - Region
+  - Channel
+  - Budget Owner
+- page: Governance & Action Center
+  grain: Scorecard domain, KPI, owner team, and action priority
+  business_question: Can leaders trust the dashboard, and who owns the next fixes?
+  metrics:
+  - Average Data Product Score
+  - At Risk Domains
+  - Governance Risk Count
+  - Open Actions
+  - P0 Actions
+  - P1 Actions
+  - Certified KPIs
+  filters:
+  - Owner Team
+  - Score Status
+  - Priority
+  - Action Type
+  - Certified Status
+- page: GA4 Funnel
+  grain: Date, source, medium, campaign, and device
+  business_question: Where does the GA4-style journey drop before purchase?
+  metrics:
+  - GA4 Sessions
+  - GA4 Purchases
+  - GA4 Purchase Revenue
+  - GA4 Session to Purchase Rate
+  filters:
+  - Event Date
+  - Source
+  - Medium
+  - Campaign
+  - Device
+- page: Variance Drivers
+  grain: Month and channel
+  business_question: Which diagnostic movements contributed to ROAS and CAC change?
+  metrics:
+  - High Variance Drivers
+  - ROAS Absolute Variance
+  filters:
+  - Reporting Month
+  - Channel
+  - Severity
+  - Primary Driver
+- page: Campaign Action Center
+  grain: Month and campaign
+  business_question: Which transparent actions should marketing leadership prioritize?
+  metrics:
+  - Campaign Actions
+  - Campaigns to Scale
+  - Data Quality Holds
+  filters:
+  - Reporting Month
+  - Channel
+  - Priority
+  - Recommended Action
+  - Data Quality Status
+- page: Scenario Planning
+  grain: Scenario and channel
+  business_question: How do explicit budget, CPC, conversion, AOV, and growth assumptions
+    change planning outcomes?
+  metrics:
+  - Scenario Budget
+  - Scenario Projected Revenue
+  - Scenario Projected Customers
+  - Scenario ROAS
+  - Scenario CAC
+  - Scenario ROAS Target Variance
+  - Scenario CAC Target Variance
+  filters:
+  - Scenario Name
+  - Channel
+  - Simulation Status

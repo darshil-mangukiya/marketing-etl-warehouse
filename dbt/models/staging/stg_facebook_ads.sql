@@ -1,0 +1,20 @@
+select
+    {{ surrogate_key(["source_system", "campaign_id", "event_date", "ad_set_id"]) }} as facebook_ads_row_key,
+    cast(event_date as date) as event_date,
+    cast(campaign_id as {{ string_type() }}) as campaign_id,
+    nullif(trim(campaign_name), '') as campaign_name,
+    cast(ad_set_id as {{ string_type() }}) as ad_set_id,
+    cast(placement as {{ string_type() }}) as placement,
+    cast(country as {{ string_type() }}) as country,
+    cast(reach as bigint) as reach,
+    cast(impressions as bigint) as impressions,
+    cast(clicks as bigint) as clicks,
+    cast(coalesce(spend, 0) as {{ numeric_type(18, 2) }}) as spend,
+    spend is null as null_spend_flag,
+    cast(conversions as bigint) as conversions,
+    cast(attribution_id as {{ string_type() }}) as attribution_id,
+    cast(batch_id as {{ string_type() }}) as batch_id,
+    cast(updated_at as timestamp) as updated_at,
+    'paid_social' as normalized_channel,
+    cast(source_system as {{ string_type() }}) as source_system
+from {{ source('raw', 'facebook_ads') }}

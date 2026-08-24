@@ -1,0 +1,82 @@
+campaign_key,campaign_id,canonical_campaign_name,canonical_channel,owner_team,valid_from,valid_to,is_current
+CMP-000060,CMP-000060,retargeting_us_fy25_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000039,CMP-000039,Holiday Promo EMEA FY25 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000025,CMP-000025,Holiday Promotion APAC 2025 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000035,CMP-000035,Enterprise ABM APAC FY25 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000036,CMP-000036,LIFECYCLE WINBACK APAC Q4 SOCIAL,paid_social,growth_marketing,2026-01-01,,True
+CMP-000077,CMP-000077,Regional Expansion EMEA FY25 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000050,CMP-000050,Enterprise ABM US FY25 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000052,CMP-000052,Regional Expansion NA 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000047,CMP-000047,Competitor SEM EMEA FY25 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000002,CMP-000002,lifecycle_winback_emea_fy25_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000021,CMP-000021,enterprise_abm_na_2024_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000006,CMP-000006,ENTERPRISE ABM APAC FY25 SOCIAL,paid_social,growth_marketing,2026-01-01,,True
+CMP-000071,CMP-000071,COMPETITOR SEARCH EMEA FY25 SOCIAL,paid_social,growth_marketing,2026-01-01,,True
+CMP-000008,CMP-000008,CREATOR SPARK EMEA 2024 SOCIAL,paid_social,growth_marketing,2026-01-01,,True
+CMP-000030,CMP-000030,LIFECYCLE WINBACK NA Q4 SOCIAL,paid_social,growth_marketing,2026-01-01,,True
+CMP-000076,CMP-000076,product_launch_global_q4_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000017,CMP-000017,Lifecycle Winback Global 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000064,CMP-000064,Cart Recovery US Q4 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000019,CMP-000019,Lifecycle Winback US 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000068,CMP-000068,Lifecycle Winback APAC 2025 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000046,CMP-000046,Regional Expansion EMEA 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000072,CMP-000072,Retargeting US 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000070,CMP-000070,Competitor SEM EMEA 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000048,CMP-000048,creator_spark_emea_fy25_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000053,CMP-000053,Enterprise ABM Global 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000049,CMP-000049,holiday_promo_global_q4_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000038,CMP-000038,Retargeting US FY25 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000043,CMP-000043,Retargeting Global 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000041,CMP-000041,creator_spark_emea_2025_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000069,CMP-000069,Lifecycle Winback EMEA FY25 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000078,CMP-000078,Product Launch EMEA 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000032,CMP-000032,Brand SEM Global 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000005,CMP-000005,Enterprise ABM APAC 2025 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000018,CMP-000018,Cart Recovery APAC 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000056,CMP-000056,holiday_promo_global_2024_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000079,CMP-000079,Cart Recovery APAC 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000004,CMP-000004,Lifecycle Winback APAC 2025 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000073,CMP-000073,Cart Recovery US 2025 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000075,CMP-000075,Regional Expansion US Q4 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000057,CMP-000057,Brand Search EMEA Q4 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000029,CMP-000029,Brand Search EMEA Q4 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000015,CMP-000015,Regional Expansion Global 2025 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000055,CMP-000055,Regional Expansion APAC 2024,paid_search,growth_marketing,2026-01-01,,True
+CMP-000011,CMP-000011,Retargeting APAC 2025 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000061,CMP-000061,Cart Recovery Global Q4 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000058,CMP-000058,enterprise_abm_apac_q4_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000034,CMP-000034,retargeting_na_2024_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000067,CMP-000067,competitor_search_emea_q4_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000062,CMP-000062,Cart Recovery APAC 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000080,CMP-000080,Holiday Promo APAC 2025 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000014,CMP-000014,lifecycle_winback_emea_2025_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000024,CMP-000024,Retargeting US 2025 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000027,CMP-000027,Enterprise ABM Global Q4 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000074,CMP-000074,Cart Recovery Global 2025 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000020,CMP-000020,LIFECYCLE WINBACK APAC Q4 SOCIAL,paid_social,growth_marketing,2026-01-01,,True
+CMP-000044,CMP-000044,brand_search_us_fy25_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000023,CMP-000023,Lifecycle Winback EMEA 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000063,CMP-000063,Holiday Promo NA 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000031,CMP-000031,Brand Search US 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000040,CMP-000040,competitor_search_global_q4_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000045,CMP-000045,product_launch_global_2025_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000022,CMP-000022,Holiday Promo APAC 2025 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000083,CMP-000083,Brand Search APAC 2025 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000065,CMP-000065,Creator Spark Global Q4 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000033,CMP-000033,Brand Search NA 2025 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000010,CMP-000010,product_launch_apac_2024,paid_search,growth_marketing,2026-01-01,,True
+CMP-000003,CMP-000003,Lifecycle Winback Global FY25 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000012,CMP-000012,brand_search_global_fy25_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000037,CMP-000037,Holiday Promo Global 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000042,CMP-000042,Brand SEM NA FY25 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000059,CMP-000059,Retargeting APAC FY25 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000007,CMP-000007,Brand Search NA 2025 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000026,CMP-000026,Brand SEM Global 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000001,CMP-000001,Creator Spark Global Q4 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000081,CMP-000081,Lifecycle Winback NA 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000013,CMP-000013,product_launch_apac_2024_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000009,CMP-000009,Regional Expansion US FY25 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000051,CMP-000051,holiday_promo_us_fy25_social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000066,CMP-000066,Product Launch EMEA 2024 Social,paid_social,growth_marketing,2026-01-01,,True
+CMP-000028,CMP-000028,Regional Expansion Global 2025,paid_search,growth_marketing,2026-01-01,,True
+CMP-000016,CMP-000016,Retargeting EMEA 2024 Social,paid_social,growth_marketing,2026-01-01,,True

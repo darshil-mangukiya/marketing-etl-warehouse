@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "artifacts": [
+    {
+      "report": {
+        "path": "definition/report.json"
+      }
+    },
+    {
+      "semanticModel": {
+        "path": "semanticModel"
+      }
+    }
+  ],
+  "settings": {
+    "sourceControlFriendly": true,
+    "notes": "Source-control scaffold. Generated TMDL assets in ../powerbi_tmdl are the semantic source of truth."
+  }
+}

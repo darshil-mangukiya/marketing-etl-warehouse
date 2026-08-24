@@ -1,0 +1,104 @@
+version: 2
+
+models:
+  - name: stg_ga4_events
+    description: "Typed staging model for the locally generated GA4-style event source."
+    columns:
+      - name: event_id
+        data_tests: [not_null, unique]
+      - name: event_name
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [session_start, page_view, view_item, add_to_cart, begin_checkout, generate_lead, purchase]
+  - name: stg_ga4_live_events
+    description: >-
+      Live GA4 event grain: one row per exported event from the date-filtered events_*
+      source after filtering to p2.darshilmangukiya.com. This model is enabled
+      only for the BigQuery target and remains separate from generated GA4 data.
+    columns:
+      - name: event_key
+        data_tests: [not_null, unique]
+      - name: event_date
+        data_tests: [not_null]
+      - name: event_name
+        data_tests: [not_null]
+      - name: hostname
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['p2.darshilmangukiya.com']
+      - name: data_origin
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['live_ga4_export']
+  - name: stg_ga4_live_ecommerce_items
+    description: >-
+      Live GA4 item grain: one row per repeated ecommerce item for view_item,
+      add_to_cart, begin_checkout, or purchase events on the live hostname.
+    columns:
+      - name: item_event_key
+        data_tests: [not_null, unique]
+      - name: event_key
+        data_tests: [not_null]
+      - name: event_date
+        data_tests: [not_null]
+      - name: event_name
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: [view_item, add_to_cart, begin_checkout, purchase]
+      - name: hostname
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['p2.darshilmangukiya.com']
+      - name: quantity
+        data_tests: [not_null]
+  - name: stg_google_ads
+    columns:
+      - name: google_ads_row_key
+        tests: [not_null]
+      - name: event_date
+        tests: [not_null]
+      - name: spend
+        tests:
+          - not_null
+  - name: stg_facebook_ads
+    columns:
+      - name: facebook_ads_row_key
+        tests: [not_null]
+      - name: event_date
+        tests: [not_null]
+  - name: stg_tiktok_ads
+    columns:
+      - name: tiktok_ads_row_key
+        tests: [not_null]
+      - name: event_date
+        tests: [not_null]
+  - name: stg_website_analytics
+    columns:
+      - name: session_id
+        tests: [not_null]
+      - name: normalized_channel
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['paid_search', 'paid_social', 'email', 'organic', 'direct', 'referral', 'unknown']
+  - name: stg_crm_leads
+    columns:
+      - name: lead_id
+        tests: [not_null]
+      - name: qualification_stage
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['new', 'marketing_qualified', 'sales_accepted', 'sales_qualified', 'disqualified']
+  - name: stg_sales_conversions
+    columns:
+      - name: conversion_id
+        tests: [not_null, unique]

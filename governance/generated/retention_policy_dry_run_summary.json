@@ -1,0 +1,7 @@
+{
+  "generated_at": "2026-08-18T02:55:38.848166+00:00",
+  "execution_mode": "dry_run",
+  "policy_count": 9,
+  "delete_or_anonymize_count": 4,
+  "report": "governance/generated/retention_policy_dry_run.csv"
+}

@@ -1,0 +1,14 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends build-essential libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt /tmp/requirements.txt
+RUN pip install --no-cache-dir pandas numpy PyYAML SQLAlchemy psycopg2-binary pydantic requests python-dotenv pyarrow "fastapi>=0.133,<0.134" "starlette>=1.3.1,<1.4" "uvicorn[standard]>=0.30,<0.33" great_expectations
+
+COPY . /app
+
+CMD ["python3", "-B", "ingestion/pipeline.py", "--profile", "dev", "--generate"]

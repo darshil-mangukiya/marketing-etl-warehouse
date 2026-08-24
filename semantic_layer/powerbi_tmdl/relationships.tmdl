@@ -1,0 +1,54 @@
+// Power BI TMDL-style relationship definitions
+relationship dim_channel_channel_key_to_mart_channel_performance_channel_key
+	fromColumn: 'mart_channel_performance'[channel_key]
+	toColumn: 'dim_channel'[channel_key]
+	cardinality: manyToOne
+	crossFilteringBehavior: oneDirection
+
+relationship dim_channel_channel_key_to_mart_funnel_performance_channel_key
+	fromColumn: 'mart_funnel_performance'[channel_key]
+	toColumn: 'dim_channel'[channel_key]
+	cardinality: manyToOne
+	crossFilteringBehavior: oneDirection
+
+relationship dim_date_date_day_to_mart_channel_performance_reporting_month
+	fromColumn: 'mart_channel_performance'[reporting_month]
+	toColumn: 'dim_date'[date_day]
+	cardinality: manyToOne
+	crossFilteringBehavior: oneDirection
+
+relationship dim_date_date_day_to_mart_funnel_performance_reporting_month
+	fromColumn: 'mart_funnel_performance'[reporting_month]
+	toColumn: 'dim_date'[date_day]
+	cardinality: manyToOne
+	crossFilteringBehavior: oneDirection
+
+relationship dim_date_date_day_to_mart_target_vs_actual_target_month
+	fromColumn: 'mart_target_vs_actual'[target_month]
+	toColumn: 'dim_date'[date_day]
+	cardinality: manyToOne
+	crossFilteringBehavior: oneDirection
+
+relationship dim_date_date_day_to_mart_ga4_funnel_event_date
+	fromColumn: 'mart_ga4_funnel'[event_date]
+	toColumn: 'dim_date'[date_day]
+	cardinality: manyToOne
+	crossFilteringBehavior: oneDirection
+
+relationship dim_campaign_campaign_id_to_mart_ga4_funnel_campaign_id
+	fromColumn: 'mart_ga4_funnel'[campaign_id]
+	toColumn: 'dim_campaign'[campaign_id]
+	cardinality: manyToOne
+	crossFilteringBehavior: oneDirection
+
+relationship dim_channel_channel_key_to_mart_marketing_variance_drivers_channel_key
+	fromColumn: 'mart_marketing_variance_drivers'[channel_key]
+	toColumn: 'dim_channel'[channel_key]
+	cardinality: manyToOne
+	crossFilteringBehavior: oneDirection
+
+relationship dim_campaign_campaign_id_to_mart_campaign_action_center_campaign_id
+	fromColumn: 'mart_campaign_action_center'[campaign_id]
+	toColumn: 'dim_campaign'[campaign_id]
+	cardinality: manyToOne
+	crossFilteringBehavior: oneDirection

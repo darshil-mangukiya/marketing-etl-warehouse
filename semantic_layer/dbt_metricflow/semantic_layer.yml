@@ -1,0 +1,275 @@
+version: 2
+
+# Preserved MetricFlow/dbt semantic-layer reference.
+# This file intentionally lives outside dbt model paths for the local DuckDB demo
+# because dbt-core semantic validation can require process semaphores that are
+# unavailable in the supported local macOS environment.
+# The Power BI-ready semantic package is generated under semantic_layer/powerbi_tmdl
+# and dashboards/powerbi from source-controlled specs.
+
+semantic_models:
+  - name: channel_performance_semantic
+    description: "Semantic model for channel-level marketing efficiency and executive KPIs."
+    model: ref('mart_channel_performance')
+    defaults:
+      agg_time_dimension: reporting_month
+    entities:
+      - name: funnel_channel
+        type: primary
+        expr: channel_key
+    dimensions:
+      - name: reporting_month
+        type: time
+        type_params:
+          time_granularity: month
+      - name: channel_name
+        type: categorical
+      - name: channel_group
+        type: categorical
+    measures:
+      - name: spend
+        agg: sum
+        expr: spend
+      - name: booked_revenue
+        agg: sum
+        expr: booked_revenue
+      - name: gross_margin
+        agg: sum
+        expr: gross_margin
+      - name: clicks
+        agg: sum
+        expr: clicks
+      - name: impressions
+        agg: sum
+        expr: impressions
+      - name: leads
+        agg: sum
+        expr: leads
+      - name: closed_won_conversions
+        agg: sum
+        expr: closed_won_conversions
+
+  - name: funnel_performance_semantic
+    description: "Semantic model for lead funnel movement from lead creation through conversion."
+    model: ref('mart_funnel_performance')
+    defaults:
+      agg_time_dimension: reporting_month
+    entities:
+      - name: channel
+        type: primary
+        expr: channel_key
+    dimensions:
+      - name: reporting_month
+        type: time
+        type_params:
+          time_granularity: month
+      - name: channel_name
+        type: categorical
+    measures:
+      - name: total_leads
+        agg: sum
+        expr: total_leads
+      - name: mqls
+        agg: sum
+        expr: mqls
+      - name: sales_qualified_leads
+        agg: sum
+        expr: sales_qualified_leads
+      - name: conversions
+        agg: sum
+        expr: conversions
+
+  - name: target_attainment_semantic
+    description: "Semantic model for target attainment by month, region, and channel."
+    model: ref('mart_target_vs_actual')
+    defaults:
+      agg_time_dimension: target_month
+    entities:
+      - name: channel_region_target
+        type: primary
+        expr: "md5(coalesce(channel_name, '') || '|' || coalesce(region, '') || '|' || cast(target_month as text))"
+    dimensions:
+      - name: target_month
+        type: time
+        type_params:
+          time_granularity: month
+      - name: region
+        type: categorical
+      - name: channel_name
+        type: categorical
+      - name: budget_owner
+        type: categorical
+    measures:
+      - name: target_spend
+        agg: sum
+        expr: target_spend
+      - name: actual_spend
+        agg: sum
+        expr: actual_spend
+      - name: target_revenue
+        agg: sum
+        expr: target_revenue
+      - name: actual_revenue
+        agg: sum
+        expr: actual_revenue
+      - name: target_leads
+        agg: sum
+        expr: target_leads
+      - name: actual_leads
+        agg: sum
+        expr: actual_leads
+
+metrics:
+  - name: total_spend
+    label: Total Spend
+    description: "Total paid media spend."
+    type: simple
+    type_params:
+      measure: spend
+  - name: booked_revenue
+    label: Booked Revenue
+    description: "Sales conversion revenue booked from closed-won conversions."
+    type: simple
+    type_params:
+      measure: booked_revenue
+  - name: gross_margin
+    label: Gross Margin
+    description: "Gross margin generated from sales conversions."
+    type: simple
+    type_params:
+      measure: gross_margin
+  - name: total_clicks
+    label: Total Clicks
+    description: "Total paid media clicks."
+    type: simple
+    type_params:
+      measure: clicks
+  - name: total_impressions
+    label: Total Impressions
+    description: "Total paid media impressions or views."
+    type: simple
+    type_params:
+      measure: impressions
+  - name: lead_count
+    label: Leads
+    description: "Total marketing leads."
+    type: simple
+    type_params:
+      measure: leads
+  - name: closed_won_conversion_count
+    label: Closed-Won Conversions
+    description: "Total closed-won conversions."
+    type: simple
+    type_params:
+      measure: closed_won_conversions
+  - name: mql_count
+    label: MQL Count
+    description: "Total marketing-qualified leads."
+    type: simple
+    type_params:
+      measure: mqls
+  - name: funnel_total_leads
+    label: Funnel Total Leads
+    description: "Total leads in the funnel semantic model."
+    type: simple
+    type_params:
+      measure: total_leads
+  - name: actual_revenue_total
+    label: Actual Revenue
+    description: "Actual revenue for target attainment."
+    type: simple
+    type_params:
+      measure: actual_revenue
+  - name: target_revenue_total
+    label: Target Revenue
+    description: "Target revenue for attainment calculations."
+    type: simple
+    type_params:
+      measure: target_revenue
+  - name: roas
+    label: ROAS
+    description: "Booked revenue divided by paid media spend."
+    type: ratio
+    type_params:
+      numerator: booked_revenue
+      denominator: total_spend
+  - name: marketing_efficiency_ratio
+    label: Marketing Efficiency Ratio
+    description: "Gross margin divided by paid media spend."
+    type: ratio
+    type_params:
+      numerator: gross_margin
+      denominator: total_spend
+  - name: click_through_rate
+    label: CTR
+    description: "Clicks divided by impressions."
+    type: ratio
+    type_params:
+      numerator: total_clicks
+      denominator: total_impressions
+  - name: cost_per_lead
+    label: Cost per Lead
+    description: "Spend divided by leads."
+    type: ratio
+    type_params:
+      numerator: total_spend
+      denominator: lead_count
+  - name: customer_acquisition_cost
+    label: CAC
+    description: "Spend divided by closed-won conversions."
+    type: ratio
+    type_params:
+      numerator: total_spend
+      denominator: closed_won_conversion_count
+  - name: lead_to_mql_rate
+    label: Lead to MQL Rate
+    description: "Marketing-qualified leads divided by total leads."
+    type: ratio
+    type_params:
+      numerator: mql_count
+      denominator: funnel_total_leads
+  - name: revenue_attainment
+    label: Revenue Attainment
+    description: "Actual revenue divided by target revenue."
+    type: ratio
+    type_params:
+      numerator: actual_revenue_total
+      denominator: target_revenue_total
+
+exposures:
+  - name: executive_marketing_overview
+    label: Executive Marketing Overview
+    type: dashboard
+    maturity: high
+    url: "http://localhost:8501"
+    description: "Executive BI page for spend, revenue, margin, ROAS, CAC, and efficiency trend."
+    depends_on:
+      - ref('mart_channel_performance')
+      - ref('mart_budget_efficiency')
+      - ref('mart_target_vs_actual')
+    owner:
+      name: Growth Analytics
+      email: growth-analytics@example.com
+  - name: campaign_intelligence_dashboard
+    label: Campaign Intelligence
+    type: dashboard
+    maturity: high
+    url: "http://localhost:8501"
+    description: "Campaign-level budget waste, attribution, and spend efficiency analysis."
+    depends_on:
+      - ref('mart_campaign_performance')
+      - ref('mart_attribution_summary')
+    owner:
+      name: Marketing Analytics
+      email: marketing-analytics@example.com
+  - name: data_quality_monitoring_dashboard
+    label: Data Quality and Monitoring
+    type: dashboard
+    maturity: high
+    url: "http://localhost:8501"
+    description: "Operational source health, validation failures, and rejected-row monitoring."
+    depends_on:
+      - ref('mart_data_quality_monitoring')
+    owner:
+      name: Data Engineering
+      email: data-engineering@example.com

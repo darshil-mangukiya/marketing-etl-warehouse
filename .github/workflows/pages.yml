@@ -1,0 +1,65 @@
+name: Publish Release Site
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build static release site
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install "dbt-core>=1.9,<1.12" "dbt-postgres>=1.9,<1.10"
+
+      - name: Generate release site
+        run: |
+          python -B local_ci/local_quality_gate.py
+          cd dbt
+          dbt docs generate --empty-catalog --static --no-compile --profiles-dir . --target-path target
+          cd ..
+          INCLUDE_DBT_DOCS=1 python -B scripts/build_release_site.py
+
+      - name: Build site folder
+        run: |
+          rm -rf public
+          cp -R release/site public
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

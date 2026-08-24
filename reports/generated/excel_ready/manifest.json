@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-06-16T17:42:25.733551+00:00",
+  "mode": "csv_package",
+  "outputs": [
+    {
+      "name": "Channel Variance",
+      "file": "reports/generated/excel_ready/channel_variance_analysis.csv",
+      "rows": 11,
+      "source": "data/exports/demo_mart_channel_performance.csv"
+    },
+    {
+      "name": "Target vs Actual",
+      "file": "reports/generated/excel_ready/target_vs_actual_analysis.csv",
+      "rows": 120,
+      "source": "data/exports/demo_mart_target_vs_actual.csv"
+    },
+    {
+      "name": "Funnel Conversion",
+      "file": "reports/generated/excel_ready/funnel_conversion_analysis.csv",
+      "rows": 7,
+      "source": "data/exports/demo_mart_funnel_performance.csv"
+    },
+    {
+      "name": "Campaign ROI",
+      "file": "reports/generated/excel_ready/campaign_roi_analysis.csv",
+      "rows": 250,
+      "source": "data/exports/demo_mart_campaign_optimization.csv"
+    },
+    {
+      "name": "Data Quality Summary",
+      "file": "reports/generated/excel_ready/data_quality_summary.csv",
+      "rows": 9,
+      "source": "data/exports/demo_mart_data_quality_monitoring.csv and demo_mart_source_health.csv"
+    }
+  ],
+  "workbook": "reports/generated/marketing_analysis_workbook.xlsx"
+}

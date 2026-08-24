@@ -1,0 +1,44 @@
+name: Data quality incident
+description: Track a source, validation, freshness, reconciliation, or KPI certification issue.
+title: "[DQ]: "
+labels: ["data-quality"]
+body:
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - P0 - dashboard totals are wrong or blocked
+        - P1 - source or mart is stale or partially failed
+        - P2 - warning-level quality issue
+        - P3 - documentation or follow-up cleanup
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source or mart
+      placeholder: google_ads, fact_campaign_performance, mart_channel_performance
+    validations:
+      required: true
+  - type: textarea
+    id: symptom
+    attributes:
+      label: Symptom
+      description: Describe the failed rule, freshness gap, reconciliation mismatch, or reporting impact.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Link to validation reports, rejected-row outputs, Airflow task logs, dbt tests, or dashboard pages.
+    validations:
+      required: false
+  - type: textarea
+    id: remediation
+    attributes:
+      label: Proposed remediation
+      description: Quarantine, remap, backfill, model fix, KPI rule change, or documentation update.
+    validations:
+      required: false

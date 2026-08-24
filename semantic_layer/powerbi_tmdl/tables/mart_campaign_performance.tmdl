@@ -1,0 +1,59 @@
+table 'mart_campaign_performance'
+	description: "Campaign intelligence mart for waste budget detection and campaign-level ROI."
+	lineageTag: mart_campaign_performance
+
+	column campaign_id
+		dataType: string
+		summarizeBy: none
+
+	column campaign_name
+		dataType: string
+		summarizeBy: none
+
+	column normalized_channel
+		dataType: string
+		summarizeBy: none
+
+	column spend
+		dataType: decimal
+		summarizeBy: none
+
+	column impressions
+		dataType: int64
+		summarizeBy: none
+
+	column clicks
+		dataType: int64
+		summarizeBy: none
+
+	column conversions
+		dataType: int64
+		summarizeBy: none
+
+	column attributed_revenue
+		dataType: decimal
+		summarizeBy: none
+
+	column attributed_roas
+		dataType: decimal
+		summarizeBy: none
+
+	column waste_budget_flag
+		dataType: boolean
+		summarizeBy: none
+
+	measure 'Campaign Spend' = SUM('mart_campaign_performance'[spend])
+		formatString: "$#,0"
+		displayFolder: "Campaign Intelligence"
+
+	measure 'Attributed Revenue' = SUM('mart_campaign_performance'[attributed_revenue])
+		formatString: "$#,0"
+		displayFolder: "Campaign Intelligence"
+
+	measure 'Attributed ROAS' = DIVIDE([Attributed Revenue], [Campaign Spend])
+		formatString: "0.00x"
+		displayFolder: "Campaign Intelligence"
+
+	measure 'Waste Campaigns' = CALCULATE(DISTINCTCOUNT('mart_campaign_performance'[campaign_id]), 'mart_campaign_performance'[waste_budget_flag] = TRUE())
+		formatString: "#,0"
+		displayFolder: "Campaign Intelligence"

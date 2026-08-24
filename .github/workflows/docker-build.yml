@@ -1,0 +1,19 @@
+name: Docker Build Check
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  docker-build:
+    name: Build local service images
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build images
+        run: |
+          docker compose build postgres api-simulator ingestion-service dbt dashboard airflow-init airflow-webserver airflow-scheduler

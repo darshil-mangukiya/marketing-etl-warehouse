@@ -1,0 +1,75 @@
+name: Warehouse Integration
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - "dbt/**"
+      - "ingestion/**"
+      - "scripts/**"
+      - "warehouse/**"
+      - "data_sources/**"
+      - ".github/workflows/warehouse-integration.yml"
+
+jobs:
+  postgres-warehouse:
+    name: PostgreSQL warehouse smoke build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: postgres
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    env:
+      POSTGRES_ADMIN_HOST: localhost
+      POSTGRES_ADMIN_PORT: 5432
+      POSTGRES_ADMIN_DB: postgres
+      POSTGRES_ADMIN_USER: postgres
+      POSTGRES_ADMIN_PASSWORD: postgres
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: marketing_warehouse
+      POSTGRES_USER: marketing
+      POSTGRES_PASSWORD: marketing
+      POSTGRES_CONNECT_TIMEOUT: 20
+      DATA_PROFILE: smoke
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install warehouse dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pandas numpy PyYAML SQLAlchemy psycopg2-binary pydantic requests python-dotenv pyarrow "dbt-core>=1.9,<1.12" "dbt-postgres>=1.9,<1.10"
+
+      - name: Run PostgreSQL warehouse smoke build
+        run: python -B scripts/run_warehouse_pipeline.py --profile smoke --export-limit 1000
+
+      - name: Upload warehouse evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: warehouse-integration-evidence
+          path: |
+            data/logs/warehouse_pipeline_latest.json
+            data/logs/postgres_bootstrap_latest.json
+            dashboards/exported_tables/*.csv

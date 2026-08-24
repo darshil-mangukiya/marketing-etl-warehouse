@@ -1,0 +1,24 @@
+table 'dim_customer'
+	description: "Customer and lead identity dimension prepared for LTV and segmentation reporting."
+	lineageTag: dim_customer
+
+	column customer_key
+		dataType: string
+		summarizeBy: none
+		isHidden
+
+	column customer_id
+		dataType: string
+		summarizeBy: none
+
+	column lead_id
+		dataType: string
+		summarizeBy: none
+
+	column customer_segment
+		dataType: string
+		summarizeBy: none
+
+	column is_current
+		dataType: boolean
+		summarizeBy: none

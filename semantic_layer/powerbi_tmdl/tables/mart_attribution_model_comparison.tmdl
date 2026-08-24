@@ -1,0 +1,63 @@
+table 'mart_attribution_model_comparison'
+	description: "Attribution model comparison for explaining why ROI changes across reporting methods."
+	lineageTag: mart_attribution_model_comparison
+
+	column reporting_month
+		dataType: dateTime
+		summarizeBy: none
+
+	column first_touch_revenue
+		dataType: decimal
+		summarizeBy: none
+
+	column last_touch_revenue
+		dataType: decimal
+		summarizeBy: none
+
+	column linear_revenue
+		dataType: decimal
+		summarizeBy: none
+
+	column u_shaped_revenue
+		dataType: decimal
+		summarizeBy: none
+
+	column time_decay_revenue
+		dataType: decimal
+		summarizeBy: none
+
+	column position_based_revenue
+		dataType: decimal
+		summarizeBy: none
+
+	column last_vs_first_revenue_delta
+		dataType: decimal
+		summarizeBy: none
+
+	column time_decay_vs_linear_revenue_delta
+		dataType: decimal
+		summarizeBy: none
+
+	column u_shaped_vs_linear_revenue_delta
+		dataType: decimal
+		summarizeBy: none
+
+	measure 'First Touch Revenue' = SUM('mart_attribution_model_comparison'[first_touch_revenue])
+		formatString: "$#,0"
+		displayFolder: "Attribution"
+
+	measure 'Last Touch Revenue' = SUM('mart_attribution_model_comparison'[last_touch_revenue])
+		formatString: "$#,0"
+		displayFolder: "Attribution"
+
+	measure 'Linear Revenue' = SUM('mart_attribution_model_comparison'[linear_revenue])
+		formatString: "$#,0"
+		displayFolder: "Attribution"
+
+	measure 'Time Decay Revenue' = SUM('mart_attribution_model_comparison'[time_decay_revenue])
+		formatString: "$#,0"
+		displayFolder: "Attribution"
+
+	measure 'Last vs First Revenue Delta' = SUM('mart_attribution_model_comparison'[last_vs_first_revenue_delta])
+		formatString: "$#,0"
+		displayFolder: "Attribution"
