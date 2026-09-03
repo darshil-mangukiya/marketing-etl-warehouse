@@ -1,0 +1,41 @@
+test_id,business_requirement,scenario,precondition,steps,expected_result,actual_result,status,evidence,notes
+UAT-001,BR-001,Executive ROAS reconciles,Green dbt build,Compare channel mart revenue divided by spend to report card,Values match governed formula,,NOT RUN,,Automatable
+UAT-002,BR-001,CAC reconciles,Green dbt build,Compare spend divided by closed-won conversions,CAC matches governed formula and zero denominators are blank,,NOT RUN,,Automatable
+UAT-003,BR-001,Channel totals reconcile,Semantic export loaded,Sum channels and compare to warehouse,Spend revenue and conversions match,,NOT RUN,,Automatable
+UAT-004,BR-001,Date filter scope,Power BI report open,Select one reporting month,All dependent visuals show only selected month,,NOT RUN,,GUI
+UAT-005,BR-001,Channel filter scope,Power BI report open,Select one channel,Campaign funnel target and quality visuals respond as designed,,NOT RUN,,GUI
+UAT-006,BR-002,SCALE threshold,Action mart built,Inspect row above target multiplier,Action is SCALE with transparent reason,,NOT RUN,,Automatable
+UAT-007,BR-013,REDUCE threshold,Action mart built,Inspect high-spend row below target multiplier,Action is REDUCE with P1 priority,,NOT RUN,,Automatable
+UAT-008,BR-013,Funnel repair rule,Action mart built,Inspect below-target row with zero conversions,Action is FIX FUNNEL,,NOT RUN,,Automatable
+UAT-009,BR-013,Missing target rule,Action mart built,Inspect campaign without matched target,Action is REVIEW TARGET,,NOT RUN,,Automatable
+UAT-010,BR-012,Quality hold override,Fixture has missing campaign ID,Run action rules,DATA QUALITY HOLD overrides performance action,,NOT RUN,,Automatable
+UAT-011,BR-004,ROAS absolute variance,Two complete periods exist,Subtract prior ROAS from current,Stored absolute variance matches,,NOT RUN,,Automatable
+UAT-012,BR-004,ROAS percentage variance,Nonzero prior ROAS exists,Divide absolute variance by prior,Stored percentage variance matches,,NOT RUN,,Automatable
+UAT-013,BR-004,No prior period,First period exists,Inspect driver row,Severity is INFO and driver is NO_PRIOR_PERIOD,,NOT RUN,,Automatable
+UAT-014,BR-004,High severity threshold,Fixture changes ROAS by at least 25 percent,Build driver output,Severity is HIGH,,NOT RUN,,Automatable
+UAT-015,BR-004,CAC absolute variance,Two complete periods exist,Subtract prior CAC from current,Stored absolute variance matches,,NOT RUN,,Automatable
+UAT-016,BR-004,CAC zero denominator,No conversions for period,Calculate CAC,CAC is null rather than infinity or error,,NOT RUN,,Automatable
+UAT-017,BR-007,GA4 event contract,GA4 fixture available,Validate required fields and accepted event names,Valid fixture passes,,NOT RUN,,Automatable
+UAT-018,BR-007,Invalid GA4 event,Fixture contains unknown event,Run validator,Row is rejected with known_ga4_event rule,,NOT RUN,,Automatable
+UAT-019,BR-007,Revenue event rule,Non-purchase row has revenue,Run validator,Row is rejected with revenue_only_on_purchase,,NOT RUN,,Automatable
+UAT-020,BR-008,Live hostname exclusion,Daily BigQuery export available,Run bounded live selector,Approved hostname remains and localhost is excluded,,NOT RUN,,Automatable
+UAT-021,BR-009,Ecommerce item grain,GA4 items model built,Compare item rows to unnested source arrays,Item rows reconcile without inflating events,,NOT RUN,,Automatable
+UAT-022,BR-007,Funnel filter behavior,Power BI GA4 page open,Filter device and source,Funnel updates without cross-filter ambiguity,,NOT RUN,,GUI
+UAT-023,BR-003,Spend attainment,Targets and actuals loaded,Divide actual spend by target spend,Attainment matches mart,,NOT RUN,,Automatable
+UAT-024,BR-003,Revenue attainment,Targets and actuals loaded,Divide actual revenue by target revenue,Attainment matches mart,,NOT RUN,,Automatable
+UAT-025,BR-003,Missing target visibility,Actual has no target,Open report,Missing target is visible and not treated as zero target,,NOT RUN,,GUI
+UAT-026,BR-010,Attribution weights reconcile,Attribution fact built,Sum weights by conversion and model,Weights equal one within tolerance,,NOT RUN,,Automatable
+UAT-027,BR-010,Attributed revenue reconciles,Attribution fact built,Sum attributed revenue by model,Each model reconciles to conversion revenue,,NOT RUN,,Automatable
+UAT-028,BR-010,Model filter behavior,Attribution page open,Select each model,Visual and totals switch to selected model,,NOT RUN,,GUI
+UAT-029,BR-011,Stale source warning,Fixture timestamp exceeds freshness SLA,Build source health,Source is marked stale or freshness failure,,NOT RUN,,Automatable
+UAT-030,BR-005,Anomaly evidence,Material KPI deviation exists,Run transparent detector,Metric baseline deviation severity method and evidence are present,,NOT RUN,,Automatable
+UAT-031,BR-014,Governed scenario set,Scenario inputs valid,Run standard scenarios,Baseline Conservative Expected Aggressive and User Defined are returned,,NOT RUN,,Automatable
+UAT-032,BR-015,Scenario equation reconciliation,Allocations sum to one,Recalculate projected funnel and financial outputs,Results match zero-safe deterministic equations,,NOT RUN,,Automatable
+UAT-033,BR-020,Source-to-landing reconciliation,Generated and ingestion manifests available,Compare source row counts to landed counts,All available checks meet recorded tolerance,,NOT RUN,,Automatable
+UAT-034,BR-022,Bounded BigQuery configuration,Live selector configured,Inspect lookback and maximum-bytes safeguards,Cost guardrails remain explicit,,NOT RUN,,Automatable
+UAT-035,BR-020,dbt-to-BI reconciliation,Mart and BI exports available,Compare row and financial totals,All available checks meet recorded tolerance,,NOT RUN,,Automatable
+UAT-036,BR-021,Deterministic insight packet,Pipeline evidence available,Generate decision intelligence,Packet includes KPIs anomalies drivers actions scenarios warnings and references,,NOT RUN,,Automatable
+UAT-037,BR-013,Priority sorting,Action mart loaded,Sort P0 through P3,Quality holds and material underperformance appear first,,NOT RUN,,Automatable
+UAT-038,BR-013,Action reason visibility,Power BI action page open,Select campaign,Action reason supporting metric and monitor metric are visible,,NOT RUN,,GUI
+UAT-039,BR-017,Power BI refresh,Report assembled and credentials configured,Trigger refresh,Refresh completes and timestamp advances,,NOT RUN,,GUI credentials required
+UAT-040,BR-017,RLS validation,Power BI roles configured,Use Test as role for each role,Each role sees only intended rows and no restricted raw data,,NOT RUN,,GUI

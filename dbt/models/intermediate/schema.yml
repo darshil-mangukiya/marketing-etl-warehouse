@@ -1,0 +1,40 @@
+version: 2
+
+models:
+  - name: int_ga4_sessions
+    description: "GA4-style session rollup at one row per session_id."
+    columns:
+      - name: session_id
+        data_tests: [not_null, unique]
+  - name: int_ga4_live_sessions
+    description: >-
+      Live GA4 session grain: one row per hashed user_pseudo_id + ga_session_id.
+      Raw pseudonymous identifiers are not exposed by this model.
+    columns:
+      - name: session_key
+        data_tests: [not_null, unique]
+      - name: user_key
+        data_tests: [not_null]
+      - name: session_date
+        data_tests: [not_null]
+      - name: hostname
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['p2.darshilmangukiya.com']
+  - name: int_campaign_spend_unified
+    description: "Conformed paid-media event stream across Google, Facebook, and TikTok."
+    columns:
+      - name: campaign_spend_row_key
+        tests: [not_null]
+      - name: normalized_channel
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['paid_search', 'paid_social']
+  - name: int_campaign_daily
+    description: "Daily campaign grain used by campaign performance fact."
+  - name: int_customer_journey
+    description: "Stitched sessions, leads, and conversions for funnel analysis."
+  - name: int_attribution_touchpoints
+    description: "Eligible attribution touchpoints for first-touch, last-touch, and linear models."

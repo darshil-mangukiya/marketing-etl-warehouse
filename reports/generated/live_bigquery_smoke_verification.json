@@ -1,0 +1,178 @@
+{
+  "verified_at": "2026-08-18T10:07:45.100402-07:00",
+  "project_id": "p2-marketing-analytics-505916",
+  "location": "us-central1",
+  "synthetic_only": true,
+  "maximum_bytes_billed_per_query": 104857600,
+  "relation_count": 23,
+  "relations": [
+    {
+      "dataset": "marketing_raw",
+      "name": "campaign_mapping",
+      "type": "TABLE",
+      "rows": 10,
+      "bytes": 1053
+    },
+    {
+      "dataset": "marketing_raw",
+      "name": "facebook_ads",
+      "type": "TABLE",
+      "rows": 10,
+      "bytes": 2258
+    },
+    {
+      "dataset": "marketing_raw",
+      "name": "google_ads",
+      "type": "TABLE",
+      "rows": 10,
+      "bytes": 2019
+    },
+    {
+      "dataset": "marketing_raw",
+      "name": "region_mapping",
+      "type": "TABLE",
+      "rows": 10,
+      "bytes": 566
+    },
+    {
+      "dataset": "marketing_raw",
+      "name": "sales_conversions",
+      "type": "TABLE",
+      "rows": 10,
+      "bytes": 1939
+    },
+    {
+      "dataset": "marketing_raw",
+      "name": "tiktok_ads",
+      "type": "TABLE",
+      "rows": 10,
+      "bytes": 2070
+    },
+    {
+      "dataset": "marketing_raw",
+      "name": "website_analytics",
+      "type": "TABLE",
+      "rows": 10,
+      "bytes": 2395
+    },
+    {
+      "dataset": "marketing_staging",
+      "name": "stg_campaign_mapping",
+      "type": "VIEW",
+      "rows": 10,
+      "bytes": 0
+    },
+    {
+      "dataset": "marketing_staging",
+      "name": "stg_facebook_ads",
+      "type": "VIEW",
+      "rows": 10,
+      "bytes": 0
+    },
+    {
+      "dataset": "marketing_staging",
+      "name": "stg_google_ads",
+      "type": "VIEW",
+      "rows": 10,
+      "bytes": 0
+    },
+    {
+      "dataset": "marketing_staging",
+      "name": "stg_region_mapping",
+      "type": "VIEW",
+      "rows": 10,
+      "bytes": 0
+    },
+    {
+      "dataset": "marketing_staging",
+      "name": "stg_sales_conversions",
+      "type": "VIEW",
+      "rows": 10,
+      "bytes": 0
+    },
+    {
+      "dataset": "marketing_staging",
+      "name": "stg_tiktok_ads",
+      "type": "VIEW",
+      "rows": 10,
+      "bytes": 0
+    },
+    {
+      "dataset": "marketing_staging",
+      "name": "stg_website_analytics",
+      "type": "VIEW",
+      "rows": 10,
+      "bytes": 0
+    },
+    {
+      "dataset": "marketing_staging",
+      "name": "int_campaign_spend_unified",
+      "type": "VIEW",
+      "rows": 30,
+      "bytes": 0
+    },
+    {
+      "dataset": "marketing_staging",
+      "name": "int_attribution_touchpoints",
+      "type": "VIEW",
+      "rows": 0,
+      "bytes": 0
+    },
+    {
+      "dataset": "marketing_staging",
+      "name": "int_campaign_daily",
+      "type": "VIEW",
+      "rows": 30,
+      "bytes": 0
+    },
+    {
+      "dataset": "marketing_warehouse",
+      "name": "dim_channel",
+      "type": "TABLE",
+      "rows": 7,
+      "bytes": 250
+    },
+    {
+      "dataset": "marketing_warehouse",
+      "name": "dim_source_system",
+      "type": "TABLE",
+      "rows": 7,
+      "bytes": 461
+    },
+    {
+      "dataset": "marketing_warehouse",
+      "name": "dim_region",
+      "type": "TABLE",
+      "rows": 15,
+      "bytes": 864
+    },
+    {
+      "dataset": "marketing_warehouse",
+      "name": "dim_campaign",
+      "type": "TABLE",
+      "rows": 32,
+      "bytes": 4500
+    },
+    {
+      "dataset": "marketing_warehouse",
+      "name": "fact_campaign_performance",
+      "type": "TABLE",
+      "rows": 30,
+      "bytes": 6710
+    },
+    {
+      "dataset": "marketing_mart",
+      "name": "mart_campaign_performance",
+      "type": "TABLE",
+      "rows": 26,
+      "bytes": 3969
+    }
+  ],
+  "view_count_query_dry_run_bytes_processed": 2510,
+  "jobs_since_utc": "2026-08-18T16:55:00+00:00",
+  "query_job_count": 76,
+  "load_job_count": 7,
+  "failed_job_count": 18,
+  "query_bytes_processed": 33869,
+  "query_bytes_billed": 671088640
+}

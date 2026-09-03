@@ -1,0 +1,36 @@
+scenario_name,channel,simulation_status,total_budget,channel_allocation,channel_budget,cpc_assumption,conversion_assumption,aov_assumption,projected_clicks,projected_sessions,projected_conversions,projected_customers,projected_revenue,projected_cac,projected_roas,target_roas,target_cac,roas_target_variance,cac_target_variance,growth_assumption,methodology
+Baseline,direct,SIMULATED,11437368.84,0.0,0.0,1.8127,9.5e-05,3446.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Baseline,email,SIMULATED,11437368.84,0.0,0.0,1.8127,9.5e-05,3446.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Baseline,organic,SIMULATED,11437368.84,0.0,0.0,1.8127,9.5e-05,3446.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Baseline,paid_search,SIMULATED,11437368.84,0.29238446156467574,3344108.93,1.8127,9.5e-05,3446.75,1844861.16,1660375.04,157.89,157.89,544199.71,21180.31,0.1627,2.0,250.0,-1.8373,20930.31,0.05,deterministic_budget_funnel_simulation
+Baseline,paid_social,SIMULATED,11437368.84,0.7076155384353243,8093259.91,1.8127,9.5e-05,3446.75,4464848.84,4018363.96,382.11,382.11,1317047.32,21180.31,0.1627,2.0,250.0,-1.8373,20930.31,0.05,deterministic_budget_funnel_simulation
+Baseline,referral,SIMULATED,11437368.84,0.0,0.0,1.8127,9.5e-05,3446.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Baseline,unknown,SIMULATED,11437368.84,0.0,0.0,1.8127,9.5e-05,3446.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Conservative,direct,SIMULATED,10293631.96,0.0,0.0,1.9033,8.6e-05,3274.42,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Conservative,email,SIMULATED,10293631.96,0.0,0.0,1.9033,8.6e-05,3274.42,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Conservative,organic,SIMULATED,10293631.96,0.0,0.0,1.9033,8.6e-05,3274.42,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Conservative,paid_search,SIMULATED,10293631.96,0.29238446156467574,3009698.04,1.9033,8.6e-05,3274.42,1581309.57,1423178.61,121.8,121.8,398820.64,24710.36,0.1325,2.0,250.0,-1.8675,24460.36,0.05,deterministic_budget_funnel_simulation
+Conservative,paid_social,SIMULATED,10293631.96,0.7076155384353243,7283933.92,1.9033,8.6e-05,3274.42,3827013.29,3444311.96,294.77,294.77,965207.53,24710.36,0.1325,2.0,250.0,-1.8675,24460.36,0.05,deterministic_budget_funnel_simulation
+Conservative,referral,SIMULATED,10293631.96,0.0,0.0,1.9033,8.6e-05,3274.42,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Conservative,unknown,SIMULATED,10293631.96,0.0,0.0,1.9033,8.6e-05,3274.42,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Expected,direct,SIMULATED,11437368.84,0.0,0.0,1.8127,0.0001,3619.09,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Expected,email,SIMULATED,11437368.84,0.0,0.0,1.8127,0.0001,3619.09,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Expected,organic,SIMULATED,11437368.84,0.0,0.0,1.8127,0.0001,3619.09,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Expected,paid_search,SIMULATED,11437368.84,0.29238446156467574,3344108.93,1.8127,0.0001,3619.09,1844861.16,1660375.04,165.78,165.78,599980.18,20171.73,0.1794,2.0,250.0,-1.8206,19921.73,0.05,deterministic_budget_funnel_simulation
+Expected,paid_social,SIMULATED,11437368.84,0.7076155384353243,8093259.91,1.8127,0.0001,3619.09,4464848.84,4018363.96,401.22,401.22,1452044.67,20171.73,0.1794,2.0,250.0,-1.8206,19921.73,0.05,deterministic_budget_funnel_simulation
+Expected,referral,SIMULATED,11437368.84,0.0,0.0,1.8127,0.0001,3619.09,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Expected,unknown,SIMULATED,11437368.84,0.0,0.0,1.8127,0.0001,3619.09,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Aggressive,direct,SIMULATED,13724842.61,0.0,0.0,1.9939,0.00011,3800.05,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Aggressive,email,SIMULATED,13724842.61,0.0,0.0,1.9939,0.00011,3800.05,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Aggressive,organic,SIMULATED,13724842.61,0.0,0.0,1.9939,0.00011,3800.05,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Aggressive,paid_search,SIMULATED,13724842.61,0.29238446156467574,4012930.72,1.9939,0.00011,3800.05,2012575.81,1811318.23,198.94,198.94,755975.03,20171.73,0.1884,2.0,250.0,-1.8116,19921.73,0.05,deterministic_budget_funnel_simulation
+Aggressive,paid_social,SIMULATED,13724842.61,0.7076155384353243,9711911.89,1.9939,0.00011,3800.05,4870744.19,4383669.77,481.46,481.46,1829576.28,20171.73,0.1884,2.0,250.0,-1.8116,19921.73,0.05,deterministic_budget_funnel_simulation
+Aggressive,referral,SIMULATED,13724842.61,0.0,0.0,1.9939,0.00011,3800.05,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+Aggressive,unknown,SIMULATED,13724842.61,0.0,0.0,1.9939,0.00011,3800.05,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+User Defined,direct,SIMULATED,12581105.72,0.0,0.0,1.8127,0.0001,3446.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+User Defined,email,SIMULATED,12581105.72,0.0,0.0,1.8127,0.0001,3446.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+User Defined,organic,SIMULATED,12581105.72,0.0,0.0,1.8127,0.0001,3446.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+User Defined,paid_search,SIMULATED,12581105.72,0.29238446156467574,3678519.82,1.8127,0.0001,3446.75,2029347.28,1826412.55,182.36,182.36,628550.66,20171.73,0.1709,2.0,250.0,-1.8291,19921.73,0.05,deterministic_budget_funnel_simulation
+User Defined,paid_social,SIMULATED,12581105.72,0.7076155384353243,8902585.9,1.8127,0.0001,3446.75,4911333.72,4420200.35,441.34,441.34,1521189.65,20171.73,0.1709,2.0,250.0,-1.8291,19921.73,0.05,deterministic_budget_funnel_simulation
+User Defined,referral,SIMULATED,12581105.72,0.0,0.0,1.8127,0.0001,3446.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation
+User Defined,unknown,SIMULATED,12581105.72,0.0,0.0,1.8127,0.0001,3446.75,0.0,0.0,0.0,0.0,0.0,0.0,0.0,2.0,250.0,-2.0,-250.0,0.05,deterministic_budget_funnel_simulation

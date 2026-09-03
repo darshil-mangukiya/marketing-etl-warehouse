@@ -1,0 +1,33 @@
+{
+  "checks": {
+    "non_empty_result": true,
+    "paid_media_failures_identified": true,
+    "rejection_rates_non_negative": true,
+    "release_decisions_complete": true
+  },
+  "evidence_boundary": "Generated marketing business data; descriptive portfolio case study.",
+  "inputs": [
+    {
+      "path": "analytics_requests/canonical_input/mart_data_quality_monitoring.csv",
+      "sha256": "61782abe00ac9e581058cfacfc8dac354c5d5f18b460ce133adc59da8c79faa8"
+    },
+    {
+      "path": "analytics_requests/canonical_input/mart_campaign_action_center.csv",
+      "sha256": "88bd5c50ab46f8c9ab1cd4572e8951253f172a2c7c382f48e021a4135e2f834a"
+    }
+  ],
+  "result_columns": [
+    "source_system",
+    "source_rows",
+    "rejected_rows",
+    "failed_loads",
+    "failed_count",
+    "severity",
+    "monitoring_status",
+    "rejection_rate",
+    "recommended_release_decision"
+  ],
+  "result_rows": 10,
+  "result_sha256": "45899e70ae302ae12c8a1660574ad87c5e3a1dd64466cb7034fe01556b413b1e",
+  "status": "PASS"
+}

@@ -1,0 +1,195 @@
+// Campaign ROI Reporting Automation & Marketing Performance Analytics Platform
+// Paste these measures into a dedicated Power BI Measures table.
+// Each measure comment references semantic/kpi_catalog.yml where a governed KPI key exists.
+
+// Executive KPIs
+// kpi_catalog_key: total_spend
+Total Spend = SUM('mart_channel_performance'[spend])
+
+// kpi_catalog_key: booked_revenue
+Booked Revenue = SUM('mart_channel_performance'[booked_revenue])
+
+// kpi_catalog_key: gross_margin
+Gross Margin = SUM('mart_channel_performance'[gross_margin])
+
+// kpi_catalog_key: roas
+ROAS = DIVIDE([Booked Revenue], [Total Spend])
+
+// kpi_catalog_key: marketing_efficiency_ratio
+Marketing Efficiency Ratio = DIVIDE([Gross Margin], [Total Spend])
+
+// Engagement
+// kpi_catalog_key: total_clicks
+Total Clicks = SUM('mart_channel_performance'[clicks])
+
+// kpi_catalog_key: total_impressions
+Total Impressions = SUM('mart_channel_performance'[impressions])
+
+// kpi_catalog_key: click_through_rate
+Click Through Rate = DIVIDE([Total Clicks], [Total Impressions])
+
+// Funnel
+// kpi_catalog_key: total_leads
+Total Leads = SUM('mart_channel_performance'[leads])
+
+// kpi_catalog_key: qualified_leads
+Qualified Leads = SUM('mart_channel_performance'[qualified_leads])
+
+// kpi_catalog_key: closed_won_conversions
+Closed Won Conversions = SUM('mart_channel_performance'[closed_won_conversions])
+
+// Efficiency
+// kpi_catalog_key: cac
+CAC = DIVIDE([Total Spend], [Closed Won Conversions])
+
+// kpi_catalog_key: cost_per_lead
+Cost Per Lead = DIVIDE([Total Spend], [Total Leads])
+
+// Campaign Intelligence
+// kpi_catalog_key: campaign_spend
+Campaign Spend = SUM('mart_campaign_performance'[spend])
+
+// kpi_catalog_key: attributed_revenue
+Attributed Revenue = SUM('mart_campaign_performance'[attributed_revenue])
+
+// kpi_catalog_key: attributed_roas
+Attributed ROAS = DIVIDE([Attributed Revenue], [Campaign Spend])
+
+// kpi_catalog_key: waste_campaigns
+Waste Campaigns = CALCULATE(DISTINCTCOUNT('mart_campaign_performance'[campaign_id]), 'mart_campaign_performance'[waste_budget_flag] = TRUE())
+
+// Funnel
+// kpi_catalog_key: supporting_metric
+Funnel Leads = SUM('mart_funnel_performance'[total_leads])
+
+// kpi_catalog_key: supporting_metric
+Funnel MQLs = SUM('mart_funnel_performance'[mqls])
+
+// kpi_catalog_key: supporting_metric
+Funnel SQLs = SUM('mart_funnel_performance'[sales_qualified_leads])
+
+// kpi_catalog_key: lead_to_mql_rate
+Lead to MQL Rate = DIVIDE([Funnel MQLs], [Funnel Leads])
+
+// kpi_catalog_key: sql_to_close_rate
+// conversions contains distinct converted leads from the eligible SQL cohort.
+SQL to Close Rate = DIVIDE(SUM('mart_funnel_performance'[conversions]), [Funnel SQLs])
+
+// Targets
+// kpi_catalog_key: supporting_metric
+Target Revenue = SUM('mart_target_vs_actual'[target_revenue])
+
+// kpi_catalog_key: supporting_metric
+Actual Revenue = SUM('mart_target_vs_actual'[actual_revenue])
+
+// kpi_catalog_key: revenue_attainment
+Revenue Attainment = DIVIDE([Actual Revenue], [Target Revenue])
+
+// kpi_catalog_key: supporting_metric
+Target Spend = SUM('mart_target_vs_actual'[target_spend])
+
+// kpi_catalog_key: supporting_metric
+Actual Spend = SUM('mart_target_vs_actual'[actual_spend])
+
+// kpi_catalog_key: spend_attainment
+Spend Attainment = DIVIDE([Actual Spend], [Target Spend])
+
+// Attribution
+// kpi_catalog_key: supporting_metric
+First Touch Revenue = SUM('mart_attribution_model_comparison'[first_touch_revenue])
+
+// kpi_catalog_key: supporting_metric
+Last Touch Revenue = SUM('mart_attribution_model_comparison'[last_touch_revenue])
+
+// kpi_catalog_key: supporting_metric
+Linear Revenue = SUM('mart_attribution_model_comparison'[linear_revenue])
+
+// kpi_catalog_key: supporting_metric
+Time Decay Revenue = SUM('mart_attribution_model_comparison'[time_decay_revenue])
+
+// kpi_catalog_key: supporting_metric
+Last vs First Revenue Delta = SUM('mart_attribution_model_comparison'[last_vs_first_revenue_delta])
+
+// Governance
+// kpi_catalog_key: open_actions
+Open Actions = COUNTROWS('mart_action_center')
+
+// kpi_catalog_key: p0_actions
+P0 Actions = CALCULATE([Open Actions], 'mart_action_center'[priority] = "P0")
+
+// kpi_catalog_key: supporting_metric
+P1 Actions = CALCULATE([Open Actions], 'mart_action_center'[priority] = "P1")
+
+// kpi_catalog_key: supporting_metric
+Action Value = SUM('mart_action_center'[action_value])
+
+// kpi_catalog_key: supporting_metric
+Urgent Critical Actions = CALCULATE([Open Actions], 'mart_action_center'[priority] IN {"P0", "P1"}, 'mart_action_center'[due_in_days] <= 2)
+
+// GA4 Funnel
+// kpi_catalog_key: ga4_sessions
+GA4 Sessions = SUM('mart_ga4_funnel'[sessions])
+
+// kpi_catalog_key: ga4_purchases
+GA4 Purchases = SUM('mart_ga4_funnel'[purchases])
+
+// kpi_catalog_key: ga4_purchase_revenue
+GA4 Purchase Revenue = SUM('mart_ga4_funnel'[purchase_revenue])
+
+// kpi_catalog_key: supporting_metric
+GA4 Session to Purchase Rate = DIVIDE([GA4 Purchases], [GA4 Sessions])
+
+// Diagnostics
+// kpi_catalog_key: high_variance_drivers
+High Variance Drivers = CALCULATE(COUNTROWS('mart_marketing_variance_drivers'), 'mart_marketing_variance_drivers'[severity] = "HIGH")
+
+// kpi_catalog_key: roas_absolute_variance
+ROAS Absolute Variance = SUM('mart_marketing_variance_drivers'[roas_absolute_variance])
+
+// Campaign Actions
+// kpi_catalog_key: campaign_actions
+Campaign Actions = COUNTROWS('mart_campaign_action_center')
+
+// kpi_catalog_key: campaigns_to_scale
+Campaigns to Scale = CALCULATE([Campaign Actions], 'mart_campaign_action_center'[recommended_action] = "SCALE")
+
+// kpi_catalog_key: data_quality_holds
+Data Quality Holds = CALCULATE([Campaign Actions], 'mart_campaign_action_center'[recommended_action] = "DATA QUALITY HOLD")
+
+// Scenario Planning
+// kpi_catalog_key: supporting_metric
+Scenario Budget = SUM('mart_budget_scenarios'[channel_budget])
+
+// kpi_catalog_key: supporting_metric
+Scenario Projected Revenue = SUM('mart_budget_scenarios'[projected_revenue])
+
+// kpi_catalog_key: supporting_metric
+Scenario Projected Customers = SUM('mart_budget_scenarios'[projected_customers])
+
+// kpi_catalog_key: supporting_metric
+Scenario ROAS = DIVIDE([Scenario Projected Revenue], [Scenario Budget])
+
+// kpi_catalog_key: supporting_metric
+Scenario CAC = DIVIDE([Scenario Budget], [Scenario Projected Customers])
+
+// kpi_catalog_key: supporting_metric
+Scenario ROAS Target Variance = [Scenario ROAS] - MAX('mart_budget_scenarios'[target_roas])
+
+// kpi_catalog_key: supporting_metric
+Scenario CAC Target Variance = [Scenario CAC] - MAX('mart_budget_scenarios'[target_cac])
+
+// Governance
+// kpi_catalog_key: data_product_score
+Average Data Product Score = AVERAGE('mart_data_product_scorecard'[score])
+
+// kpi_catalog_key: supporting_metric
+At Risk Domains = CALCULATE(COUNTROWS('mart_data_product_scorecard'), 'mart_data_product_scorecard'[score_status] = "at_risk")
+
+// kpi_catalog_key: supporting_metric
+Governance Risk Count = SUM('mart_data_product_scorecard'[risk_count])
+
+// kpi_catalog_key: supporting_metric
+Governed KPIs = COUNTROWS('mart_semantic_kpi_governance')
+
+// kpi_catalog_key: certified_kpis
+Certified KPIs = CALCULATE([Governed KPIs], 'mart_semantic_kpi_governance'[certified_status] = "certified")

@@ -1,0 +1,79 @@
+table 'mart_action_center'
+	description: "Operational action queue created from campaign optimization, pacing, quality, source-health, anomaly, forecast, and scenario signals."
+	lineageTag: mart_action_center
+
+	column action_id
+		dataType: string
+		summarizeBy: none
+
+	column priority
+		dataType: string
+		summarizeBy: none
+
+	column action_type
+		dataType: string
+		summarizeBy: none
+
+	column owner_team
+		dataType: string
+		summarizeBy: none
+
+	column source_area
+		dataType: string
+		summarizeBy: none
+
+	column normalized_channel
+		dataType: string
+		summarizeBy: none
+
+	column title
+		dataType: string
+		summarizeBy: none
+
+	column recommended_action
+		dataType: string
+		summarizeBy: none
+
+	column business_impact
+		dataType: string
+		summarizeBy: none
+
+	column evidence_metric
+		dataType: string
+		summarizeBy: none
+
+	column due_in_days
+		dataType: int64
+		summarizeBy: none
+
+	column action_value
+		dataType: decimal
+		summarizeBy: none
+
+	column status
+		dataType: string
+		summarizeBy: none
+
+	column created_at
+		dataType: dateTime
+		summarizeBy: none
+
+	measure 'Open Actions' = COUNTROWS('mart_action_center')
+		formatString: "#,0"
+		displayFolder: "Governance"
+
+	measure 'P0 Actions' = CALCULATE([Open Actions], 'mart_action_center'[priority] = "P0")
+		formatString: "#,0"
+		displayFolder: "Governance"
+
+	measure 'P1 Actions' = CALCULATE([Open Actions], 'mart_action_center'[priority] = "P1")
+		formatString: "#,0"
+		displayFolder: "Governance"
+
+	measure 'Action Value' = SUM('mart_action_center'[action_value])
+		formatString: "$#,0"
+		displayFolder: "Governance"
+
+	measure 'Urgent Critical Actions' = CALCULATE([Open Actions], 'mart_action_center'[priority] IN {"P0", "P1"}, 'mart_action_center'[due_in_days] <= 2)
+		formatString: "#,0"
+		displayFolder: "Governance"

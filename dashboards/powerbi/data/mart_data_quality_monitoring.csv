@@ -1,0 +1,11 @@
+source_system,last_ingestion_time,failed_loads,source_rows,rejected_rows,rule_name,severity,failed_count,last_failed_at,monitoring_status
+google_ads,2026-08-18T02:55:19.904700+00:00,0,2510.0,23.0,source_contract,error,12.0,2026-08-18T02:55:25.788338+00:00,quality_failure
+tiktok_ads,2026-08-18T02:55:20.041721+00:00,0,1205.0,4.0,source_contract,error,7.0,2026-08-18T02:55:25.788338+00:00,quality_failure
+website_analytics,2026-08-18T02:55:20.093913+00:00,0,3000.0,0.0,source_contract,warning,6.0,2026-08-18T02:55:25.788338+00:00,quality_warning
+crm_leads,2026-08-18T02:55:20.195968+00:00,0,1300.0,0.0,source_contract,warning,2.0,2026-08-18T02:55:25.788338+00:00,quality_warning
+marketing_targets,2026-08-18T02:55:20.207848+00:00,0,120.0,0.0,source_contract,warning,0.0,2026-08-18T02:55:25.788338+00:00,healthy
+region_mapping,2026-08-18T02:55:20.219460+00:00,0,10.0,0.0,source_contract,warning,0.0,2026-08-18T02:55:25.788338+00:00,healthy
+campaign_mapping,2026-08-18T02:55:20.217879+00:00,0,500.0,0.0,source_contract,warning,0.0,2026-08-18T02:55:25.788338+00:00,healthy
+sales_conversions,2026-08-18T02:55:20.205645+00:00,0,600.0,0.0,source_contract,warning,2.0,2026-08-18T02:55:25.788338+00:00,quality_warning
+ga4_events,2026-08-18T02:55:20.161171+00:00,0,4000.0,0.0,source_contract,warning,8.0,2026-08-18T02:55:25.788338+00:00,quality_warning
+facebook_ads,2026-08-18T02:55:19.945163+00:00,0,1807.0,16.0,source_contract,error,8.0,2026-08-18T02:55:25.788338+00:00,quality_failure

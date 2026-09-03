@@ -1,0 +1,7 @@
+decision_id,request_id,scenario_type,modeled_disposition,rationale,authority_boundary,follow_up
+DEC-01,REQ-01,portfolio case study,REVIEW BEFORE ACTION,Weak return is portfolio-wide and quality checks precede any budget response,No actual management approval or ad-account authority,Review measurement and eight largest campaign shortfalls
+DEC-02,REQ-02,portfolio case study,INVESTIGATE LEAD QUALITY,Largest internally consistent loss occurs before MQL qualification,No actual Sales Operations decision,Sample unqualified leads and review MQL definition
+DEC-03,REQ-03,portfolio case study,HOLD FOR RECONCILIATION,Platform conversion attainment conflicts with revenue and lead attainment,No actual Finance approval,Reconcile conversion definitions joins and target grain
+DEC-04,REQ-04,portfolio case study,USE SENSITIVITY RANGE,Paid Search ranks first across all six methods while attributed value changes by method,No method is causal ground truth,Show the Paid Search rank plus range in executive reporting
+DEC-05,REQ-05,portfolio case study,REVIEW ASSUMPTIONS,Every SIMULATED scenario remains below 1.0x ROAS,No live budget execution,Test concentration and response assumptions before any real decision
+DEC-06,REQ-06,portfolio case study,DATA QUALITY HOLD,Three paid-media sources have quality-failure status,No production release or stakeholder sign-off,Resolve or formally accept failed source checks and rerun monitoring

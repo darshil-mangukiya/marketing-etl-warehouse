@@ -1,0 +1,292 @@
+{
+  "generated_at": "2026-08-22T22:35:25.682563+00:00",
+  "classification": "LOCAL_STATIC_BI_VALIDATION",
+  "check_count": 27,
+  "passed_count": 27,
+  "failed_count": 0,
+  "status": "PASS",
+  "checks": [
+    {
+      "check_id": "BI-001",
+      "affected_asset": "semantic tables",
+      "expected": 17,
+      "actual": 17,
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-002",
+      "affected_asset": "DAX catalog",
+      "expected": 59,
+      "actual": 59,
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-003",
+      "affected_asset": "semantic relationships",
+      "expected": 9,
+      "actual": 9,
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-003B",
+      "affected_asset": "Power BI handoff relationships",
+      "expected": 11,
+      "actual": 11,
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-004",
+      "affected_asset": "DAX catalog",
+      "expected": "unique measure names",
+      "actual": 59,
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-005",
+      "affected_asset": "semantic tables",
+      "expected": "unique table names",
+      "actual": 17,
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-KEY-dim_date",
+      "affected_asset": "dim_date",
+      "expected": "unique non-null date_day",
+      "actual": {
+        "nulls": 0,
+        "duplicates": 0
+      },
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-KEY-dim_campaign",
+      "affected_asset": "dim_campaign",
+      "expected": "unique non-null campaign_key",
+      "actual": {
+        "nulls": 0,
+        "duplicates": 0
+      },
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-KEY-dim_channel",
+      "affected_asset": "dim_channel",
+      "expected": "unique non-null channel_key",
+      "actual": {
+        "nulls": 0,
+        "duplicates": 0
+      },
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-KEY-dim_customer",
+      "affected_asset": "dim_customer",
+      "expected": "unique non-null customer_key",
+      "actual": {
+        "nulls": 0,
+        "duplicates": 0
+      },
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-KEY-dim_region",
+      "affected_asset": "dim_region",
+      "expected": "unique non-null region_key",
+      "actual": {
+        "nulls": 0,
+        "duplicates": 0
+      },
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-011",
+      "affected_asset": "mart_budget_scenarios",
+      "expected": [
+        "channel",
+        "channel_budget",
+        "projected_cac",
+        "projected_revenue",
+        "projected_roas",
+        "scenario_name",
+        "simulation_status",
+        "target_cac",
+        "target_roas"
+      ],
+      "actual": [
+        "channel",
+        "channel_budget",
+        "projected_cac",
+        "projected_revenue",
+        "projected_roas",
+        "scenario_name",
+        "simulation_status",
+        "target_cac",
+        "target_roas"
+      ],
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-012",
+      "affected_asset": "mart_budget_scenarios",
+      "expected": "SIMULATED only",
+      "actual": [
+        "SIMULATED"
+      ],
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-RLS-Executive",
+      "affected_asset": "roles.tmdl",
+      "expected": "role Executive",
+      "actual": "present",
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-RLS-Channel Manager",
+      "affected_asset": "roles.tmdl",
+      "expected": "[channel_group] = \"Paid\"",
+      "actual": "present",
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-RLS-Regional Manager",
+      "affected_asset": "roles.tmdl",
+      "expected": "[region] = \"EMEA\"",
+      "actual": "present",
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-016",
+      "affected_asset": "KPI catalog",
+      "expected": ">=15 governed KPIs",
+      "actual": 16,
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-016B",
+      "affected_asset": "KPI definitions",
+      "expected": "all core metadata present",
+      "actual": [],
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-017",
+      "affected_asset": "KPI-to-DAX linkage",
+      "expected": "all explicit links resolve",
+      "actual": [],
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-018",
+      "affected_asset": "report pages",
+      "expected": [
+        "Campaign Action Center",
+        "GA4 Funnel",
+        "Scenario Planning",
+        "Variance Drivers"
+      ],
+      "actual": [
+        "Attribution & ROI",
+        "Campaign Action Center",
+        "Campaign Intelligence",
+        "Channel Performance",
+        "Executive Marketing Overview",
+        "Funnel Analysis",
+        "GA4 Funnel",
+        "Governance & Action Center",
+        "Scenario Planning",
+        "Target vs Actual",
+        "Variance Drivers"
+      ],
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-019",
+      "affected_asset": "Power BI handoff",
+      "expected": "all manifest CSVs exist",
+      "actual": [],
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-019B",
+      "affected_asset": "Power BI imported schemas",
+      "expected": "TMDL columns equal CSV headers",
+      "actual": [],
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-020",
+      "affected_asset": "GA4 semantic output",
+      "expected": "mart_ga4_funnel available",
+      "actual": true,
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-020B",
+      "affected_asset": "GA4 freshness metadata",
+      "expected": "record timestamp + LIVE VERIFIED status",
+      "actual": {
+        "latest_record_timestamp": "2026-08-19",
+        "validation_status": "LIVE VERIFIED"
+      },
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-021",
+      "affected_asset": "decision intelligence",
+      "expected": "packet and reconciliation available",
+      "actual": true,
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-022",
+      "affected_asset": "reconciliation",
+      "expected": "PASS with zero failures",
+      "actual": {
+        "status": "PASS",
+        "failures": 0
+      },
+      "severity": "error",
+      "status": "PASS"
+    },
+    {
+      "check_id": "BI-023",
+      "affected_asset": "RLS target tables",
+      "expected": [
+        "dim_channel",
+        "dim_region"
+      ],
+      "actual": [
+        "dim_channel",
+        "dim_region"
+      ],
+      "severity": "error",
+      "status": "PASS"
+    }
+  ]
+}

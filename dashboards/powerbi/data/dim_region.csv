@@ -1,0 +1,5 @@
+region_key,country,region,sales_territory
+APAC,MULTI,APAC,APAC
+EMEA,MULTI,EMEA,EMEA
+LATAM,MULTI,LATAM,LATAM
+Unknown,MULTI,Unknown,Unknown

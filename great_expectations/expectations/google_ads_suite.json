@@ -1,0 +1,19 @@
+{
+  "expectation_suite_name": "google_ads_suite",
+  "meta": {
+    "source_system": "google_ads",
+    "business_owner": "performance_marketing",
+    "description": "Great Expectations suite for paid search spend and conversion quality."
+  },
+  "expectations": [
+    {"expectation_type": "expect_column_to_exist", "kwargs": {"column": "event_date"}},
+    {"expectation_type": "expect_column_to_exist", "kwargs": {"column": "campaign_id"}},
+    {"expectation_type": "expect_column_to_exist", "kwargs": {"column": "spend"}},
+    {"expectation_type": "expect_column_values_to_not_be_null", "kwargs": {"column": "event_date"}},
+    {"expectation_type": "expect_column_values_to_not_be_null", "kwargs": {"column": "campaign_id", "mostly": 0.98}},
+    {"expectation_type": "expect_column_values_to_not_be_null", "kwargs": {"column": "spend", "mostly": 0.99}},
+    {"expectation_type": "expect_column_values_to_be_between", "kwargs": {"column": "spend", "min_value": 0}},
+    {"expectation_type": "expect_column_pair_values_a_to_be_greater_than_b", "kwargs": {"column_A": "impressions", "column_B": "clicks", "or_equal": true}},
+    {"expectation_type": "expect_column_pair_values_a_to_be_greater_than_b", "kwargs": {"column_A": "clicks", "column_B": "conversions", "or_equal": true}}
+  ]
+}

@@ -1,0 +1,6 @@
+product,normalized_channel,region,customers,conversions,booked_revenue,gross_margin,avg_deal_value,margin_rate,revenue_rank,product_priority
+Growth,unknown,Unknown,175,175,665432.05,445351.87,3802.4688571428574,0.6692672377292317,1,feature_in_campaigns
+Starter,unknown,Unknown,161,161,540689.63,365496.84,3358.3206832298138,0.6759827074915419,2,feature_in_campaigns
+Enterprise,unknown,Unknown,108,108,382761.29,258641.48,3544.0860185185184,0.6757252803699142,3,feature_in_campaigns
+Commerce Pro,unknown,Unknown,90,90,300292.12,197008.97,3336.579111111111,0.6560577413752982,4,feature_in_campaigns
+Marketing Suite,unknown,Unknown,66,66,184369.9,125099.11,2793.483333333333,0.6785224160776786,5,feature_in_campaigns

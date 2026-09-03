@@ -1,0 +1,2 @@
+target_month,region,channel_name,budget_owner,target_spend,actual_spend,spend_attainment,target_revenue,actual_revenue,revenue_attainment,target_leads,actual_leads,lead_attainment,target_conversions,actual_platform_conversions,conversion_attainment,measurement_mismatch_flag
+2025-01-01,LATAM,Paid Search,regional_marketing,395593.250000,424602.380000,1.073331,111005.110000,16199.045000,0.145931,4564,82,0.017967,322,5922.000000,18.391304,True

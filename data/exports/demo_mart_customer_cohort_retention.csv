@@ -1,0 +1,5 @@
+cohort_month,normalized_channel,activity_month,months_since_cohort,active_customers,conversions,booked_revenue,gross_margin,cohort_customers,cohort_leads,retention_rate,revenue_per_cohort_customer,margin_per_cohort_customer
+2025-01-01,unknown,2025-01-01,0,120,120,396912.31,270181.91,45.0,45.0,2.6666666666666665,8820.273555555556,6004.042444444444
+2025-02-01,unknown,2025-02-01,0,196,196,649169.53,434030.72,0.0,0.0,0.0,0.0,0.0
+2025-03-01,unknown,2025-03-01,0,191,191,671530.03,443892.14,0.0,0.0,0.0,0.0,0.0
+2025-04-01,unknown,2025-04-01,0,93,93,355933.12,243493.5,0.0,0.0,0.0,0.0,0.0

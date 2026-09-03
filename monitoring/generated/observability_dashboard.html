@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Marketing Platform Observability</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 32px; color: #172033; background: #f8fafc; }
+    h1 { margin-bottom: 4px; }
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 24px 0; }
+    .card { background: white; border: 1px solid #d7dee8; border-radius: 8px; padding: 16px; }
+    .label { color: #64748b; font-size: 13px; }
+    .value { font-size: 24px; font-weight: 700; margin-top: 8px; }
+    table { border-collapse: collapse; width: 100%; background: white; margin: 12px 0 28px; }
+    th, td { border-bottom: 1px solid #e5e7eb; padding: 9px; text-align: left; font-size: 13px; vertical-align: top; }
+    th { background: #f1f5f9; }
+    .watch { color: #b45309; }
+    .healthy { color: #15803d; }
+  </style>
+</head>
+<body>
+  <h1>Marketing Data Platform Observability</h1>
+  <p>Generated 2026-08-22T22:35:27.222342+00:00</p>
+  <div class="grid">
+    <div class="card"><div class="label">Overall Status</div><div class="value">watch</div></div>
+    <div class="card"><div class="label">Quality Gate</div><div class="value">pass</div></div>
+    <div class="card"><div class="label">Rejected Rows</div><div class="value">43</div></div>
+    <div class="card"><div class="label">Contract Issues</div><div class="value">19</div></div>
+    <div class="card"><div class="label">Catalog Models</div><div class="value">48</div></div>
+    <div class="card"><div class="label">Lineage Edges</div><div class="value">104</div></div>
+    <div class="card"><div class="label">Benchmark</div><div class="value">n/a</div></div>
+    <div class="card"><div class="label">Quality Gate Checks</div><div class="value">25</div></div>
+  </div>
+  <h2>Quality Summary</h2>
+  <p>Rows evaluated: 15052; rejected rows: 43; status: failed.</p>
+  <h2>Contract Findings</h2>
+  <table><thead><tr><th>Source</th><th>Rule</th><th>Severity</th><th>Failed</th><th>Detail</th></tr></thead><tbody><tr><td>google_ads</td><td>primary_key_unique</td><td>warning</td><td>8</td><td>Duplicate rows for key [&#x27;event_date&#x27;, &#x27;campaign_id&#x27;, &#x27;ad_group_id&#x27;]</td></tr><tr><td>google_ads</td><td>clicks_lte_impressions</td><td>error</td><td>4</td><td>clicks &lt;= impressions</td></tr><tr><td>google_ads</td><td>spend_non_negative</td><td>error</td><td>4</td><td>spend &gt;= 0</td></tr><tr><td>google_ads</td><td>primary_key_unique</td><td>warning</td><td>8</td><td>Duplicate rows for key [&#x27;event_date&#x27;, &#x27;campaign_id&#x27;, &#x27;ad_group_id&#x27;]</td></tr><tr><td>google_ads</td><td>clicks_lte_impressions</td><td>error</td><td>1</td><td>clicks &lt;= impressions</td></tr><tr><td>google_ads</td><td>spend_non_negative</td><td>error</td><td>9</td><td>spend &gt;= 0</td></tr><tr><td>google_ads</td><td>primary_key_unique</td><td>warning</td><td>4</td><td>Duplicate rows for key [&#x27;event_date&#x27;, &#x27;campaign_id&#x27;, &#x27;ad_group_id&#x27;]</td></tr><tr><td>google_ads</td><td>clicks_lte_impressions</td><td>error</td><td>1</td><td>clicks &lt;= impressions</td></tr><tr><td>google_ads</td><td>spend_non_negative</td><td>error</td><td>4</td><td>spend &gt;= 0</td></tr><tr><td>facebook_ads</td><td>primary_key_unique</td><td>warning</td><td>8</td><td>Duplicate rows for key [&#x27;event_date&#x27;, &#x27;campaign_id&#x27;, &#x27;ad_set_id&#x27;]</td></tr><tr><td>facebook_ads</td><td>clicks_lte_impressions</td><td>error</td><td>5</td><td>clicks &lt;= impressions</td></tr><tr><td>facebook_ads</td><td>primary_key_unique</td><td>warning</td><td>6</td><td>Duplicate rows for key [&#x27;event_date&#x27;, &#x27;campaign_id&#x27;, &#x27;ad_set_id&#x27;]</td></tr><tr><td>facebook_ads</td><td>clicks_lte_impressions</td><td>error</td><td>4</td><td>clicks &lt;= impressions</td></tr><tr><td>tiktok_ads</td><td>primary_key_unique</td><td>warning</td><td>8</td><td>Duplicate rows for key [&#x27;event_date&#x27;, &#x27;campaign_id&#x27;, &#x27;creative_id&#x27;]</td></tr><tr><td>tiktok_ads</td><td>clicks_lte_video_views</td><td>error</td><td>1</td><td>clicks &lt;= video_views</td></tr><tr><td>tiktok_ads</td><td>primary_key_unique</td><td>warning</td><td>2</td><td>Duplicate rows for key [&#x27;event_date&#x27;, &#x27;campaign_id&#x27;, &#x27;creative_id&#x27;]</td></tr><tr><td>website_analytics</td><td>contract_passed</td><td>info</td><td>0</td><td>3000 rows evaluated.</td></tr><tr><td>ga4_events</td><td>contract_passed</td><td>info</td><td>0</td><td>4000 rows evaluated.</td></tr><tr><td>crm_leads</td><td>primary_key_unique</td><td>warning</td><td>2</td><td>Duplicate rows for key [&#x27;lead_id&#x27;]</td></tr><tr><td>crm_leads</td><td>primary_key_unique</td><td>warning</td><td>2</td><td>Duplicate rows for key [&#x27;lead_id&#x27;]</td></tr></tbody></table>
+  <h2>Source Health</h2>
+  <table><thead><tr><th>Source</th><th>Last Ingestion</th><th>Failed Loads</th><th>Rejected Rows</th><th>Status</th></tr></thead><tbody><tr><td colspan="5">No rows available.</td></tr></tbody></table>
+  <h2>Local Quality Gate</h2>
+  <table><thead><tr><th>Command</th><th>Status</th><th>Return Code</th></tr></thead><tbody><tr><td>python -B scripts/run_smoke_pipeline.py</td><td>passed</td><td>0</td></tr><tr><td>python -B monitoring/great_expectations_runner.py --profile smoke</td><td>passed</td><td>0</td></tr><tr><td>python -B ingestion/data_contracts.py</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/load_duckdb_raw.py</td><td>passed</td><td>0</td></tr><tr><td>dbt build --project-dir dbt --profiles-dir dbt --target duckdb</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/export_cloud_upgrade_outputs.py</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/build_demo_marts.py</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/generate_decision_intelligence.py</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/generate_analyst_outputs.py</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/generate_catalog.py</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/generate_lineage_metadata.py</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/generate_powerbi_semantic_model.py</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/generate_powerbi_handoff.py</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/generate_final_validation_assets.py</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/generate_release_evidence.py</td><td>passed</td><td>0</td></tr><tr><td>python -B monitoring/observability_report.py</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/generate_executive_report.py</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/generate_executive_planning_report.py</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/generate_governance_pack.py</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/pii_discovery.py</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/apply_retention_policy.py</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/generate_release_bundle.py</td><td>passed</td><td>0</td></tr><tr><td>python -B scripts/build_release_site.py</td><td>passed</td><td>0</td></tr><tr><td>python -m pytest -q</td><td>passed</td><td>0</td></tr><tr><td>dbt --log-path &lt;tmp&gt; parse --target-path &lt;tmp&gt; --profiles-dir . --no-partial-parse</td><td>passed</td><td>0</td></tr></tbody></table>
+  <h2>Recent Alerts</h2>
+  <table><thead><tr><th>Created</th><th>Severity</th><th>Type</th><th>Message</th></tr></thead><tbody></tbody></table>
+</body>
+</html>

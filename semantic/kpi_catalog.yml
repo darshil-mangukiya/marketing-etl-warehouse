@@ -1,0 +1,140 @@
+version: 1
+project_name: Campaign ROI Reporting Automation & Marketing Performance Analytics Platform
+data_context: "Locally generated project data keeps KPI validation reproducible without customer records."
+kpis:
+  total_spend:
+    name: Total Spend
+    category: Spend/Revenue
+    business_definition: Total marketing spend from paid media and campaign sources.
+    formula: "sum(spend)"
+    grain: Date, channel, campaign where available
+    inputs: ["mart_channel_performance.spend", "mart_campaign_performance.spend"]
+  booked_revenue:
+    name: Booked Revenue
+    category: Spend/Revenue
+    business_definition: Revenue recorded from simulated closed-won sales conversions.
+    formula: "sum(booked_revenue)"
+    grain: Date and channel
+    inputs: ["mart_channel_performance.booked_revenue"]
+  attributed_revenue:
+    name: Attributed Revenue
+    category: Attribution
+    business_definition: Revenue assigned to campaigns or touchpoints by the selected attribution model.
+    formula: "sum(attributed_revenue)"
+    grain: Date, campaign, channel, attribution model
+    inputs: ["mart_campaign_performance.attributed_revenue", "mart_attribution_summary.attributed_revenue"]
+  roas:
+    name: ROAS
+    category: ROI/Efficiency
+    business_definition: Revenue returned for each dollar of marketing spend.
+    formula: "booked_revenue / total_spend"
+    grain: Date and channel
+    inputs: ["mart_channel_performance.booked_revenue", "mart_channel_performance.spend"]
+    owner_persona: Marketing Analytics Manager
+    source_of_truth: mart_channel_performance
+    exclusions: ["rows failing release quality controls", "zero-spend denominator"]
+    validation: "dbt ratio tests plus source-to-BI reconciliation"
+    dbt_model: mart_channel_performance
+    dax_measure: ROAS
+  campaign_roi:
+    name: Campaign ROI
+    category: ROI/Efficiency
+    business_definition: Campaign profit-style return relative to campaign spend.
+    formula: "(attributed_revenue - spend) / spend"
+    grain: Campaign
+    inputs: ["mart_campaign_performance.attributed_revenue", "mart_campaign_performance.spend"]
+  attributed_roas:
+    name: Attributed ROAS
+    category: ROI/Efficiency
+    business_definition: Attributed campaign revenue divided by campaign spend.
+    formula: "attributed_revenue / spend"
+    grain: Campaign
+    inputs: ["mart_campaign_performance.attributed_revenue", "mart_campaign_performance.spend"]
+  cac:
+    name: CAC
+    category: ROI/Efficiency
+    business_definition: Marketing spend divided by closed-won conversions.
+    formula: "total_spend / closed_won_conversions"
+    grain: Date and channel
+    inputs: ["mart_channel_performance.spend", "mart_channel_performance.closed_won_conversions"]
+    owner_persona: Marketing Analytics Manager
+    source_of_truth: mart_channel_performance
+    exclusions: ["rows failing release quality controls", "zero-customer denominator"]
+    validation: "dbt zero-safe calculation plus source-to-BI reconciliation"
+    dbt_model: mart_channel_performance
+    dax_measure: CAC
+  cost_per_lead:
+    name: Cost Per Lead
+    category: Funnel
+    business_definition: Marketing spend divided by generated leads.
+    formula: "total_spend / total_leads"
+    grain: Date and channel
+    inputs: ["mart_channel_performance.spend", "mart_channel_performance.leads"]
+  lead_to_mql_rate:
+    name: Lead to MQL Rate
+    category: Funnel
+    business_definition: Share of leads that reach marketing-qualified stage.
+    formula: "mqls / total_leads"
+    grain: Date and channel
+    inputs: ["mart_funnel_performance.mqls", "mart_funnel_performance.total_leads"]
+  mql_to_sql_rate:
+    name: MQL to SQL Rate
+    category: Funnel
+    business_definition: Share of MQLs that reach sales-qualified stage.
+    formula: "sales_qualified_leads / mqls"
+    grain: Date and channel
+    inputs: ["mart_funnel_performance.sales_qualified_leads", "mart_funnel_performance.mqls"]
+  sql_to_close_rate:
+    name: SQL to Close Rate
+    category: Funnel
+    business_definition: Share of distinct SQL-qualified leads with at least one matching conversion.
+    formula: "conversions / sales_qualified_leads"
+    grain: SQL cohort creation month and channel
+    inputs: ["mart_funnel_performance.conversions", "mart_funnel_performance.sales_qualified_leads"]
+  spend_attainment:
+    name: Spend Attainment
+    category: Budget/Targets
+    business_definition: Actual spend as a share of target spend.
+    formula: "actual_spend / target_spend"
+    grain: Month, region, channel
+    inputs: ["mart_target_vs_actual.actual_spend", "mart_target_vs_actual.target_spend"]
+  revenue_attainment:
+    name: Revenue Attainment
+    category: Budget/Targets
+    business_definition: Actual revenue as a share of target revenue.
+    formula: "actual_revenue / target_revenue"
+    grain: Month, region, channel
+    inputs: ["mart_target_vs_actual.actual_revenue", "mart_target_vs_actual.target_revenue"]
+  scenario_roas:
+    name: Scenario ROAS
+    category: Scenario Planning
+    business_definition: Simulated projected revenue divided by simulated channel budget under an explicit named assumption set.
+    formula: "sum(projected_revenue) / sum(channel_budget)"
+    grain: Scenario and channel
+    inputs: ["mart_budget_scenarios.projected_revenue", "mart_budget_scenarios.channel_budget"]
+    owner_persona: Finance Business Partner
+    source_of_truth: mart_budget_scenarios
+    exclusions: ["actual performance interpretation", "causal lift interpretation", "approved budget implication"]
+    validation: "scenario unit tests and generated-output contract"
+    dbt_model: mart_budget_scenarios
+    dax_measure: Scenario ROAS
+  anomaly_count:
+    name: Material Anomaly Count
+    category: Diagnostics
+    business_definition: Count of transparent KPI deviations that cross the configured percent-change or rolling-MAD threshold.
+    formula: "count(anomaly evidence rows)"
+    grain: Period, entity, and metric
+    inputs: ["mart_marketing_anomalies.metric_name", "mart_marketing_anomalies.severity"]
+    owner_persona: Data Analyst
+    source_of_truth: mart_marketing_anomalies
+    exclusions: ["causal inference", "automatic campaign changes"]
+    validation: "detector unit tests and required evidence-field contract"
+    dbt_model: mart_marketing_anomalies
+    dax_measure: supporting metric
+  data_product_score:
+    name: Data Product Score
+    category: Data Quality
+    business_definition: Operating score for source reliability, quality, attribution, and action ownership.
+    formula: "average(score)"
+    grain: Scorecard domain
+    inputs: ["mart_data_product_scorecard.score"]

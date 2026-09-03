@@ -1,0 +1,75 @@
+table 'mart_ga4_funnel'
+	description: "GA4-style synthetic event funnel prepared for optional live export mapping."
+	lineageTag: mart_ga4_funnel
+
+	column event_date
+		dataType: dateTime
+		summarizeBy: none
+
+	column source
+		dataType: string
+		summarizeBy: none
+
+	column medium
+		dataType: string
+		summarizeBy: none
+
+	column campaign_id
+		dataType: string
+		summarizeBy: none
+
+	column campaign
+		dataType: string
+		summarizeBy: none
+
+	column device_category
+		dataType: string
+		summarizeBy: none
+
+	column sessions
+		dataType: int64
+		summarizeBy: none
+
+	column page_views
+		dataType: int64
+		summarizeBy: none
+
+	column item_views
+		dataType: int64
+		summarizeBy: none
+
+	column add_to_carts
+		dataType: int64
+		summarizeBy: none
+
+	column checkouts
+		dataType: int64
+		summarizeBy: none
+
+	column leads
+		dataType: int64
+		summarizeBy: none
+
+	column purchases
+		dataType: int64
+		summarizeBy: none
+
+	column purchase_revenue
+		dataType: decimal
+		summarizeBy: none
+
+	measure 'GA4 Sessions' = SUM('mart_ga4_funnel'[sessions])
+		formatString: "#,0"
+		displayFolder: "GA4 Funnel"
+
+	measure 'GA4 Purchases' = SUM('mart_ga4_funnel'[purchases])
+		formatString: "#,0"
+		displayFolder: "GA4 Funnel"
+
+	measure 'GA4 Purchase Revenue' = SUM('mart_ga4_funnel'[purchase_revenue])
+		formatString: "$#,0"
+		displayFolder: "GA4 Funnel"
+
+	measure 'GA4 Session to Purchase Rate' = DIVIDE([GA4 Purchases], [GA4 Sessions])
+		formatString: "0.00%"
+		displayFolder: "GA4 Funnel"

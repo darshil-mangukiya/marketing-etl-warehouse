@@ -1,0 +1,215 @@
+version: 1
+owner_domain: growth_data_platform
+default_freshness_hours: 36
+default_rejected_row_threshold_pct: 5.0
+
+sources:
+  google_ads:
+    owner: performance_marketing
+    ingestion_method: rest_api
+    primary_key: [event_date, campaign_id, ad_group_id]
+    watermark_column: updated_at
+    freshness_hours: 24
+    rejected_row_threshold_pct: 3.0
+    required_columns:
+      event_date: date
+      campaign_id: string
+      campaign_name: string
+      ad_group_id: string
+      impressions: integer
+      clicks: integer
+      spend: numeric
+      conversions: integer
+      attribution_id: string
+      updated_at: timestamp
+    rules:
+      - name: clicks_lte_impressions
+        expression: clicks <= impressions
+        severity: error
+      - name: conversions_lte_clicks
+        expression: conversions <= clicks
+        severity: error
+      - name: spend_non_negative
+        expression: spend >= 0
+        severity: error
+
+  facebook_ads:
+    owner: performance_marketing
+    ingestion_method: rest_api
+    primary_key: [event_date, campaign_id, ad_set_id]
+    watermark_column: updated_at
+    freshness_hours: 24
+    rejected_row_threshold_pct: 3.0
+    required_columns:
+      event_date: date
+      campaign_id: string
+      campaign_name: string
+      ad_set_id: string
+      reach: integer
+      impressions: integer
+      clicks: integer
+      spend: numeric
+      conversions: integer
+      attribution_id: string
+      updated_at: timestamp
+    rules:
+      - name: clicks_lte_impressions
+        expression: clicks <= impressions
+        severity: error
+      - name: conversions_lte_clicks
+        expression: conversions <= clicks
+        severity: error
+
+  tiktok_ads:
+    owner: performance_marketing
+    ingestion_method: rest_api
+    primary_key: [event_date, campaign_id, creative_id]
+    watermark_column: updated_at
+    freshness_hours: 24
+    rejected_row_threshold_pct: 3.0
+    required_columns:
+      event_date: date
+      campaign_id: string
+      campaign_name: string
+      creative_id: string
+      video_views: integer
+      clicks: integer
+      spend: numeric
+      conversions: integer
+      attribution_id: string
+      updated_at: timestamp
+    rules:
+      - name: clicks_lte_video_views
+        expression: clicks <= video_views
+        severity: error
+      - name: conversions_lte_clicks
+        expression: conversions <= clicks
+        severity: error
+
+  website_analytics:
+    owner: growth_analytics
+    ingestion_method: batch_file
+    primary_key: [session_id]
+    watermark_column: updated_at
+    freshness_hours: 24
+    rejected_row_threshold_pct: 2.0
+    required_columns:
+      event_date: date
+      session_id: string
+      visitor_id: string
+      traffic_source: string
+      device: string
+      country: string
+      page_views: integer
+      session_duration_seconds: integer
+      attribution_id: string
+      updated_at: timestamp
+
+  ga4_events:
+    owner: growth_analytics
+    ingestion_method: ga4_style_event_export
+    primary_key: [event_id]
+    watermark_column: updated_at
+    freshness_hours: 24
+    rejected_row_threshold_pct: 2.0
+    required_columns:
+      event_id: string
+      user_pseudo_id: string
+      session_id: string
+      event_timestamp: timestamp
+      event_date: date
+      event_name: string
+      source: string
+      medium: string
+      campaign: string
+      landing_page: string
+      device_category: string
+      region: string
+      country: string
+      product: string
+      engagement_indicator: integer
+      conversion_indicator: integer
+      revenue: numeric
+      updated_at: timestamp
+    rules:
+      - name: conversion_indicator_boolean
+        expression: conversion_indicator >= 0 and conversion_indicator <= 1
+        severity: error
+      - name: revenue_non_negative
+        expression: revenue >= 0
+        severity: error
+
+  crm_leads:
+    owner: revenue_operations
+    ingestion_method: batch_file_cdc
+    primary_key: [lead_id]
+    watermark_column: updated_at
+    freshness_hours: 12
+    rejected_row_threshold_pct: 1.5
+    required_columns:
+      created_at: date
+      lead_id: string
+      customer_id: string
+      lead_source: string
+      campaign_id: string
+      qualification_stage: string
+      assigned_rep: string
+      cdc_operation: string
+      updated_at: timestamp
+
+  sales_conversions:
+    owner: sales_operations
+    ingestion_method: json_event_file_cdc
+    primary_key: [conversion_id]
+    watermark_column: updated_at
+    freshness_hours: 12
+    rejected_row_threshold_pct: 1.0
+    required_columns:
+      conversion_id: string
+      lead_id: string
+      customer_id: string
+      conversion_date: date
+      product: string
+      deal_value: numeric
+      gross_margin: numeric
+      cdc_operation: string
+      updated_at: timestamp
+
+  marketing_targets:
+    owner: finance
+    ingestion_method: managed_file
+    primary_key: [target_month, region, channel]
+    freshness_hours: 720
+    rejected_row_threshold_pct: 0.5
+    required_columns:
+      target_month: string
+      region: string
+      channel: string
+      target_spend: numeric
+      target_revenue: numeric
+      target_leads: integer
+      target_conversions: integer
+
+  campaign_mapping:
+    owner: marketing_operations
+    ingestion_method: reference_file
+    primary_key: [campaign_id, valid_from]
+    freshness_hours: 720
+    rejected_row_threshold_pct: 0.1
+    required_columns:
+      campaign_id: string
+      canonical_campaign_name: string
+      canonical_channel: string
+      owner_team: string
+      valid_from: date
+
+  region_mapping:
+    owner: revenue_operations
+    ingestion_method: reference_file
+    primary_key: [country]
+    freshness_hours: 720
+    rejected_row_threshold_pct: 0.1
+    required_columns:
+      country: string
+      region: string
+      sales_territory: string

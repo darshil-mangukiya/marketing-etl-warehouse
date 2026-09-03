@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-08-18T02:55:35.318833+00:00",
+  "artifacts": [
+    "evidence/generated/architecture_snapshot.svg",
+    "evidence/generated/dashboard_wireframe.svg",
+    "evidence/generated/dashboard_executive_preview.svg",
+    "evidence/generated/dashboard_governance_preview.svg",
+    "evidence/generated/dashboard_observability_preview.svg"
+  ],
+  "metrics": {
+    "spend": 11437368.84,
+    "revenue": 2073544.9900000002,
+    "roas": 0.18129563005331917,
+    "campaigns": 81,
+    "quality_files": 20,
+    "rejected_rows": 43
+  }
+}

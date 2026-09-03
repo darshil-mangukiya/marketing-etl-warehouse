@@ -1,0 +1,66 @@
+{
+  "checks": {
+    "artifact_layout_bounds_pass": true,
+    "artifact_render_set_present": true,
+    "expected_notes_count": true,
+    "expected_slide_count": true,
+    "legacy_footer_absent": true,
+    "metrics_trace_to_source": true,
+    "no_ai_residue": true,
+    "no_broken_local_paths": true,
+    "no_empty_slides": true,
+    "no_personal_path": true,
+    "no_placeholder": true,
+    "no_secret": true,
+    "no_unsupported_claim": true,
+    "pptx_exists": true,
+    "regular_footer_exact": true,
+    "required_office_parts": true,
+    "slide_titles_present": true,
+    "sources_in_every_slide_notes": true,
+    "synthetic_boundary_present": true,
+    "valid_office_archive": true
+  },
+  "deck": "executive_review/Marketing_Monthly_Business_Review.pptx",
+  "details": {
+    "archive_part_count": 62,
+    "evidence_boundary": "Generated marketing business data; bounded real portfolio-site GA4 remains separate and unused.",
+    "expected_metric_strings": {
+      "campaign_action_holds": "1",
+      "expected_scenario_roas": "0.18x",
+      "lead_to_mql_leakage": "79%",
+      "paid_social_revenue": "$34K",
+      "paid_social_roas": "0.03x",
+      "paid_social_spend": "$1.20M",
+      "quality_failures": "3"
+    },
+    "external_relationship_targets": [],
+    "forbidden_pattern_hits": {
+      "ai_residue": [],
+      "personal_path": [],
+      "placeholder": [],
+      "secret": [],
+      "unsupported_claim": []
+    },
+    "slide_count": 10,
+    "slide_titles": [
+      "MONTHLY MARKETING BUSINESS REVIEW",
+      "Validate the signal before changing budget",
+      "The scorecard says review, not scale",
+      "Weak return is not isolated to one campaign",
+      "Paid social loses most volume before MQL",
+      "Attribution changes magnitude\u2014not the leader",
+      "Near-plan spend masks conflicting signals",
+      "All simulated cases stay below 1.0x ROAS",
+      "Source failures require a manual release hold",
+      "Resolve trust first, then review performance"
+    ],
+    "visual_validation": {
+      "artifact_layout_bounds": "all_element_bboxes_within_slide_canvas",
+      "artifact_renderer": "10_slide_pngs_generated_and_inspected",
+      "manual_powerpoint_review": "recommended_after_local_handoff",
+      "office_compatible_renderer": "not_available_in_current_sandbox"
+    }
+  },
+  "status": "PASS"
+}

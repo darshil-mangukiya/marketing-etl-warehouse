@@ -1,0 +1,5 @@
+date_day,year,quarter,month_number,month_name,week_of_year
+2025-01-01,2025,Q1,1,January,1
+2025-02-01,2025,Q1,2,February,5
+2025-03-01,2025,Q1,3,March,9
+2025-04-01,2025,Q2,4,April,14

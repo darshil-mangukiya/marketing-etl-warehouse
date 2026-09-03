@@ -1,0 +1,178 @@
+{
+  "generated_at": "2026-08-18T02:55:38.908562+00:00",
+  "release_name": "marketing-etl-platform-local-release",
+  "status": "complete",
+  "artifact_count": 22,
+  "available_artifact_count": 22,
+  "artifact_pass_rate": 1.0,
+  "artifacts": [
+    {
+      "name": "Demo mart manifest",
+      "path": "data/exports/demo_mart_manifest.json",
+      "exists": true,
+      "size_bytes": 4065,
+      "modified_at": "2026-08-18T02:55:37.386074+00:00"
+    },
+    {
+      "name": "Excel-ready analysis package",
+      "path": "reports/generated/excel_ready/README.md",
+      "exists": true,
+      "size_bytes": 1781,
+      "modified_at": "2026-07-07T16:36:46.143156+00:00"
+    },
+    {
+      "name": "Business requirements",
+      "path": "docs/business_requirements.md",
+      "exists": true,
+      "size_bytes": 9221,
+      "modified_at": "2026-08-18T02:47:44.691872+00:00"
+    },
+    {
+      "name": "Dashboard requirements",
+      "path": "docs/dashboard_requirements.md",
+      "exists": true,
+      "size_bytes": 5640,
+      "modified_at": "2026-06-16T17:35:51.927248+00:00"
+    },
+    {
+      "name": "UAT checklist",
+      "path": "docs/uat_checklist.md",
+      "exists": true,
+      "size_bytes": 3202,
+      "modified_at": "2026-07-07T16:35:42.029255+00:00"
+    },
+    {
+      "name": "Power BI evidence",
+      "path": "semantic_layer/powerbi/POWERBI_EVIDENCE.md",
+      "exists": true,
+      "size_bytes": 4775,
+      "modified_at": "2026-07-07T16:36:17.667533+00:00"
+    },
+    {
+      "name": "Executive marketing report",
+      "path": "reports/generated/executive_marketing_report.html",
+      "exists": true,
+      "size_bytes": 8871,
+      "modified_at": "2026-08-18T02:55:36.590119+00:00"
+    },
+    {
+      "name": "Executive planning report",
+      "path": "reports/generated/executive_planning_report.html",
+      "exists": true,
+      "size_bytes": 14973,
+      "modified_at": "2026-08-18T02:55:37.417750+00:00"
+    },
+    {
+      "name": "Governance release packet",
+      "path": "reports/generated/governance_release_packet.html",
+      "exists": true,
+      "size_bytes": 9983,
+      "modified_at": "2026-08-18T02:55:37.834561+00:00"
+    },
+    {
+      "name": "Observability dashboard",
+      "path": "monitoring/generated/observability_dashboard.html",
+      "exists": true,
+      "size_bytes": 7130,
+      "modified_at": "2026-08-18T02:55:35.781860+00:00"
+    },
+    {
+      "name": "Architecture snapshot",
+      "path": "evidence/generated/architecture_snapshot.svg",
+      "exists": true,
+      "size_bytes": 2760,
+      "modified_at": "2026-08-18T02:55:35.316276+00:00"
+    },
+    {
+      "name": "Dashboard wireframe",
+      "path": "evidence/generated/dashboard_wireframe.svg",
+      "exists": true,
+      "size_bytes": 2762,
+      "modified_at": "2026-08-18T02:55:35.316551+00:00"
+    },
+    {
+      "name": "Executive dashboard preview",
+      "path": "evidence/generated/dashboard_executive_preview.svg",
+      "exists": true,
+      "size_bytes": 3333,
+      "modified_at": "2026-08-18T02:55:35.317635+00:00"
+    },
+    {
+      "name": "Governance dashboard preview",
+      "path": "evidence/generated/dashboard_governance_preview.svg",
+      "exists": true,
+      "size_bytes": 3988,
+      "modified_at": "2026-08-18T02:55:35.318311+00:00"
+    },
+    {
+      "name": "Observability dashboard preview",
+      "path": "evidence/generated/dashboard_observability_preview.svg",
+      "exists": true,
+      "size_bytes": 3651,
+      "modified_at": "2026-08-18T02:55:35.318811+00:00"
+    },
+    {
+      "name": "Power BI semantic manifest",
+      "path": "semantic_layer/powerbi_tmdl/semantic_model_manifest.json",
+      "exists": true,
+      "size_bytes": 205,
+      "modified_at": "2026-08-18T02:55:33.968638+00:00"
+    },
+    {
+      "name": "Governance manifest",
+      "path": "governance/generated/governance_manifest.json",
+      "exists": true,
+      "size_bytes": 772,
+      "modified_at": "2026-08-18T02:55:37.834809+00:00"
+    },
+    {
+      "name": "Local quality gate",
+      "path": "local_ci/latest_quality_gate.json",
+      "exists": true,
+      "size_bytes": 47435,
+      "modified_at": "2026-08-18T02:34:26.452240+00:00"
+    },
+    {
+      "name": "OpenLineage events",
+      "path": "metadata/generated/openlineage_events.jsonl",
+      "exists": true,
+      "size_bytes": 49953,
+      "modified_at": "2026-08-18T02:55:33.888915+00:00"
+    },
+    {
+      "name": "DataHub metadata",
+      "path": "metadata/generated/datahub_mces.json",
+      "exists": true,
+      "size_bytes": 41163,
+      "modified_at": "2026-08-18T02:55:33.889166+00:00"
+    },
+    {
+      "name": "Data catalog",
+      "path": "catalog/generated/data_catalog.json",
+      "exists": true,
+      "size_bytes": 14085,
+      "modified_at": "2026-08-18T02:55:33.885801+00:00"
+    },
+    {
+      "name": "BI field dictionary",
+      "path": "catalog/generated/bi_field_dictionary.csv",
+      "exists": true,
+      "size_bytes": 27506,
+      "modified_at": "2026-08-18T02:55:33.888081+00:00"
+    }
+  ],
+  "recommended_review_order": [
+    "README.md",
+    "docs/business_requirements.md",
+    "docs/dashboard_requirements.md",
+    "evidence/generated/architecture_snapshot.svg",
+    "reports/generated/executive_marketing_report.html",
+    "reports/generated/excel_ready/README.md",
+    "bi_app/streamlit_app.py",
+    "reports/generated/executive_planning_report.html",
+    "reports/generated/governance_release_packet.html",
+    "semantic_layer/powerbi_tmdl/README.md",
+    "docs/demo.md",
+    "release/site/index.html"
+  ]
+}

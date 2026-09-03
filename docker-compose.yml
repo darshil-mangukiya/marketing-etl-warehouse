@@ -1,0 +1,214 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: marketing-postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-marketing_warehouse}
+      POSTGRES_USER: ${POSTGRES_USER:-marketing}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-marketing}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./warehouse/postgres/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-marketing} -d ${POSTGRES_DB:-marketing_warehouse}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  airflow-init:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.airflow
+    container_name: marketing-airflow-init
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-marketing}:${POSTGRES_PASSWORD:-marketing}@postgres:5432/${POSTGRES_DB:-marketing_warehouse}
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_USERS: ${AIRFLOW_USER:-admin}:admin
+      AIRFLOW__SCHEDULER__CREATE_CRON_DATA_INTERVALS: "True"
+      PROJECT_HOME: /opt/airflow/project
+      DATA_PROFILE: ${DATA_PROFILE:-smoke}
+      DBT_TARGET: ${DBT_TARGET:-postgres}
+      EXECUTION_MODE: ${EXECUTION_MODE:-local}
+      USE_MOCK_API_EXTRACTION: ${USE_MOCK_API_EXTRACTION:-false}
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:-marketing_warehouse}
+      POSTGRES_USER: ${POSTGRES_USER:-marketing}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-marketing}
+    volumes:
+      - ./:/opt/airflow/project
+      - ./airflow/dags:/opt/airflow/dags
+    command: ["airflow", "db", "migrate"]
+
+  airflow-api-server:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.airflow
+    container_name: marketing-airflow-api-server
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+    environment:
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-marketing}:${POSTGRES_PASSWORD:-marketing}@postgres:5432/${POSTGRES_DB:-marketing_warehouse}
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_USERS: ${AIRFLOW_USER:-admin}:admin
+      AIRFLOW__SCHEDULER__CREATE_CRON_DATA_INTERVALS: "True"
+      PROJECT_HOME: /opt/airflow/project
+      DATA_PROFILE: ${DATA_PROFILE:-smoke}
+      DBT_TARGET: ${DBT_TARGET:-postgres}
+      EXECUTION_MODE: ${EXECUTION_MODE:-local}
+      USE_MOCK_API_EXTRACTION: ${USE_MOCK_API_EXTRACTION:-false}
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:-marketing_warehouse}
+      POSTGRES_USER: ${POSTGRES_USER:-marketing}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-marketing}
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - ./:/opt/airflow/project
+      - ./airflow/dags:/opt/airflow/dags
+      - airflow_logs:/opt/airflow/logs
+    command: ["airflow", "api-server"]
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/api/v2/monitor/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  airflow-scheduler:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.airflow
+    container_name: marketing-airflow-scheduler
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+    environment:
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-marketing}:${POSTGRES_PASSWORD:-marketing}@postgres:5432/${POSTGRES_DB:-marketing_warehouse}
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_USERS: ${AIRFLOW_USER:-admin}:admin
+      AIRFLOW__SCHEDULER__CREATE_CRON_DATA_INTERVALS: "True"
+      PROJECT_HOME: /opt/airflow/project
+      DATA_PROFILE: ${DATA_PROFILE:-smoke}
+      DBT_TARGET: ${DBT_TARGET:-postgres}
+      EXECUTION_MODE: ${EXECUTION_MODE:-local}
+      USE_MOCK_API_EXTRACTION: ${USE_MOCK_API_EXTRACTION:-false}
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:-marketing_warehouse}
+      POSTGRES_USER: ${POSTGRES_USER:-marketing}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-marketing}
+    volumes:
+      - ./:/opt/airflow/project
+      - ./airflow/dags:/opt/airflow/dags
+      - airflow_logs:/opt/airflow/logs
+    command: ["airflow", "scheduler"]
+
+  airflow-dag-processor:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.airflow
+    container_name: marketing-airflow-dag-processor
+    depends_on:
+      airflow-init:
+        condition: service_completed_successfully
+    environment:
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER:-marketing}:${POSTGRES_PASSWORD:-marketing}@postgres:5432/${POSTGRES_DB:-marketing_warehouse}
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW__CORE__LOAD_EXAMPLES: "False"
+      AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_USERS: ${AIRFLOW_USER:-admin}:admin
+      AIRFLOW__SCHEDULER__CREATE_CRON_DATA_INTERVALS: "True"
+      PROJECT_HOME: /opt/airflow/project
+      DATA_PROFILE: ${DATA_PROFILE:-smoke}
+      DBT_TARGET: ${DBT_TARGET:-postgres}
+      EXECUTION_MODE: ${EXECUTION_MODE:-local}
+      USE_MOCK_API_EXTRACTION: ${USE_MOCK_API_EXTRACTION:-false}
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:-marketing_warehouse}
+      POSTGRES_USER: ${POSTGRES_USER:-marketing}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-marketing}
+    volumes:
+      - ./:/opt/airflow/project
+      - ./airflow/dags:/opt/airflow/dags
+      - airflow_logs:/opt/airflow/logs
+    command: ["airflow", "dag-processor"]
+
+  ingestion-service:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.ingestion
+    container_name: marketing-ingestion-service
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:-marketing_warehouse}
+      POSTGRES_USER: ${POSTGRES_USER:-marketing}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-marketing}
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: ["python3", "-B", "scripts/run_smoke_pipeline.py"]
+
+  api-simulator:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    container_name: marketing-api-simulator
+    environment:
+      MOCK_API_TOKEN: ${MOCK_API_TOKEN:-local-dev-token}
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - ./:/app
+    working_dir: /app
+
+  dashboard:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dashboard
+    container_name: marketing-streamlit-dashboard
+    depends_on:
+      ingestion-service:
+        condition: service_completed_successfully
+    ports:
+      - "127.0.0.1:8501:8501"
+    volumes:
+      - ./:/app
+    working_dir: /app
+
+  dbt:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dbt
+    container_name: marketing-dbt
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:-marketing_warehouse}
+      POSTGRES_USER: ${POSTGRES_USER:-marketing}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-marketing}
+      DBT_TARGET: ${DBT_TARGET:-postgres}
+    volumes:
+      - ./:/app
+    working_dir: /app/dbt
+    command: ["dbt", "build", "--profiles-dir", "."]
+
+volumes:
+  postgres_data:
+  airflow_logs:

@@ -1,0 +1,34 @@
+{
+  "checks": {
+    "non_empty_result": true,
+    "paid_social_monotonic": true,
+    "paid_social_present": true,
+    "paid_social_rates_between_zero_and_one": true,
+    "presented_stage_drops_are_non_negative": true
+  },
+  "evidence_boundary": "Generated marketing business data; descriptive portfolio case study.",
+  "inputs": [
+    {
+      "path": "analytics_requests/canonical_input/mart_funnel_performance.csv",
+      "sha256": "6355de458135cd503941bc52f8b8d78bfb26a60037bb35bb359d538d6b5b693e"
+    }
+  ],
+  "result_columns": [
+    "reporting_month",
+    "channel",
+    "total_leads",
+    "mqls",
+    "sqls",
+    "conversions",
+    "lead_to_mql_rate",
+    "mql_to_sql_rate",
+    "sql_to_close_rate",
+    "lead_to_mql_drop",
+    "mql_to_sql_drop",
+    "sql_to_close_drop",
+    "lead_to_close_rate"
+  ],
+  "result_rows": 7,
+  "result_sha256": "0df80fcc7cf9cd0859c67a466a6d53db4ba79bbba7295c1e1b3b715cd091509a",
+  "status": "PASS"
+}

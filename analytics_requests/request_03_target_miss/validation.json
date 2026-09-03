@@ -1,0 +1,37 @@
+{
+  "checks": {
+    "measurement_mismatch_flagged": true,
+    "one_selected_record": true,
+    "revenue_below_half_target": true,
+    "spend_near_plan": true
+  },
+  "evidence_boundary": "Generated marketing business data; descriptive portfolio case study.",
+  "inputs": [
+    {
+      "path": "analytics_requests/canonical_input/mart_target_vs_actual.csv",
+      "sha256": "197a977b3604d078f226a0bb287bcbed13fadbc2deb80c52271f86874e1ac6cc"
+    }
+  ],
+  "result_columns": [
+    "target_month",
+    "region",
+    "channel_name",
+    "budget_owner",
+    "target_spend",
+    "actual_spend",
+    "spend_attainment",
+    "target_revenue",
+    "actual_revenue",
+    "revenue_attainment",
+    "target_leads",
+    "actual_leads",
+    "lead_attainment",
+    "target_conversions",
+    "actual_platform_conversions",
+    "conversion_attainment",
+    "measurement_mismatch_flag"
+  ],
+  "result_rows": 1,
+  "result_sha256": "24c2d25586e77405889e597f9fa07661efac06189fefaf908cecc00f8c8ea89f",
+  "status": "PASS"
+}

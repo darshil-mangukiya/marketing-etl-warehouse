@@ -1,0 +1,30 @@
+{
+  "checks": {
+    "campaign_ids_present": true,
+    "non_empty_result": true,
+    "positive_spend": true,
+    "roas_recalculated": true
+  },
+  "evidence_boundary": "Generated marketing business data; descriptive portfolio case study.",
+  "inputs": [
+    {
+      "path": "analytics_requests/canonical_input/mart_campaign_performance.csv",
+      "sha256": "09996e441072ea49dd1716877ee03dc986579ad95654951b08833b01ce978cc7"
+    }
+  ],
+  "result_columns": [
+    "campaign_id",
+    "campaign_name",
+    "channel",
+    "spend",
+    "attributed_revenue",
+    "attributed_roas",
+    "platform_conversions",
+    "waste_budget_flag",
+    "break_even_shortfall",
+    "shortfall_share"
+  ],
+  "result_rows": 8,
+  "result_sha256": "46d6f85ae8885c7df4711a2633da0545f5e2173fb0bcc0d6d690de3040edee0c",
+  "status": "PASS"
+}

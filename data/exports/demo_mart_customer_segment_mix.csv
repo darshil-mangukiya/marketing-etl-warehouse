@@ -1,0 +1,3 @@
+customer_segment,customers,purchases,lifetime_revenue,lifetime_margin,avg_revenue_per_customer,avg_purchases_per_customer,margin_rate,segment_priority
+smb_value,564,564,1678899.16,1125724.63,2976.771560283688,1.0,0.6705135465074626,expand
+mid_market_value,36,36,394645.83,265873.64,10962.384166666667,1.0,0.6737018860683262,expand

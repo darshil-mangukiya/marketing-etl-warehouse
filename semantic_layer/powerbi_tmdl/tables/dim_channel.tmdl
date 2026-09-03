@@ -1,0 +1,16 @@
+table 'dim_channel'
+	description: "Conformed marketing channel dimension for paid search, paid social, email, organic, direct, referral, and unknown traffic."
+	lineageTag: dim_channel
+
+	column channel_key
+		dataType: string
+		summarizeBy: none
+		isHidden
+
+	column channel_name
+		dataType: string
+		summarizeBy: none
+
+	column channel_group
+		dataType: string
+		summarizeBy: none

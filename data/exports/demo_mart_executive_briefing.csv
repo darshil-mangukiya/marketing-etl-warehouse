@@ -1,0 +1,8 @@
+priority,section,finding,recommended_action,evidence_metric
+P0,Executive Scorecard,Marketing is not yet covering spend with margin.,Profitability Watch,"ROAS 0.00x, CAC $0"
+P1,Campaign Optimization,Cart Recovery Global FY25 Social is the strongest budget expansion candidate.,Increase budget on this campaign and monitor marginal CAC.,Attributed ROAS 20.21x
+P1,Campaign Optimization,Retargeting US FY25 Social is consuming budget with weak return.,Pause Or Rebuild,"Spend $21,911, ROAS 0.00x"
+P2,Regional Performance,Unknown is the largest revenue market for unknown.,Watch,"Revenue $2,073,545, margin rate 67.1%"
+P2,Product Performance,Growth has the highest booked revenue in the current demo mart.,Feature In Campaigns,"Revenue $665,432, margin rate 66.9%"
+P0,Anomaly Detection,"Leads decrease needs review against campaign, source, and attribution changes.","Review upstream loads, campaign changes, and attribution joins.",leads z-score -0.58
+P1,Budget Pacing,paid_social has the weakest pacing efficiency signal.,Under Pacing,Revenue attainment 0.0%

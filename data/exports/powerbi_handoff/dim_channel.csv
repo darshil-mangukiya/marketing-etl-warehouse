@@ -1,0 +1,8 @@
+channel_key,channel_name,channel_group
+direct,Direct,Owned/Other
+email,Email,Owned/Other
+organic,Organic,Owned/Other
+paid_search,Paid Search,Paid
+paid_social,Paid Social,Paid
+referral,Referral,Owned/Other
+unknown,Unknown,Owned/Other

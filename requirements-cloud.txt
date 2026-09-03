@@ -1,0 +1,6 @@
+# Optional cloud dependencies. Local/demo tests do not require this file.
+-r requirements.txt
+dbt-bigquery>=1.9,<1.10
+google-cloud-bigquery>=3.25
+google-cloud-storage>=2.18
+google-cloud-secret-manager>=2.20

@@ -1,0 +1,10 @@
+retention_policy,applies_to,retention_days,disposition_action,business_reason
+raw_customer_touchpoint_730_days,raw CRM and attribution records,730,anonymize,Supports funnel replay while limiting direct-identifier retention.
+web_event_730_days,raw website session events,730,delete,Session-level data is retained long enough for seasonality and attribution review.
+revenue_fact_1095_days,sales conversion and revenue facts,1095,archive_then_delete,Three-year history supports LTV and planning comparisons.
+customer_dimension_1095_days,customer identity dimension,1095,anonymize,Preserve segment analytics while removing natural identifiers.
+customer_value_1095_days,customer-level LTV marts,1095,aggregate_then_delete,Retain customer-level LTV only while analytically necessary.
+aggregate_mart_1825_days,aggregate BI marts,1825,archive,Aggregated reporting marts are useful for long-term executive trend analysis.
+operational_action_365_days,action center rows,365,archive_then_delete,Operational action history supports postmortems without growing indefinitely.
+governance_scorecard_730_days,data product scorecard rows,730,archive,Retain enough history to show operating maturity over time.
+governance_reference_indefinite,KPI definitions and policy references,0,retain_until_superseded,Definitions should remain versioned as governance evidence.

@@ -1,0 +1,47 @@
+name: "marketing_etl_platform"
+version: "1.0.0"
+config-version: 2
+
+profile: "marketing_etl_platform"
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  marketing_etl_platform:
+    staging:
+      +schema: staging
+      +materialized: view
+      +tags: ["staging"]
+    intermediate:
+      +schema: intermediate
+      +materialized: view
+      +tags: ["intermediate"]
+    marts:
+      core:
+        +schema: warehouse
+        +materialized: table
+        +tags: ["warehouse"]
+      reporting:
+        +schema: mart
+        +materialized: table
+        +tags: ["reporting", "bi"]
+
+vars:
+  lookback_days_for_late_arrivals: 90
+  campaign_scale_roas_multiplier: 1.15
+  campaign_reduce_roas_multiplier: 0.75
+  campaign_monitor_roas_multiplier: 0.95
+  campaign_min_spend_for_action: 1000
+  ga4_export_project: "p2-marketing-analytics-505916"
+  ga4_export_dataset: "analytics_550433518"
+  ga4_live_hostname: "p2.darshilmangukiya.com"
+  ga4_live_lookback_days: 14
+  ga4_property_timezone: "America/Los_Angeles"

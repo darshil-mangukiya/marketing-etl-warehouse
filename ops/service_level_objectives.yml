@@ -1,0 +1,21 @@
+slos:
+  daily_ingestion_completion:
+    target: "complete by 07:00 local business time"
+    measurement: "latest successful Airflow DAG run"
+    severity_on_breach: critical
+  source_freshness:
+    target: "all daily sources fresher than 36 hours"
+    measurement: "ops.watermarks and ops.vw_source_health"
+    severity_on_breach: critical
+  rejected_row_rate:
+    target: "below 5% per batch"
+    measurement: "latest_quality_summary rejected_count / row_count"
+    severity_on_breach: warning
+  executive_mart_refresh:
+    target: "mart tables refreshed after each successful dbt build"
+    measurement: "dbt build result and BI export manifest"
+    severity_on_breach: critical
+  dashboard_availability:
+    target: "Streamlit or BI tool available during demo window"
+    measurement: "dashboard health check"
+    severity_on_breach: warning

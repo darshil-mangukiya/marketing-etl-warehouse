@@ -1,0 +1,38 @@
+{
+  "checks": {
+    "all_method_values_non_negative": true,
+    "non_empty_result": true,
+    "six_methods_present": true,
+    "summary_channel_is_rank_one": true,
+    "top_channel_stable": true
+  },
+  "evidence_boundary": "Generated marketing business data; descriptive portfolio case study.",
+  "inputs": [
+    {
+      "path": "analytics_requests/canonical_input/mart_attribution_model_comparison.csv",
+      "sha256": "ef048fb5ff255942c6c41da52630121c3f7c0fdccfd850a4a1b9cb7ac376d3c4"
+    }
+  ],
+  "result_columns": [
+    "channel_name",
+    "first_touch_revenue",
+    "last_touch_revenue",
+    "linear_revenue",
+    "u_shaped_revenue",
+    "time_decay_revenue",
+    "position_based_revenue",
+    "first_touch_rank",
+    "last_touch_rank",
+    "linear_rank",
+    "u_shaped_rank",
+    "time_decay_rank",
+    "position_based_rank",
+    "min_attributed_revenue",
+    "max_attributed_revenue",
+    "model_spread_pct",
+    "rank_range"
+  ],
+  "result_rows": 6,
+  "result_sha256": "6acbbc2d91117b16c5b7cd7a673d21049585346202ebfdcd9c12eb24f53cb357",
+  "status": "PASS"
+}

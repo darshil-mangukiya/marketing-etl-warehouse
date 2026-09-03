@@ -1,0 +1,590 @@
+{
+  "catalog_name": "marketing_data_platform_catalog",
+  "generated_at": "2026-08-22T22:35:24.142949+00:00",
+  "counts": {
+    "models": 48,
+    "sources": 13,
+    "semantic_assets": 0,
+    "lineage_edges": 104,
+    "fields": 291
+  },
+  "sources": [
+    {
+      "source": "raw",
+      "table": "google_ads",
+      "schema": "{{ env_var('BIGQUERY_RAW_DATASET', 'raw') if target.type == 'bigquery' else 'raw' }}",
+      "description": "Raw Google Ads campaign metrics extracted from simulated REST API payloads."
+    },
+    {
+      "source": "raw",
+      "table": "facebook_ads",
+      "schema": "{{ env_var('BIGQUERY_RAW_DATASET', 'raw') if target.type == 'bigquery' else 'raw' }}",
+      "description": "Raw Facebook Ads ad set and placement metrics with schema drift examples."
+    },
+    {
+      "source": "raw",
+      "table": "tiktok_ads",
+      "schema": "{{ env_var('BIGQUERY_RAW_DATASET', 'raw') if target.type == 'bigquery' else 'raw' }}",
+      "description": "Raw TikTok Ads campaign metrics."
+    },
+    {
+      "source": "raw",
+      "table": "website_analytics",
+      "schema": "{{ env_var('BIGQUERY_RAW_DATASET', 'raw') if target.type == 'bigquery' else 'raw' }}",
+      "description": "Raw website analytics session events."
+    },
+    {
+      "source": "raw",
+      "table": "ga4_events",
+      "schema": "{{ env_var('BIGQUERY_RAW_DATASET', 'raw') if target.type == 'bigquery' else 'raw' }}",
+      "description": "Locally generated GA4-style event export, separate from the Daily BigQuery source."
+    },
+    {
+      "source": "raw",
+      "table": "crm_leads",
+      "schema": "{{ env_var('BIGQUERY_RAW_DATASET', 'raw') if target.type == 'bigquery' else 'raw' }}",
+      "description": "Raw CRM lead records with CDC operation flags."
+    },
+    {
+      "source": "raw",
+      "table": "sales_conversions",
+      "schema": "{{ env_var('BIGQUERY_RAW_DATASET', 'raw') if target.type == 'bigquery' else 'raw' }}",
+      "description": "Raw sales conversion records with deal values and CDC flags."
+    },
+    {
+      "source": "raw",
+      "table": "marketing_targets",
+      "schema": "{{ env_var('BIGQUERY_RAW_DATASET', 'raw') if target.type == 'bigquery' else 'raw' }}",
+      "description": "Raw monthly marketing targets by channel and region."
+    },
+    {
+      "source": "raw",
+      "table": "campaign_mapping",
+      "schema": "{{ env_var('BIGQUERY_RAW_DATASET', 'raw') if target.type == 'bigquery' else 'raw' }}",
+      "description": "Reference mapping from platform campaign IDs to canonical campaign metadata."
+    },
+    {
+      "source": "raw",
+      "table": "region_mapping",
+      "schema": "{{ env_var('BIGQUERY_RAW_DATASET', 'raw') if target.type == 'bigquery' else 'raw' }}",
+      "description": "Reference mapping from country code to reporting region."
+    },
+    {
+      "source": "ops",
+      "table": "ingestion_logs",
+      "schema": "ops",
+      "description": ""
+    },
+    {
+      "source": "ops",
+      "table": "validation_results",
+      "schema": "ops",
+      "description": ""
+    },
+    {
+      "source": "ga4_live_export",
+      "table": "events",
+      "schema": "{{ var('ga4_export_dataset', 'analytics_550433518') }}",
+      "description": "Date-sharded GA4 event export. Live models always apply a date-filtered _TABLE_SUFFIX predicate and filter to the configured production hostname."
+    }
+  ],
+  "models": [
+    {
+      "name": "int_attribution_touchpoints",
+      "layer": "intermediate",
+      "path": "models/intermediate/int_attribution_touchpoints.sql",
+      "refs": [
+        "int_campaign_spend_unified",
+        "stg_sales_conversions",
+        "stg_website_analytics"
+      ],
+      "sources": []
+    },
+    {
+      "name": "int_campaign_daily",
+      "layer": "intermediate",
+      "path": "models/intermediate/int_campaign_daily.sql",
+      "refs": [
+        "int_campaign_spend_unified"
+      ],
+      "sources": []
+    },
+    {
+      "name": "int_campaign_spend_unified",
+      "layer": "intermediate",
+      "path": "models/intermediate/int_campaign_spend_unified.sql",
+      "refs": [
+        "stg_facebook_ads",
+        "stg_google_ads",
+        "stg_region_mapping",
+        "stg_tiktok_ads"
+      ],
+      "sources": []
+    },
+    {
+      "name": "int_customer_journey",
+      "layer": "intermediate",
+      "path": "models/intermediate/int_customer_journey.sql",
+      "refs": [
+        "stg_crm_leads",
+        "stg_sales_conversions",
+        "stg_website_analytics"
+      ],
+      "sources": []
+    },
+    {
+      "name": "int_ga4_live_sessions",
+      "layer": "intermediate",
+      "path": "models/intermediate/int_ga4_live_sessions.sql",
+      "refs": [
+        "stg_ga4_live_events"
+      ],
+      "sources": []
+    },
+    {
+      "name": "int_ga4_sessions",
+      "layer": "intermediate",
+      "path": "models/intermediate/int_ga4_sessions.sql",
+      "refs": [
+        "stg_ga4_events"
+      ],
+      "sources": []
+    },
+    {
+      "name": "dim_campaign",
+      "layer": "warehouse",
+      "path": "models/marts/core/dim_campaign.sql",
+      "refs": [
+        "int_campaign_spend_unified",
+        "stg_campaign_mapping",
+        "stg_website_analytics"
+      ],
+      "sources": []
+    },
+    {
+      "name": "dim_channel",
+      "layer": "warehouse",
+      "path": "models/marts/core/dim_channel.sql",
+      "refs": [],
+      "sources": []
+    },
+    {
+      "name": "dim_customer",
+      "layer": "warehouse",
+      "path": "models/marts/core/dim_customer.sql",
+      "refs": [
+        "stg_crm_leads",
+        "stg_sales_conversions"
+      ],
+      "sources": []
+    },
+    {
+      "name": "dim_date",
+      "layer": "warehouse",
+      "path": "models/marts/core/dim_date.sql",
+      "refs": [
+        "int_campaign_daily",
+        "stg_crm_leads",
+        "stg_sales_conversions",
+        "stg_website_analytics"
+      ],
+      "sources": []
+    },
+    {
+      "name": "dim_device",
+      "layer": "warehouse",
+      "path": "models/marts/core/dim_device.sql",
+      "refs": [],
+      "sources": []
+    },
+    {
+      "name": "dim_product",
+      "layer": "warehouse",
+      "path": "models/marts/core/dim_product.sql",
+      "refs": [
+        "stg_sales_conversions"
+      ],
+      "sources": []
+    },
+    {
+      "name": "dim_region",
+      "layer": "warehouse",
+      "path": "models/marts/core/dim_region.sql",
+      "refs": [
+        "stg_region_mapping"
+      ],
+      "sources": []
+    },
+    {
+      "name": "dim_sales_rep",
+      "layer": "warehouse",
+      "path": "models/marts/core/dim_sales_rep.sql",
+      "refs": [
+        "stg_crm_leads"
+      ],
+      "sources": []
+    },
+    {
+      "name": "dim_source_system",
+      "layer": "warehouse",
+      "path": "models/marts/core/dim_source_system.sql",
+      "refs": [],
+      "sources": []
+    },
+    {
+      "name": "fact_attribution",
+      "layer": "warehouse",
+      "path": "models/marts/core/fact_attribution.sql",
+      "refs": [
+        "dim_campaign",
+        "dim_channel",
+        "dim_customer",
+        "int_attribution_touchpoints"
+      ],
+      "sources": []
+    },
+    {
+      "name": "fact_campaign_performance",
+      "layer": "warehouse",
+      "path": "models/marts/core/fact_campaign_performance.sql",
+      "refs": [
+        "dim_campaign",
+        "dim_channel",
+        "dim_region",
+        "dim_source_system",
+        "int_attribution_touchpoints",
+        "int_campaign_daily"
+      ],
+      "sources": []
+    },
+    {
+      "name": "fact_conversions",
+      "layer": "warehouse",
+      "path": "models/marts/core/fact_conversions.sql",
+      "refs": [
+        "dim_campaign",
+        "dim_customer",
+        "dim_product",
+        "stg_sales_conversions"
+      ],
+      "sources": []
+    },
+    {
+      "name": "fact_leads",
+      "layer": "warehouse",
+      "path": "models/marts/core/fact_leads.sql",
+      "refs": [
+        "dim_campaign",
+        "dim_channel",
+        "dim_customer",
+        "dim_region",
+        "dim_sales_rep",
+        "stg_crm_leads"
+      ],
+      "sources": []
+    },
+    {
+      "name": "fact_revenue",
+      "layer": "warehouse",
+      "path": "models/marts/core/fact_revenue.sql",
+      "refs": [
+        "dim_campaign",
+        "dim_customer",
+        "dim_product",
+        "stg_sales_conversions"
+      ],
+      "sources": []
+    },
+    {
+      "name": "fact_sessions",
+      "layer": "warehouse",
+      "path": "models/marts/core/fact_sessions.sql",
+      "refs": [
+        "dim_campaign",
+        "dim_channel",
+        "dim_device",
+        "dim_region",
+        "stg_website_analytics"
+      ],
+      "sources": []
+    },
+    {
+      "name": "fact_targets",
+      "layer": "warehouse",
+      "path": "models/marts/core/fact_targets.sql",
+      "refs": [
+        "dim_channel",
+        "dim_region",
+        "stg_marketing_targets"
+      ],
+      "sources": []
+    },
+    {
+      "name": "metricflow_time_spine",
+      "layer": "warehouse",
+      "path": "models/marts/core/metricflow_time_spine.sql",
+      "refs": [
+        "dim_date"
+      ],
+      "sources": []
+    },
+    {
+      "name": "mart_attribution_model_comparison",
+      "layer": "reporting",
+      "path": "models/marts/reporting/mart_attribution_model_comparison.sql",
+      "refs": [
+        "dim_campaign",
+        "dim_channel",
+        "fact_attribution"
+      ],
+      "sources": []
+    },
+    {
+      "name": "mart_attribution_summary",
+      "layer": "reporting",
+      "path": "models/marts/reporting/mart_attribution_summary.sql",
+      "refs": [
+        "dim_campaign",
+        "dim_channel",
+        "fact_attribution"
+      ],
+      "sources": []
+    },
+    {
+      "name": "mart_budget_efficiency",
+      "layer": "reporting",
+      "path": "models/marts/reporting/mart_budget_efficiency.sql",
+      "refs": [
+        "mart_channel_performance"
+      ],
+      "sources": []
+    },
+    {
+      "name": "mart_campaign_action_center",
+      "layer": "reporting",
+      "path": "models/marts/reporting/mart_campaign_action_center.sql",
+      "refs": [
+        "mart_campaign_performance",
+        "mart_target_vs_actual"
+      ],
+      "sources": []
+    },
+    {
+      "name": "mart_campaign_performance",
+      "layer": "reporting",
+      "path": "models/marts/reporting/mart_campaign_performance.sql",
+      "refs": [
+        "dim_campaign",
+        "fact_campaign_performance"
+      ],
+      "sources": []
+    },
+    {
+      "name": "mart_channel_performance",
+      "layer": "reporting",
+      "path": "models/marts/reporting/mart_channel_performance.sql",
+      "refs": [
+        "dim_campaign",
+        "dim_channel",
+        "fact_campaign_performance",
+        "fact_conversions",
+        "fact_leads"
+      ],
+      "sources": []
+    },
+    {
+      "name": "mart_customer_value",
+      "layer": "reporting",
+      "path": "models/marts/reporting/mart_customer_value.sql",
+      "refs": [
+        "dim_campaign",
+        "dim_customer",
+        "fact_campaign_performance",
+        "fact_revenue"
+      ],
+      "sources": []
+    },
+    {
+      "name": "mart_data_quality_monitoring",
+      "layer": "reporting",
+      "path": "models/marts/reporting/mart_data_quality_monitoring.sql",
+      "refs": [],
+      "sources": [
+        "ops.ingestion_logs",
+        "ops.validation_results"
+      ]
+    },
+    {
+      "name": "mart_funnel_performance",
+      "layer": "reporting",
+      "path": "models/marts/reporting/mart_funnel_performance.sql",
+      "refs": [
+        "dim_campaign",
+        "dim_channel",
+        "fact_conversions",
+        "fact_leads"
+      ],
+      "sources": []
+    },
+    {
+      "name": "mart_ga4_funnel",
+      "layer": "reporting",
+      "path": "models/marts/reporting/mart_ga4_funnel.sql",
+      "refs": [
+        "stg_ga4_events"
+      ],
+      "sources": []
+    },
+    {
+      "name": "mart_ga4_live_funnel",
+      "layer": "reporting",
+      "path": "models/marts/reporting/mart_ga4_live_funnel.sql",
+      "refs": [
+        "int_ga4_live_sessions"
+      ],
+      "sources": []
+    },
+    {
+      "name": "mart_marketing_variance_drivers",
+      "layer": "reporting",
+      "path": "models/marts/reporting/mart_marketing_variance_drivers.sql",
+      "refs": [
+        "mart_channel_performance"
+      ],
+      "sources": []
+    },
+    {
+      "name": "mart_target_vs_actual",
+      "layer": "reporting",
+      "path": "models/marts/reporting/mart_target_vs_actual.sql",
+      "refs": [
+        "dim_channel",
+        "dim_region",
+        "fact_campaign_performance",
+        "fact_leads",
+        "fact_targets"
+      ],
+      "sources": []
+    },
+    {
+      "name": "stg_campaign_mapping",
+      "layer": "staging",
+      "path": "models/staging/stg_campaign_mapping.sql",
+      "refs": [],
+      "sources": [
+        "raw.campaign_mapping"
+      ]
+    },
+    {
+      "name": "stg_crm_leads",
+      "layer": "staging",
+      "path": "models/staging/stg_crm_leads.sql",
+      "refs": [],
+      "sources": [
+        "raw.crm_leads"
+      ]
+    },
+    {
+      "name": "stg_facebook_ads",
+      "layer": "staging",
+      "path": "models/staging/stg_facebook_ads.sql",
+      "refs": [],
+      "sources": [
+        "raw.facebook_ads"
+      ]
+    },
+    {
+      "name": "stg_ga4_events",
+      "layer": "staging",
+      "path": "models/staging/stg_ga4_events.sql",
+      "refs": [],
+      "sources": [
+        "raw.ga4_events"
+      ]
+    },
+    {
+      "name": "stg_ga4_live_ecommerce_items",
+      "layer": "staging",
+      "path": "models/staging/stg_ga4_live_ecommerce_items.sql",
+      "refs": [],
+      "sources": [
+        "ga4_live_export.events"
+      ]
+    },
+    {
+      "name": "stg_ga4_live_events",
+      "layer": "staging",
+      "path": "models/staging/stg_ga4_live_events.sql",
+      "refs": [],
+      "sources": [
+        "ga4_live_export.events"
+      ]
+    },
+    {
+      "name": "stg_google_ads",
+      "layer": "staging",
+      "path": "models/staging/stg_google_ads.sql",
+      "refs": [],
+      "sources": [
+        "raw.google_ads"
+      ]
+    },
+    {
+      "name": "stg_marketing_targets",
+      "layer": "staging",
+      "path": "models/staging/stg_marketing_targets.sql",
+      "refs": [],
+      "sources": [
+        "raw.marketing_targets"
+      ]
+    },
+    {
+      "name": "stg_region_mapping",
+      "layer": "staging",
+      "path": "models/staging/stg_region_mapping.sql",
+      "refs": [],
+      "sources": [
+        "raw.region_mapping"
+      ]
+    },
+    {
+      "name": "stg_sales_conversions",
+      "layer": "staging",
+      "path": "models/staging/stg_sales_conversions.sql",
+      "refs": [],
+      "sources": [
+        "raw.sales_conversions"
+      ]
+    },
+    {
+      "name": "stg_tiktok_ads",
+      "layer": "staging",
+      "path": "models/staging/stg_tiktok_ads.sql",
+      "refs": [],
+      "sources": [
+        "raw.tiktok_ads"
+      ]
+    },
+    {
+      "name": "stg_website_analytics",
+      "layer": "staging",
+      "path": "models/staging/stg_website_analytics.sql",
+      "refs": [],
+      "sources": [
+        "raw.website_analytics"
+      ]
+    }
+  ],
+  "semantic_assets": [],
+  "critical_marts": [
+    "mart_channel_performance",
+    "mart_campaign_performance",
+    "mart_funnel_performance",
+    "mart_target_vs_actual",
+    "mart_attribution_summary",
+    "mart_attribution_model_comparison",
+    "mart_customer_value",
+    "mart_budget_efficiency",
+    "mart_data_quality_monitoring"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "generated_at": "2026-08-22T22:35:30.303838+00:00",
+  "sensitive_field_mentions": 769,
+  "classification_counts": {
+    "commercially_sensitive": 371,
+    "direct_identifier": 196,
+    "location": 133,
+    "attribution_identifier": 69
+  },
+  "needs_review_count": 567,
+  "report": "governance/generated/pii_discovery_report.csv"
+}

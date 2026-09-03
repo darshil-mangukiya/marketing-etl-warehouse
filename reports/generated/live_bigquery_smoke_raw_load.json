@@ -1,0 +1,197 @@
+{
+  "validated_at_utc": "2026-08-18T16:59:40.573984+00:00",
+  "project_id": "p2-marketing-analytics-505916",
+  "location": "us-central1",
+  "dataset_id": "marketing_raw",
+  "synthetic_only": true,
+  "dry_run": false,
+  "rows_per_source_limit": 10,
+  "tables": [
+    {
+      "table_id": "p2-marketing-analytics-505916.marketing_raw.campaign_mapping",
+      "rows": 10,
+      "columns": [
+        "source_system",
+        "batch_id",
+        "campaign_id",
+        "canonical_campaign_name",
+        "canonical_channel",
+        "owner_team",
+        "valid_from",
+        "valid_to"
+      ],
+      "source_files": [
+        "data_sources/generated/source_system=campaign_mapping/batch_id=batch_20260818T025519Z/campaign_mapping_part_00000.csv"
+      ],
+      "loaded_rows": 10,
+      "table_rows": 10,
+      "table_bytes": 1053,
+      "load_input_bytes": 2864
+    },
+    {
+      "table_id": "p2-marketing-analytics-505916.marketing_raw.facebook_ads",
+      "rows": 10,
+      "columns": [
+        "source_system",
+        "batch_id",
+        "event_date",
+        "campaign_id",
+        "campaign_name",
+        "ad_set_id",
+        "placement",
+        "country",
+        "reach",
+        "impressions",
+        "clicks",
+        "spend",
+        "conversions",
+        "attribution_id",
+        "updated_at",
+        "campaign_objective",
+        "ingestion_available_at"
+      ],
+      "source_files": [
+        "data_sources/generated/source_system=facebook_ads/batch_id=batch_20260818T025519Z/facebook_ads_part_00000.csv"
+      ],
+      "loaded_rows": 10,
+      "table_rows": 10,
+      "table_bytes": 2258,
+      "load_input_bytes": 6315
+    },
+    {
+      "table_id": "p2-marketing-analytics-505916.marketing_raw.google_ads",
+      "rows": 10,
+      "columns": [
+        "source_system",
+        "batch_id",
+        "event_date",
+        "campaign_id",
+        "campaign_name",
+        "ad_group_id",
+        "network_type",
+        "region",
+        "currency",
+        "impressions",
+        "clicks",
+        "ctr",
+        "avg_cpc",
+        "spend",
+        "conversions",
+        "attribution_id",
+        "updated_at",
+        "ingestion_available_at"
+      ],
+      "source_files": [
+        "data_sources/generated/source_system=google_ads/batch_id=batch_20260818T025519Z/google_ads_part_00000.jsonl"
+      ],
+      "loaded_rows": 10,
+      "table_rows": 10,
+      "table_bytes": 2019,
+      "load_input_bytes": 6756
+    },
+    {
+      "table_id": "p2-marketing-analytics-505916.marketing_raw.region_mapping",
+      "rows": 10,
+      "columns": [
+        "source_system",
+        "batch_id",
+        "country",
+        "region",
+        "sales_territory"
+      ],
+      "source_files": [
+        "data_sources/generated/source_system=region_mapping/batch_id=batch_20260818T025519Z/region_mapping_part_00000.csv"
+      ],
+      "loaded_rows": 10,
+      "table_rows": 10,
+      "table_bytes": 566,
+      "load_input_bytes": 1699
+    },
+    {
+      "table_id": "p2-marketing-analytics-505916.marketing_raw.sales_conversions",
+      "rows": 10,
+      "columns": [
+        "source_system",
+        "batch_id",
+        "conversion_id",
+        "lead_id",
+        "customer_id",
+        "created_at",
+        "conversion_date",
+        "product",
+        "deal_value",
+        "gross_margin",
+        "currency",
+        "attribution_id",
+        "campaign_id",
+        "cdc_operation",
+        "updated_at",
+        "ingestion_available_at"
+      ],
+      "source_files": [
+        "data_sources/generated/source_system=sales_conversions/batch_id=batch_20260818T025519Z/sales_conversions_part_00000.jsonl"
+      ],
+      "loaded_rows": 10,
+      "table_rows": 10,
+      "table_bytes": 1939,
+      "load_input_bytes": 6167
+    },
+    {
+      "table_id": "p2-marketing-analytics-505916.marketing_raw.tiktok_ads",
+      "rows": 10,
+      "columns": [
+        "source_system",
+        "batch_id",
+        "event_date",
+        "campaign_id",
+        "campaign_name",
+        "creative_id",
+        "country",
+        "video_views",
+        "clicks",
+        "spend",
+        "conversions",
+        "attribution_id",
+        "updated_at",
+        "ingestion_available_at"
+      ],
+      "source_files": [
+        "data_sources/generated/source_system=tiktok_ads/batch_id=batch_20260818T025519Z/tiktok_ads_part_00000.parquet"
+      ],
+      "loaded_rows": 10,
+      "table_rows": 10,
+      "table_bytes": 2070,
+      "load_input_bytes": 5375
+    },
+    {
+      "table_id": "p2-marketing-analytics-505916.marketing_raw.website_analytics",
+      "rows": 10,
+      "columns": [
+        "source_system",
+        "batch_id",
+        "event_date",
+        "session_id",
+        "visitor_id",
+        "utm_campaign_id",
+        "utm_campaign",
+        "traffic_source",
+        "device",
+        "country",
+        "page_views",
+        "session_duration_seconds",
+        "bounce_flag",
+        "attribution_id",
+        "updated_at",
+        "ingestion_available_at"
+      ],
+      "source_files": [
+        "data_sources/generated/source_system=website_analytics/batch_id=batch_20260818T025519Z/website_analytics_part_00000.parquet"
+      ],
+      "loaded_rows": 10,
+      "table_rows": 10,
+      "table_bytes": 2395,
+      "load_input_bytes": 6092
+    }
+  ],
+  "total_rows": 70
+}

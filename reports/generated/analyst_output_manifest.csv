@@ -1,0 +1,11 @@
+name,row_count,file
+campaign_roi_driver_analysis,50,data/exports/analyst_outputs/campaign_roi_driver_analysis.csv
+campaign_action_recommendations,250,data/exports/analyst_outputs/campaign_action_recommendations.csv
+channel_efficiency_segmentation,10,data/exports/analyst_outputs/channel_efficiency_segmentation.csv
+funnel_dropoff_analysis,7,data/exports/analyst_outputs/funnel_dropoff_analysis.csv
+conversion_forecasting,21,data/exports/analyst_outputs/conversion_forecasting.csv
+campaign_anomaly_detection,6,data/exports/analyst_outputs/campaign_anomaly_detection.csv
+budget_pacing_alerts,15,data/exports/analyst_outputs/budget_pacing_alerts.csv
+customer_value_analysis,100,data/exports/analyst_outputs/customer_value_analysis.csv
+executive_insight_generator,11,data/exports/analyst_outputs/executive_insight_generator.csv
+executive_insights,8,data/exports/analyst_outputs/executive_insights.csv

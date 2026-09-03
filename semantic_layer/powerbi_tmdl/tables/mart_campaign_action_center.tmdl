@@ -1,0 +1,87 @@
+table 'mart_campaign_action_center'
+	description: "Target-aware deterministic campaign actions with quality overrides."
+	lineageTag: mart_campaign_action_center
+
+	column reporting_month
+		dataType: dateTime
+		summarizeBy: none
+
+	column campaign_id
+		dataType: string
+		summarizeBy: none
+
+	column campaign_name
+		dataType: string
+		summarizeBy: none
+
+	column channel
+		dataType: string
+		summarizeBy: none
+
+	column spend
+		dataType: decimal
+		summarizeBy: none
+
+	column attributed_revenue
+		dataType: decimal
+		summarizeBy: none
+
+	column current_roas
+		dataType: decimal
+		summarizeBy: none
+
+	column current_cac
+		dataType: decimal
+		summarizeBy: none
+
+	column target_roas
+		dataType: decimal
+		summarizeBy: none
+
+	column target_cac
+		dataType: decimal
+		summarizeBy: none
+
+	column performance_status
+		dataType: string
+		summarizeBy: none
+
+	column action_priority
+		dataType: string
+		summarizeBy: none
+
+	column recommended_action
+		dataType: string
+		summarizeBy: none
+
+	column action_reason
+		dataType: string
+		summarizeBy: none
+
+	column supporting_metric
+		dataType: string
+		summarizeBy: none
+
+	column data_quality_status
+		dataType: string
+		summarizeBy: none
+
+	column metric_to_monitor
+		dataType: string
+		summarizeBy: none
+
+	column generated_at
+		dataType: dateTime
+		summarizeBy: none
+
+	measure 'Campaign Actions' = COUNTROWS('mart_campaign_action_center')
+		formatString: "#,0"
+		displayFolder: "Campaign Actions"
+
+	measure 'Campaigns to Scale' = CALCULATE([Campaign Actions], 'mart_campaign_action_center'[recommended_action] = "SCALE")
+		formatString: "#,0"
+		displayFolder: "Campaign Actions"
+
+	measure 'Data Quality Holds' = CALCULATE([Campaign Actions], 'mart_campaign_action_center'[recommended_action] = "DATA QUALITY HOLD")
+		formatString: "#,0"
+		displayFolder: "Campaign Actions"

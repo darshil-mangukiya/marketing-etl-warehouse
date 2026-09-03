@@ -1,0 +1,52 @@
+{
+  "generated_at": "2026-08-22T22:35:29.701310+00:00",
+  "release_status": "certified",
+  "artifact_pass_rate": 1.0,
+  "required_artifact_count": 8,
+  "available_artifact_count": 8,
+  "demo_mart_count": 28,
+  "semantic_table_count": 17,
+  "semantic_measure_count": 59,
+  "artifacts": [
+    {
+      "artifact": "data/exports/demo_mart_manifest.json",
+      "exists": true,
+      "size_bytes": 4065
+    },
+    {
+      "artifact": "data/exports/demo_mart_data_product_scorecard.csv",
+      "exists": true,
+      "size_bytes": 2121
+    },
+    {
+      "artifact": "data/exports/demo_mart_semantic_kpi_governance.csv",
+      "exists": true,
+      "size_bytes": 4002
+    },
+    {
+      "artifact": "data/exports/demo_mart_action_center.csv",
+      "exists": true,
+      "size_bytes": 9584
+    },
+    {
+      "artifact": "reports/generated/executive_planning_report.html",
+      "exists": true,
+      "size_bytes": 14978
+    },
+    {
+      "artifact": "semantic_layer/powerbi_tmdl/semantic_model_manifest.json",
+      "exists": true,
+      "size_bytes": 205
+    },
+    {
+      "artifact": "docs/data_quality_framework.md",
+      "exists": true,
+      "size_bytes": 2518
+    },
+    {
+      "artifact": "docs/dashboard_outputs.md",
+      "exists": true,
+      "size_bytes": 3734
+    }
+  ]
+}

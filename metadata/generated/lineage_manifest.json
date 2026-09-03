@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-08-22T22:35:24.147065+00:00",
+  "openlineage_event_count": 45,
+  "datahub_mce_count": 48,
+  "source_count": 13,
+  "warehouse_model_count": 17,
+  "reporting_model_count": 13,
+  "critical_marts": [
+    "mart_channel_performance",
+    "mart_campaign_performance",
+    "mart_funnel_performance",
+    "mart_target_vs_actual",
+    "mart_attribution_summary",
+    "mart_attribution_model_comparison",
+    "mart_customer_value",
+    "mart_budget_efficiency",
+    "mart_data_quality_monitoring"
+  ],
+  "outputs": {
+    "openlineage_events": "metadata/generated/openlineage_events.jsonl",
+    "datahub_mces": "metadata/generated/datahub_mces.json",
+    "summary": "metadata/generated/lineage_summary.md"
+  }
+}

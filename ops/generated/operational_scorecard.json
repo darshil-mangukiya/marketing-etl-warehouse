@@ -1,0 +1,32 @@
+{
+  "generated_at": "2026-08-22T22:35:27.215055+00:00",
+  "overall_status": "watch",
+  "quality": {
+    "row_count": 15052,
+    "rejected_count": 43,
+    "quality_gate": "pass"
+  },
+  "great_expectations": {
+    "quality_gate": "pass",
+    "evaluated_files": 20,
+    "evaluated_rows": 15052
+  },
+  "contracts": {
+    "status": "failed",
+    "issue_count": 19
+  },
+  "catalog": {
+    "models": 48,
+    "sources": 13,
+    "lineage_edges": 104,
+    "fields": 291
+  },
+  "local_quality_gate": {
+    "status": "passed",
+    "checks": 25
+  },
+  "benchmark": {
+    "status": null,
+    "total_elapsed_seconds": null
+  }
+}

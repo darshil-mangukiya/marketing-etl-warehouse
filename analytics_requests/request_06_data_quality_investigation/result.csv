@@ -1,0 +1,11 @@
+source_system,source_rows,rejected_rows,failed_loads,failed_count,severity,monitoring_status,rejection_rate,recommended_release_decision
+google_ads,2510.000000,23.000000,0,12.000000,error,quality_failure,0.009163,HOLD
+facebook_ads,1807.000000,16.000000,0,8.000000,error,quality_failure,0.008854,HOLD
+tiktok_ads,1205.000000,4.000000,0,7.000000,error,quality_failure,0.003320,HOLD
+campaign_mapping,500.000000,0.000000,0,0.000000,warning,healthy,0.000000,RELEASE
+marketing_targets,120.000000,0.000000,0,0.000000,warning,healthy,0.000000,RELEASE
+region_mapping,10.000000,0.000000,0,0.000000,warning,healthy,0.000000,RELEASE
+website_analytics,3000.000000,0.000000,0,6.000000,warning,quality_warning,0.000000,REVIEW
+ga4_events,4000.000000,0.000000,0,8.000000,warning,quality_warning,0.000000,REVIEW
+crm_leads,1300.000000,0.000000,0,2.000000,warning,quality_warning,0.000000,REVIEW
+sales_conversions,600.000000,0.000000,0,2.000000,warning,quality_warning,0.000000,REVIEW

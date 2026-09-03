@@ -1,0 +1,35 @@
+export_folder: data/exports
+refresh_mode: import
+date_table: dim_date
+recommended_tables:
+  dimensions:
+    - warehouse_dim_date.csv
+    - warehouse_dim_campaign.csv
+    - warehouse_dim_channel.csv
+    - warehouse_dim_customer.csv
+    - warehouse_dim_region.csv
+    - warehouse_dim_device.csv
+    - warehouse_dim_product.csv
+  facts:
+    - warehouse_fact_campaign_performance.csv
+    - warehouse_fact_sessions.csv
+    - warehouse_fact_leads.csv
+    - warehouse_fact_conversions.csv
+    - warehouse_fact_revenue.csv
+    - warehouse_fact_targets.csv
+    - warehouse_fact_attribution.csv
+  marts:
+    - mart_mart_channel_performance.csv
+    - mart_mart_campaign_performance.csv
+    - mart_mart_funnel_performance.csv
+    - mart_mart_target_vs_actual.csv
+    - mart_mart_attribution_summary.csv
+    - mart_mart_attribution_model_comparison.csv
+    - mart_mart_customer_value.csv
+    - mart_mart_budget_efficiency.csv
+    - mart_mart_data_quality_monitoring.csv
+hidden_fields:
+  - "*_key"
+  - load_batch_id
+  - updated_at
+  - source_row_count

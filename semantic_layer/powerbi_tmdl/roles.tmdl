@@ -1,0 +1,12 @@
+// Power BI TMDL role design using generated project dimensions.
+// Validate the roles with Power BI Desktop View as role and Service-side enforcement during deployment.
+role Executive
+	modelPermission: read
+
+role 'Channel Manager'
+	modelPermission: read
+	tablePermission dim_channel = [channel_group] = "Paid"
+
+role 'Regional Manager'
+	modelPermission: read
+	tablePermission dim_region = [region] = "EMEA"

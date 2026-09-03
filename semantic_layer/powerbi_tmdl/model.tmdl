@@ -1,0 +1,7 @@
+model 'Marketing ETL Semantic Model'
+	compatibilityLevel: 1601
+	culture: en-US
+	discourageImplicitMeasures
+	annotation __PBI_TimeIntelligenceEnabled = 0
+
+	annotation SemanticPackagePurpose = "Power BI-ready semantic package for the marketing warehouse"

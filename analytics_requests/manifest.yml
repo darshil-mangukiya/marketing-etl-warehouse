@@ -1,0 +1,92 @@
+version: 1
+portfolio_case_study: true
+scenario_label: modeled stakeholder requests
+requests:
+  - id: REQ-01
+    slug: request_01_roas_decline
+    requester: VP Marketing
+    question: Why is paid-social attributed ROAS materially below the review line?
+    sources:
+      - mart.mart_campaign_performance
+      - mart.mart_campaign_action_center
+      - mart.mart_data_quality_monitoring
+  - id: REQ-02
+    slug: request_02_funnel_leakage
+    requester: Sales Operations Manager
+    question: Where is the largest Lead to MQL to SQL to Close leakage?
+    sources:
+      - mart.mart_funnel_performance
+      - mart.mart_data_quality_monitoring
+  - id: REQ-03
+    slug: request_03_target_miss
+    requester: Finance Business Partner
+    question: Why did LATAM Paid Search miss revenue target with spend near plan?
+    sources:
+      - mart.mart_target_vs_actual
+      - mart.mart_attribution_reconciliation
+      - mart.mart_data_quality_monitoring
+  - id: REQ-04
+    slug: request_04_attribution_sensitivity
+    requester: Marketing Analytics Manager
+    question: How much does the channel conclusion change by attribution method?
+    sources:
+      - mart.mart_attribution_model_comparison
+      - mart.mart_attribution_summary
+      - mart.mart_attribution_reconciliation
+  - id: REQ-05
+    slug: request_05_budget_scenario
+    requester: Performance Marketing Manager
+    question: Which areas should be reviewed if budget needs to be reallocated?
+    simulated: true
+    sources:
+      - analytics_requests/canonical_input/mart_budget_scenarios.csv
+      - deterministic_budget_funnel_simulation (upstream methodology)
+  - id: REQ-06
+    slug: request_06_data_quality_investigation
+    requester: Marketing Analytics Manager
+    question: Can campaign recommendations be trusted or should actions be held?
+    sources:
+      - mart.mart_data_quality_monitoring
+      - mart.mart_campaign_action_center
+build:
+  canonical_input: analytics_requests/canonical_input
+  input_format: versioned_csv_snapshot
+  scenario_source: analytics_requests/canonical_input/mart_budget_scenarios.csv
+  request_count: 6
+  evidence_boundary: Generated marketing business data; bounded real GA4 evidence
+    is separate and unused.
+summaries:
+  REQ-01:
+    channel_roas: 0.028590803951384653
+    total_spend: 1203353.36
+    total_revenue: 34404.840000000004
+    top_two_share: 0.2400099535606581
+  REQ-02:
+    channel: paid_social
+    lead_to_mql_drop: 303
+    leakage_rate: 0.787012987012987
+  REQ-03:
+    region: LATAM
+    channel: Paid Search
+    spend_attainment: 1.0733307001572954
+    revenue_attainment: 0.14593062427486447
+    lead_attainment: 0.01796669588080631
+    conversion_attainment: 18.391304347826086
+  REQ-04:
+    top_channel: Paid Search
+    min_revenue: 119293.51000000001
+    max_revenue: 123209.18
+    spread_pct: 0.03229382733857496
+    rank_stable: true
+    chart_title: Paid Search remains first, but attributed value changes by model
+  REQ-05:
+    expected_roas: 0.17941406618132638
+    expected_cac: 20171.72634920635
+    social_allocation: 0.7076155384353243
+    all_below_break_even: true
+  REQ-06:
+    quality_failures: 3
+    quality_warnings: 4
+    hold_source_count: 3
+    campaign_action_holds: 1
+    release_decision: DATA QUALITY HOLD

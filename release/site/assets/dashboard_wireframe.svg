@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1300" height="760" viewBox="0 0 1300 760">
+  <rect width="1300" height="760" fill="#ffffff"/>
+  <text x="45" y="52" font-size="28" font-weight="700" fill="#0f172a">Executive Marketing Overview</text>
+  <rect x="45" y="88" width="210" height="96" rx="8" fill="#f8fafc" stroke="#cbd5e1"/><text x="63" y="123" font-size="15" fill="#64748b">Spend</text><text x="63" y="160" font-size="26" font-weight="700" fill="#0f172a">$11,437,369</text><rect x="295" y="88" width="210" height="96" rx="8" fill="#f8fafc" stroke="#cbd5e1"/><text x="313" y="123" font-size="15" fill="#64748b">Booked Revenue</text><text x="313" y="160" font-size="26" font-weight="700" fill="#0f172a">$2,073,545</text><rect x="545" y="88" width="210" height="96" rx="8" fill="#f8fafc" stroke="#cbd5e1"/><text x="563" y="123" font-size="15" fill="#64748b">ROAS</text><text x="563" y="160" font-size="26" font-weight="700" fill="#0f172a">0.18x</text><rect x="795" y="88" width="210" height="96" rx="8" fill="#f8fafc" stroke="#cbd5e1"/><text x="813" y="123" font-size="15" fill="#64748b">Campaigns</text><text x="813" y="160" font-size="26" font-weight="700" fill="#0f172a">81</text><rect x="1045" y="88" width="210" height="96" rx="8" fill="#f8fafc" stroke="#cbd5e1"/><text x="1063" y="123" font-size="15" fill="#64748b">Rejected Rows</text><text x="1063" y="160" font-size="26" font-weight="700" fill="#0f172a">43</text>
+  <rect x="45" y="230" width="590" height="230" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="70" y="268" font-size="18" font-weight="700" fill="#0f172a">Spend and Revenue Trend</text>
+  <polyline points="85,410 170,376 255,390 340,330 425,352 510,300 600,288" fill="none" stroke="#2563eb" stroke-width="4"/>
+  <polyline points="85,430 170,418 255,404 340,384 425,360 510,340 600,320" fill="none" stroke="#16a34a" stroke-width="4"/>
+  <rect x="670" y="230" width="585" height="230" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="695" y="268" font-size="18" font-weight="700" fill="#0f172a">Channel Efficiency Map</text>
+  <circle cx="760" cy="380" r="34" fill="#bfdbfe" stroke="#2563eb"/>
+  <circle cx="905" cy="315" r="48" fill="#bbf7d0" stroke="#16a34a"/>
+  <circle cx="1085" cy="395" r="26" fill="#fecaca" stroke="#dc2626"/>
+  <rect x="45" y="500" width="1210" height="190" rx="8" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="70" y="540" font-size="18" font-weight="700" fill="#0f172a">Quality and Pipeline Health</text>
+  <text x="70" y="590" font-size="16" fill="#334155">GE checkpoint, rejected-row outputs, source health, and freshness checks feed the monitoring page.</text>
+  <text x="70" y="630" font-size="16" fill="#334155">Dashboard artifact generated from local smoke marts for release review.</text>
+</svg>

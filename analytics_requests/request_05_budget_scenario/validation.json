@@ -1,0 +1,28 @@
+{
+  "checks": {
+    "all_rows_simulated": true,
+    "five_scenarios": true,
+    "no_optimal_claim": true,
+    "positive_budgets": true
+  },
+  "evidence_boundary": "Generated marketing business data; descriptive portfolio case study.",
+  "inputs": [
+    {
+      "path": "analytics_requests/canonical_input/mart_budget_scenarios.csv",
+      "sha256": "ef680ba2d7ea0813da705389071094ec019097f38224c818ffa3390bd1c71314"
+    }
+  ],
+  "result_columns": [
+    "scenario_name",
+    "simulation_status",
+    "total_budget",
+    "projected_revenue",
+    "projected_customers",
+    "active_channels",
+    "projected_roas",
+    "projected_cac"
+  ],
+  "result_rows": 5,
+  "result_sha256": "3985c8aedbcb5a095c24c28edadedc729d539c75baa09190de5675606e87d84a",
+  "status": "PASS"
+}

@@ -1,0 +1,31 @@
+campaign_id,canonical_campaign_name,canonical_channel,spend,attributed_revenue,attributed_roas,platform_conversions,waste_budget_flag
+CMP-000057,Product Launch 2024,organic,164823.68,2410.43,0.01462429427616226,2379,true
+CMP-000010,Regional Expansion 2025,paid_social,139530.01,13012.325,0.09325825318868679,2182,true
+,,,7686795.79,309776.37499999994,0.040299805466797754,105849,true
+CMP-000016,Creator Spark 2025,paid_search,114692.67,5608.1,0.04889676035966379,1443,true
+CMP-000024,Lifecycle Winback 2025,paid_search,111518.33,1383.795,0.012408677568970052,1565,true
+CMP-000004,Lifecycle Winback 2025,paid_search,152384.51,0.0,0.0,2080,true
+CMP-000061,Brand Search 2024,paid_search,127208.55,0.0,0.0,1484,true
+CMP-000074,Lifecycle Winback 2025,paid_search,125810.52,0.0,0.0,1524,true
+CMP-000047,Product Launch 2024,paid_social,146325.70,12969.975,0.08863771025869002,1747,true
+CMP-000071,Brand Search 2024,direct,199755.59,18298.64,0.09160514606875332,2070,true
+CMP-000069,Cart Recovery 2024,email,102957.08,5487.78,0.05330162821245513,847,true
+CMP-000042,Competitor Search 2025,paid_social,140987.19,0.0,0.0,2732,true
+CMP-000031,Brand Search 2024,paid_social,85892.43,0.0,0.0,1114,true
+CMP-000068,Enterprise ABM 2025,direct,151710.02,0.0,0.0,2028,true
+CMP-000062,Competitor Search 2025,paid_social,123759.13,1719.9,0.013897156516856574,1531,true
+CMP-000048,Enterprise ABM 2025,paid_social,146274.73,6702.639999999999,0.045822268822509525,1296,true
+CMP-000073,Retargeting 2024,direct,138236.01,0.0,0.0,1837,true
+CMP-000015,Holiday Promo 2024,paid_search,128326.20,0.0,0.0,2304,true
+CMP-000056,Creator Spark 2025,paid_search,164001.74,0.0,0.0,1691,true
+CMP-000072,Competitor Search 2025,paid_search,177790.13,0.0,0.0,2379,true
+CMP-000007,Product Launch 2024,paid_search,141978.67,9442.080000000002,0.06650351070340356,2109,true
+CMP-000080,Regional Expansion 2025,paid_social,85257.15,0.0,0.0,1818,true
+CMP-000052,Competitor Search 2025,paid_search,147792.32,0.0,0.0,1811,true
+CMP-000060,Regional Expansion 2025,organic,152076.21,0.0,0.0,2268,true
+CMP-000066,Creator Spark 2025,paid_social,91229.55,0.0,0.0,1229,true
+CMP-000058,Enterprise ABM 2025,paid_search,133063.11,4045.875,0.030405684941528874,1679,true
+CMP-000030,Regional Expansion 2025,paid_social,6778.13,0.0,0.0,11,false
+CMP-000075,Holiday Promo 2024,paid_social,110362.23,0.0,0.0,1425,true
+CMP-000013,Retargeting 2024,paid_search,113094.35,3764.38,0.033285305587768085,2340,true
+CMP-000023,Retargeting 2024,paid_social,126957.11,0.0,0.0,1416,true

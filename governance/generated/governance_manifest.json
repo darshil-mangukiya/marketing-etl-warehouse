@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-08-18T02:55:37.834592+00:00",
+  "status": "certified",
+  "outputs": {
+    "data_classification_catalog": "governance/generated/data_classification_catalog.csv",
+    "access_policy_matrix": "governance/generated/access_policy_matrix.csv",
+    "retention_policy_matrix": "governance/generated/retention_policy_matrix.csv",
+    "bi_release_certification_json": "governance/generated/bi_release_certification.json",
+    "bi_release_certification_markdown": "governance/generated/bi_release_certification.md",
+    "governance_release_packet": "reports/generated/governance_release_packet.html"
+  },
+  "classified_asset_count": 10,
+  "restricted_asset_count": 6,
+  "access_policy_count": 21,
+  "retention_policy_count": 9,
+  "artifact_pass_rate": 1.0
+}

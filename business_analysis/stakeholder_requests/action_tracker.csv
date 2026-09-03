@@ -1,0 +1,7 @@
+action_id,request_id,scenario_type,owner_role,modeled_action,priority,status,completion_evidence
+ACT-M01,REQ-01,portfolio case study,Marketing Analytics Manager,Validate attribution coverage and campaign mapping before budget review,P1,Proposed,analytics_requests/request_01_roas_decline/validation.json
+ACT-M02,REQ-02,portfolio case study,Sales Operations Manager,Review paid-social lead-source quality and MQL rules,P1,Proposed,analytics_requests/request_02_funnel_leakage/validation.json
+ACT-M03,REQ-03,portfolio case study,Analytics Engineering,Reconcile platform conversions to leads and attributed revenue,P0,Proposed,analytics_requests/request_03_target_miss/validation.json
+ACT-M04,REQ-04,portfolio case study,Marketing Analytics Manager,Publish the Paid Search rank with six-method sensitivity band,P2,Proposed,analytics_requests/request_04_attribution_sensitivity/validation.json
+ACT-M05,REQ-05,portfolio case study,Performance Marketing Manager,Review scenario assumptions and paid-social concentration,P1,Proposed,analytics_requests/request_05_budget_scenario/validation.json
+ACT-M06,REQ-06,portfolio case study,Analytics Engineering,Resolve paid-source quality failures before recommendation release,P0,Proposed,analytics_requests/request_06_data_quality_investigation/validation.json

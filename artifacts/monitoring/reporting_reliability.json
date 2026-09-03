@@ -1,0 +1,118 @@
+{
+  "generated_at": "2026-08-22T22:35:25.682942+00:00",
+  "classification": "PROJECT_REPORTING_RELIABILITY",
+  "source_count": 8,
+  "status_counts": {
+    "FRESH": 7,
+    "WARNING": 1,
+    "BREACHED": 0,
+    "NOT APPLICABLE": 0
+  },
+  "sources": [
+    {
+      "source": "google_ads",
+      "expected_refresh": "Daily",
+      "freshness_threshold_hours": 36,
+      "latest_record_timestamp": "NOT AVAILABLE IN INGESTION SUMMARY",
+      "latest_load_timestamp": "2026-08-22T22:35:04.132554+00:00",
+      "volume_expectation": ">0 rows per smoke load",
+      "observed_rows": 2510,
+      "missing_partition_check": "PASS",
+      "validation_status": "PASS",
+      "reliability_status": "FRESH",
+      "execution_status": "LOCAL CONTRACT TESTED"
+    },
+    {
+      "source": "facebook_ads",
+      "expected_refresh": "Daily",
+      "freshness_threshold_hours": 36,
+      "latest_record_timestamp": "NOT AVAILABLE IN INGESTION SUMMARY",
+      "latest_load_timestamp": "2026-08-22T22:35:04.132554+00:00",
+      "volume_expectation": ">0 rows per smoke load",
+      "observed_rows": 1807,
+      "missing_partition_check": "PASS",
+      "validation_status": "PASS",
+      "reliability_status": "FRESH",
+      "execution_status": "LOCAL CONTRACT TESTED"
+    },
+    {
+      "source": "tiktok_ads",
+      "expected_refresh": "Daily",
+      "freshness_threshold_hours": 36,
+      "latest_record_timestamp": "NOT AVAILABLE IN INGESTION SUMMARY",
+      "latest_load_timestamp": "2026-08-22T22:35:04.132554+00:00",
+      "volume_expectation": ">0 rows per smoke load",
+      "observed_rows": 1205,
+      "missing_partition_check": "PASS",
+      "validation_status": "PASS",
+      "reliability_status": "FRESH",
+      "execution_status": "LOCAL CONTRACT TESTED"
+    },
+    {
+      "source": "ga4_events",
+      "expected_refresh": "Daily",
+      "freshness_threshold_hours": 36,
+      "latest_record_timestamp": "NOT AVAILABLE IN INGESTION SUMMARY",
+      "latest_load_timestamp": "2026-08-22T22:35:04.132554+00:00",
+      "volume_expectation": ">0 rows per smoke load",
+      "observed_rows": 4000,
+      "missing_partition_check": "PASS",
+      "validation_status": "PASS",
+      "reliability_status": "FRESH",
+      "execution_status": "GENERATED"
+    },
+    {
+      "source": "crm_leads",
+      "expected_refresh": "Daily",
+      "freshness_threshold_hours": 36,
+      "latest_record_timestamp": "NOT AVAILABLE IN INGESTION SUMMARY",
+      "latest_load_timestamp": "2026-08-22T22:35:04.132554+00:00",
+      "volume_expectation": ">0 rows per smoke load",
+      "observed_rows": 1300,
+      "missing_partition_check": "PASS",
+      "validation_status": "PASS",
+      "reliability_status": "FRESH",
+      "execution_status": "GENERATED"
+    },
+    {
+      "source": "sales_conversions",
+      "expected_refresh": "Daily",
+      "freshness_threshold_hours": 36,
+      "latest_record_timestamp": "NOT AVAILABLE IN INGESTION SUMMARY",
+      "latest_load_timestamp": "2026-08-22T22:35:04.132554+00:00",
+      "volume_expectation": ">0 rows per smoke load",
+      "observed_rows": 600,
+      "missing_partition_check": "PASS",
+      "validation_status": "PASS",
+      "reliability_status": "FRESH",
+      "execution_status": "GENERATED"
+    },
+    {
+      "source": "marketing_targets",
+      "expected_refresh": "Monthly",
+      "freshness_threshold_hours": 744,
+      "latest_record_timestamp": "NOT AVAILABLE IN INGESTION SUMMARY",
+      "latest_load_timestamp": "2026-08-22T22:35:04.132554+00:00",
+      "volume_expectation": ">0 rows per smoke load",
+      "observed_rows": 120,
+      "missing_partition_check": "PASS",
+      "validation_status": "PASS",
+      "reliability_status": "FRESH",
+      "execution_status": "GENERATED"
+    },
+    {
+      "source": "ga4_live_daily_export",
+      "expected_refresh": "Daily",
+      "freshness_threshold_hours": 48,
+      "latest_record_timestamp": "2026-08-19",
+      "latest_load_timestamp": "Documented Daily export availability",
+      "volume_expectation": ">=1 live-host event when site activity occurs",
+      "observed_rows": 39,
+      "missing_partition_check": "PASS for events_20260818 and events_20260819",
+      "validation_status": "LIVE VERIFIED",
+      "reliability_status": "WARNING",
+      "execution_status": "LIVE VERIFIED",
+      "evidence": "docs/P2_LIVE_GCP_VALIDATION.md"
+    }
+  ]
+}

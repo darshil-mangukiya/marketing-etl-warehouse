@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: mart_ga4_funnel
+    description: "GA4-style event funnel by date, acquisition dimensions, campaign and device."
+  - name: mart_ga4_live_funnel
+    description: >-
+      Live GA4 session funnel by date and acquisition dimensions. Metrics validate
+      pipeline behavior on a deliberately small project sample and are not
+      business-performance or causal conclusions.
+    columns:
+      - name: session_date
+        data_tests: [not_null]
+      - name: sessions
+        data_tests: [not_null]
+      - name: data_origin
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['live_ga4_export']
+  - name: mart_marketing_variance_drivers
+    description: "Period-over-period diagnostic drivers; findings are contributing factors, not statistical causality."
+    columns:
+      - name: severity
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [INFO, LOW, MEDIUM, HIGH]
+  - name: mart_campaign_action_center
+    description: "Transparent target-aware campaign action rules with data-quality holds."
+    columns:
+      - name: recommended_action
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [SCALE, MONITOR, REDUCE, FIX FUNNEL, REVIEW TARGET, DATA QUALITY HOLD]
+  - name: mart_channel_performance
+    description: "Executive-ready channel KPI mart with spend, revenue, ROAS, CAC, and funnel metrics."
+  - name: mart_campaign_performance
+    description: "Campaign intelligence mart including waste-budget flags and attributed ROAS."
+  - name: mart_funnel_performance
+    description: "Lead funnel mart by SQL-cohort creation month and channel; conversions count distinct SQL-qualified leads with at least one matching conversion."
+  - name: mart_target_vs_actual
+    description: "Monthly target attainment by region and channel."
+  - name: mart_attribution_summary
+    description: "Attribution model comparison across first touch, last touch, and linear revenue."
+  - name: mart_attribution_model_comparison
+    description: "Pivoted attribution model comparison for first-touch, last-touch, linear, U-shaped, time-decay, and position-based models."
+  - name: mart_customer_value
+    description: "Customer LTV-ready mart by acquisition channel and segment."
+  - name: mart_budget_efficiency
+    description: "Budget recommendation mart for spend optimization."
+  - name: mart_data_quality_monitoring
+    description: "BI-ready pipeline and source quality monitoring mart."

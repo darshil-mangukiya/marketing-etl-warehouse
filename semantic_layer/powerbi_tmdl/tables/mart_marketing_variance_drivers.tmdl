@@ -1,0 +1,143 @@
+table 'mart_marketing_variance_drivers'
+	description: "Month/channel diagnostic drivers without causal claims."
+	lineageTag: mart_marketing_variance_drivers
+
+	column reporting_month
+		dataType: dateTime
+		summarizeBy: none
+
+	column channel_key
+		dataType: string
+		summarizeBy: none
+
+	column channel_name
+		dataType: string
+		summarizeBy: none
+
+	column current_spend
+		dataType: decimal
+		summarizeBy: none
+
+	column prior_spend
+		dataType: decimal
+		summarizeBy: none
+
+	column spend_absolute_variance
+		dataType: decimal
+		summarizeBy: none
+
+	column spend_percentage_variance
+		dataType: decimal
+		summarizeBy: none
+
+	column current_impressions
+		dataType: int64
+		summarizeBy: none
+
+	column prior_impressions
+		dataType: int64
+		summarizeBy: none
+
+	column current_clicks
+		dataType: int64
+		summarizeBy: none
+
+	column prior_clicks
+		dataType: int64
+		summarizeBy: none
+
+	column current_ctr
+		dataType: decimal
+		summarizeBy: none
+
+	column prior_ctr
+		dataType: decimal
+		summarizeBy: none
+
+	column current_cpc
+		dataType: decimal
+		summarizeBy: none
+
+	column prior_cpc
+		dataType: decimal
+		summarizeBy: none
+
+	column current_conversions
+		dataType: int64
+		summarizeBy: none
+
+	column prior_conversions
+		dataType: int64
+		summarizeBy: none
+
+	column current_revenue
+		dataType: decimal
+		summarizeBy: none
+
+	column prior_revenue
+		dataType: decimal
+		summarizeBy: none
+
+	column current_aov
+		dataType: decimal
+		summarizeBy: none
+
+	column prior_aov
+		dataType: decimal
+		summarizeBy: none
+
+	column current_cac
+		dataType: decimal
+		summarizeBy: none
+
+	column prior_cac
+		dataType: decimal
+		summarizeBy: none
+
+	column cac_absolute_variance
+		dataType: decimal
+		summarizeBy: none
+
+	column cac_percentage_variance
+		dataType: decimal
+		summarizeBy: none
+
+	column current_roas
+		dataType: decimal
+		summarizeBy: none
+
+	column prior_roas
+		dataType: decimal
+		summarizeBy: none
+
+	column roas_absolute_variance
+		dataType: decimal
+		summarizeBy: none
+
+	column roas_percentage_variance
+		dataType: decimal
+		summarizeBy: none
+
+	column primary_driver
+		dataType: string
+		summarizeBy: none
+
+	column secondary_driver
+		dataType: string
+		summarizeBy: none
+
+	column severity
+		dataType: string
+		summarizeBy: none
+
+	column recommended_investigation
+		dataType: string
+		summarizeBy: none
+
+	measure 'High Variance Drivers' = CALCULATE(COUNTROWS('mart_marketing_variance_drivers'), 'mart_marketing_variance_drivers'[severity] = "HIGH")
+		formatString: "#,0"
+		displayFolder: "Diagnostics"
+
+	measure 'ROAS Absolute Variance' = SUM('mart_marketing_variance_drivers'[roas_absolute_variance])
+		formatString: "0.00x"
+		displayFolder: "Diagnostics"

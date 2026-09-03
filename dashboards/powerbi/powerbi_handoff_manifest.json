@@ -1,0 +1,169 @@
+{
+  "generated_at": "2026-08-22T22:35:24.900864+00:00",
+  "table_count": 17,
+  "measure_count": 59,
+  "relationship_count": 11,
+  "tables": [
+    {
+      "table": "dim_date",
+      "row_count": 4,
+      "file": "dashboards/powerbi/data/dim_date.csv"
+    },
+    {
+      "table": "dim_campaign",
+      "row_count": 81,
+      "file": "dashboards/powerbi/data/dim_campaign.csv"
+    },
+    {
+      "table": "dim_channel",
+      "row_count": 7,
+      "file": "dashboards/powerbi/data/dim_channel.csv"
+    },
+    {
+      "table": "dim_customer",
+      "row_count": 600,
+      "file": "dashboards/powerbi/data/dim_customer.csv"
+    },
+    {
+      "table": "dim_region",
+      "row_count": 4,
+      "file": "dashboards/powerbi/data/dim_region.csv"
+    },
+    {
+      "table": "mart_channel_performance",
+      "row_count": 10,
+      "file": "dashboards/powerbi/data/mart_channel_performance.csv"
+    },
+    {
+      "table": "mart_campaign_performance",
+      "row_count": 250,
+      "file": "dashboards/powerbi/data/mart_campaign_performance.csv"
+    },
+    {
+      "table": "mart_funnel_performance",
+      "row_count": 7,
+      "file": "dashboards/powerbi/data/mart_funnel_performance.csv"
+    },
+    {
+      "table": "mart_target_vs_actual",
+      "row_count": 120,
+      "file": "dashboards/powerbi/data/mart_target_vs_actual.csv"
+    },
+    {
+      "table": "mart_attribution_model_comparison",
+      "row_count": 4,
+      "file": "dashboards/powerbi/data/mart_attribution_model_comparison.csv"
+    },
+    {
+      "table": "mart_action_center",
+      "row_count": 31,
+      "file": "dashboards/powerbi/data/mart_action_center.csv"
+    },
+    {
+      "table": "mart_ga4_funnel",
+      "row_count": 3998,
+      "file": "dashboards/powerbi/data/mart_ga4_funnel.csv"
+    },
+    {
+      "table": "mart_marketing_variance_drivers",
+      "row_count": 24,
+      "file": "dashboards/powerbi/data/mart_marketing_variance_drivers.csv"
+    },
+    {
+      "table": "mart_campaign_action_center",
+      "row_count": 29,
+      "file": "dashboards/powerbi/data/mart_campaign_action_center.csv"
+    },
+    {
+      "table": "mart_budget_scenarios",
+      "row_count": 35,
+      "file": "dashboards/powerbi/data/mart_budget_scenarios.csv"
+    },
+    {
+      "table": "mart_data_product_scorecard",
+      "row_count": 8,
+      "file": "dashboards/powerbi/data/mart_data_product_scorecard.csv"
+    },
+    {
+      "table": "mart_semantic_kpi_governance",
+      "row_count": 9,
+      "file": "dashboards/powerbi/data/mart_semantic_kpi_governance.csv"
+    }
+  ],
+  "import_ready_handoff": {
+    "table_count": 14,
+    "tables": [
+      {
+        "table": "dim_date",
+        "row_count": 4,
+        "file": "data/exports/powerbi_handoff/dim_date.csv"
+      },
+      {
+        "table": "dim_campaign",
+        "row_count": 81,
+        "file": "data/exports/powerbi_handoff/dim_campaign.csv"
+      },
+      {
+        "table": "dim_channel",
+        "row_count": 7,
+        "file": "data/exports/powerbi_handoff/dim_channel.csv"
+      },
+      {
+        "table": "dim_region",
+        "row_count": 4,
+        "file": "data/exports/powerbi_handoff/dim_region.csv"
+      },
+      {
+        "table": "dim_device",
+        "row_count": 5,
+        "file": "data/exports/powerbi_handoff/dim_device.csv"
+      },
+      {
+        "table": "dim_customer_segment",
+        "row_count": 2,
+        "file": "data/exports/powerbi_handoff/dim_customer_segment.csv"
+      },
+      {
+        "table": "fact_campaign_performance",
+        "row_count": 250,
+        "file": "data/exports/powerbi_handoff/fact_campaign_performance.csv"
+      },
+      {
+        "table": "fact_ad_spend",
+        "row_count": 250,
+        "file": "data/exports/powerbi_handoff/fact_ad_spend.csv"
+      },
+      {
+        "table": "fact_leads",
+        "row_count": 7,
+        "file": "data/exports/powerbi_handoff/fact_leads.csv"
+      },
+      {
+        "table": "fact_conversions",
+        "row_count": 7,
+        "file": "data/exports/powerbi_handoff/fact_conversions.csv"
+      },
+      {
+        "table": "fact_revenue_attribution",
+        "row_count": 4,
+        "file": "data/exports/powerbi_handoff/fact_revenue_attribution.csv"
+      },
+      {
+        "table": "fact_budget_targets",
+        "row_count": 120,
+        "file": "data/exports/powerbi_handoff/fact_budget_targets.csv"
+      },
+      {
+        "table": "mart_campaign_action_recommendations",
+        "row_count": 250,
+        "file": "data/exports/powerbi_handoff/mart_campaign_action_recommendations.csv"
+      },
+      {
+        "table": "mart_budget_scenarios",
+        "row_count": 35,
+        "file": "data/exports/powerbi_handoff/mart_budget_scenarios.csv"
+      }
+    ],
+    "folder": "data/exports/powerbi_handoff"
+  }
+}

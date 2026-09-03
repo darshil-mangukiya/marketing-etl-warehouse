@@ -1,0 +1,10 @@
+execution_mode: cloud
+storage_backend: gcs
+warehouse_target: bigquery
+secret_provider: google_secret_manager
+gcp_region: us-central1
+datasets:
+  raw: marketing_raw
+  staging: marketing_staging
+  warehouse: marketing_warehouse
+  mart: marketing_mart

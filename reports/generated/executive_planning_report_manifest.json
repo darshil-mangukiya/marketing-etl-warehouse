@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-08-18T02:55:37.418474+00:00",
+  "html": "reports/generated/executive_planning_report.html",
+  "markdown": "reports/generated/executive_planning_report.md",
+  "metrics": {
+    "executive_status": "profitability_watch",
+    "forecast_spend": 34312106.52,
+    "forecast_revenue": 1104821.6805,
+    "forecast_margin": 749868.781,
+    "forecast_roas": 0.0321991796060675,
+    "approved_scenarios": 0,
+    "best_incremental_margin": 0.0,
+    "p0_actions": 1,
+    "p1_actions": 23,
+    "urgent_actions": 1,
+    "action_value": 40090067.033990316,
+    "avg_data_product_score": 74.7,
+    "at_risk_domains": 3
+  },
+  "included_marts": [
+    "mart_executive_scorecard",
+    "mart_executive_briefing",
+    "mart_action_center",
+    "mart_performance_forecast",
+    "mart_budget_scenarios",
+    "mart_data_product_scorecard",
+    "mart_semantic_kpi_governance",
+    "mart_source_health"
+  ]
+}

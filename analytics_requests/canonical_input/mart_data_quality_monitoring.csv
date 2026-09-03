@@ -1,0 +1,11 @@
+source_system,source_rows,rejected_rows,failed_loads,failed_count,severity,monitoring_status
+google_ads,2510,23,0,12,error,quality_failure
+tiktok_ads,1205,4,0,7,error,quality_failure
+campaign_mapping,500,0,0,0,warning,healthy
+website_analytics,3000,0,0,6,warning,quality_warning
+ga4_events,4000,0,0,8,warning,quality_warning
+marketing_targets,120,0,0,0,warning,healthy
+region_mapping,10,0,0,0,warning,healthy
+crm_leads,1300,0,0,2,warning,quality_warning
+sales_conversions,600,0,0,2,warning,quality_warning
+facebook_ads,1807,16,0,8,error,quality_failure

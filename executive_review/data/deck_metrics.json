@@ -1,0 +1,46 @@
+{
+  "evidence_boundary": "Generated marketing business data; bounded real GA4 evidence is separate and unused.",
+  "source": "analytics_requests/manifest.yml",
+  "summaries": {
+    "REQ-01": {
+      "channel_roas": 0.028590803951384653,
+      "top_two_share": 0.2400099535606581,
+      "total_revenue": 34404.840000000004,
+      "total_spend": 1203353.36
+    },
+    "REQ-02": {
+      "channel": "paid_social",
+      "lead_to_mql_drop": 303,
+      "leakage_rate": 0.787012987012987
+    },
+    "REQ-03": {
+      "channel": "Paid Search",
+      "conversion_attainment": 18.391304347826086,
+      "lead_attainment": 0.01796669588080631,
+      "region": "LATAM",
+      "revenue_attainment": 0.14593062427486447,
+      "spend_attainment": 1.0733307001572954
+    },
+    "REQ-04": {
+      "chart_title": "Paid Search remains first, but attributed value changes by model",
+      "max_revenue": 123209.18,
+      "min_revenue": 119293.51000000001,
+      "rank_stable": true,
+      "spread_pct": 0.03229382733857496,
+      "top_channel": "Paid Search"
+    },
+    "REQ-05": {
+      "all_below_break_even": true,
+      "expected_cac": 20171.72634920635,
+      "expected_roas": 0.17941406618132638,
+      "social_allocation": 0.7076155384353243
+    },
+    "REQ-06": {
+      "campaign_action_holds": 1,
+      "hold_source_count": 3,
+      "quality_failures": 3,
+      "quality_warnings": 4,
+      "release_decision": "DATA QUALITY HOLD"
+    }
+  }
+}

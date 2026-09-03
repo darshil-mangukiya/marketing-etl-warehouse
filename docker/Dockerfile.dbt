@@ -1,0 +1,14 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends git libpq-dev build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN pip install --no-cache-dir "dbt-core>=1.9,<1.12" "dbt-postgres>=1.9,<1.10" pandas psycopg2-binary
+
+COPY . /app
+
+WORKDIR /app/dbt
+CMD ["dbt", "build", "--profiles-dir", "."]
